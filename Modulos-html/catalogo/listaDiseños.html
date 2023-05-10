@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diseños</title>
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
+    <link rel="stylesheet" href="/css/cssgeneral.css">
+</head>
+
+<body class="fondo">
+    <header class="contenedor">
+    <h1 class="titulo">Diseños</h1>
+
+    <!-- botón para publicar diseño -->
+    <div class="container-fluid seccion2">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Publicar
+            diseño</button>
+
+        <!-- modal de agregar cliente -->
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header modal-head-agregar">
+                        <h5 class="modal-title" id="exampleModalLabel">Publicar diseño</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- formulario para agregar un cliente -->
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="nombreGuardar" class="col-form-label">Nombre del diseño:</label>
+                                <input type="text" class="form-control" id="nombreGuardarr"
+                                    placeholder="Ingresar nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Subir imagen del diseño</label>
+                                <input class="form-control" type="file" id="formFile1" required>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <input type="submit" class="btn btn-success" value="Guardar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- botón para buscar -->
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+
+        <!-- botón para mostrar la lista de Diseños  -->
+        <a href="./catalogo.html"><button type="button" class="btn btn-secondary">Lista de productos</button></a>
+
+        </div>
+    </header>
+
+<!-- </div> -->
+<div class="tabla">
+    <table class="table caption-top ">
+        <caption>Diseños publicados</caption>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ver imagen</th>
+                <th scope="col">Inhabilitar</th>
+                <th scope="col">Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">001</th>
+                <td>Vaca</td>
+                <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                
+                <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
+            </tr>
+            <tr>
+                <th scope="row">002</th>
+                <td>Batman Logo</td>
+                <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                
+                <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
+            </tr>
+            <tr>
+                <th scope="row">003</th>
+                <td>Naruto</td>
+                <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                
+                <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
+            </tr>
+            <tr>
+                <th scope="row">004</th>
+                <td>Pacman</td>
+                <td><button type="button" class="btn btn-secondary">Ver</button></td>
+               
+                <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- modal para editar diseño -->
+<div class="modal" id="modalDiseño">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header modal-head-editar">
+                <h5 class="modal-title" id="PublicarDiseño">Editar la publicación del diseño </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <!-- formulario para agregar un cliente -->
+                <form action="">
+                    <div class="mb-3">
+                        <label for="nombreDiseñoGuardar" class="col-form-label">Nombre de el producto:</label>
+                        <input type="text" class="form-control" id="nombreDiseñoGuardar"
+                            placeholder="Ingresar nombre">
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="precioDiseñoEditar" class="col-form-label">Precio:</label>
+                        <input type="text" class="form-control" id="precioDiseñoEditar"
+                            placeholder="Ingresar nombre" value="100 x cm2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="TamañoDiseñoEditar" class="col-form-label">Tamaño:</label>
+                        <input type="text" class="form-control" id="tamañoDiseñoEditar"
+                            placeholder="Ingresar nombre" required value="MIN: 2 X 2 - Max: 40 x 50 cm">
+                    </div> -->
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Subir imagen del diseño</label>
+                        <input class="form-control" type="file" id="archivoDiseño">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="submit" class="btn btn-success" value="Guardar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

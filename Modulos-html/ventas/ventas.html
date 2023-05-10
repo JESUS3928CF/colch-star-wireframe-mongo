@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ventas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
+    <link rel="stylesheet" href="/css/cssgeneral.css" />
+</head>
+
+<body class="fondo">
+    <header class="contenedor">
+        <h1 class="titulo">Ventas</h1>
+        <!-- SidebarSearch Form -->
+
+        <!-- botón agregar -->
+        <div class="container-fluid seccion2">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+                Agregar venta
+            </button>
+
+            <!-- modal de agregar cliente -->
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-dialog-centered" style= "width: 800px ; margin-left: 100px;">
+                    <div class="modal-content" style= "width: 800px ;" >
+                        <div class="modal-header modal-head-agregar" style="width: 800px ">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                Agregar venta
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="formulario">
+                            
+                            <div class="modal-body" >
+                                <!-- formulario para agregar un cliente -->
+                                <form action="">
+                                    <div class="mb-3">
+                                        <label for="nombreGuardar" class="col-form-label">
+                                            Nombre del cliente:
+                                        </label>
+                                        <input type="text" class="form-control" id="nombreGuardarr" placeholder="Ingresar nombre" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="apellidoGuardar" class="col-form-label">
+                                            Teléfono:
+                                        </label>
+                                        <input type="number" class="form-control" id="telefonoGuardar" placeholder="Ingresar teléfono" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefonoGuardar" class="col-form-label">
+                                            Dirección:
+                                        </label>
+                                        <input type="text" class="form-control" id="direccionGuardar" placeholder="Ingresar dirección" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefonoGuardar" class="col-form-label">
+                                            Fecha:
+                                        </label>
+                                        <input type="date" class="form-control" id="productoGuardar" required />
+                                    </div>
+                            
+                            
+                            
+                                    <!-- <label for="exampleDataList" class="form-label">
+                                        Seleccionar estado:
+                                    </label>
+                                     <select class="form-select" aria-label="Default select example">
+                                        <option value="1">Habilitado</option>
+                                        <option value="2">Inhabilitado</option>
+                                    </select> -->
+                             
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                            Cancelar
+                                        </button>
+                                        <input type="submit" class="btn btn-success" value="Guardar" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-body ">
+                                <form action="">
+                                    <div class="form-label" style="text-align: center;">
+                                        <p class="detalleCompra">Agregar datos de los productos de la venta</p>
+                                    </div>
+                                    <div class="subFormulario">
+                            
+                                        <div class="mb-3">
+                                            <label for="nombreVentaAgregar" class="col-form-label">Nombre:</label>
+                                            <input type="number" class="form-control" id="nombreVentaAgregar" placeholder="Ingresar nombre">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="cantidaVentadAgregar" class="col-form-label">Cantidad:</label>
+                                            <input type="number" class="form-control" id="cantidaVentadAgregar" placeholder="Ingresar cantidad">
+                                        </div>
+                                    </div>
+                                    <div class="subFormulario">
+                                        <div class="mb-3">
+                                            <label for="precioVentaAgregar" class="col-form-label">Precio:</label>
+                                            <input type="number" class="form-control" id="precioVentaAgregar"
+                                                placeholder="Ingresar precio unitario del producto">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="totalVentaAgregar" class="col-form-label">Precio total:</label>
+                                            <input type="number" class="form-control" id="totalVentaAgregar" placeholder="" value="100.000"
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    <div class="bottonAgregarProducto">
+                                        <div> <button type="button" class="btn btn-info">Agregar producto</button> </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <!-- botón de buscar -->
+
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="" aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit">
+                    Buscar
+                </button>
+            </form>
+        </div>
+
+        <!--! tabla para listar las ventas -->
+    </header>
+    <div class="tabla">
+        <table class="table caption-top">
+            <caption>Lista de ventas</caption>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre cliente</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Ver detalle</th>
+                    <th scope="col">Estado</th>
+                    <!-- <th scope="col">Editar</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">01</th>
+                    <td>Carlos</td>
+                    <td>3017835457</td>
+                    <td>Calle 78 #49b-12</td>
+                    <td>12/12/2023</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">En proceso</option>
+                            <option value="">Finalizado</option>
+                        </select>
+                    </td> 
+                    <!-- <td>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                            Editar
+                        </button>
+                    </td> -->
+                </tr>
+                <tr>
+                    <th scope="row">02</th>
+                    <td>Lorena</td>
+                    <td>3037985512</td>
+                    <td>Calle 92 #51a-66</td>
+                    <td>12/12/2023</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                   
+                    <td>
+                        <select name="" id="">
+                            <option value="">En proceso</option>
+                            <option value="">Finalizado</option>
+                        </select>
+                    </td> 
+                    <!-- <td>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                            Editar
+                        </button>
+                    </td> -->
+                </tr>
+                <tr>
+                    <th scope="row">03</th>
+                    <td>Manuel</td>
+                    <td>302448895</td>
+                    <td>Cra 25 #22-14</td>
+                    <td>12/12/2023</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                    
+                    <td>
+                        <select name="" id="">
+                            <option value="">En proceso</option>
+                            <option value="">Finalizado</option>
+                        </select>
+                    </td> 
+                    <!-- <td>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                            Editar
+                        </button>
+                    </td> -->
+                </tr>
+
+                <tr>
+                    <th scope="col">04</th>
+                    <td>Pablo</td>
+                    <td>3224758020</td>
+                    <td>Cll 25#1-04</td>
+                    <td>12/12/2023</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                   
+                    <td>
+                        <select name="" id="">
+                            <option value="">En proceso</option>
+                            <option value="">Finalizado</option>
+                        </select>
+                    </td> 
+                    <!-- <td>
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                            Editar
+                        </button>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- modal de editar cliente -->
+    <div class="modal" id="modalEditar">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-head-editar">
+                    <h5 class="modal-title">Editar los datos de la venta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- formulario para editar los datos de la tabla clientes -->
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="nombreEditar" class="col-form-label">
+                                Nombre del cliente:
+                            </label>
+                            <input type="text" class="form-control" id="nombreEditar" placeholder="Ingresar nombre" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidoEditar" class="col-form-label">
+                                Teléfono:
+                            </label>
+                            <input type="number" class="form-control" id="telefonoEditar"
+                                placeholder="Ingresar teléfono" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefonoEditar" class="col-form-label">
+                                Dirección:
+                            </label>
+                            <input type="text" class="form-control" id="direccionEditar"
+                                placeholder="Ingresar dirección" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaEditar" class="col-form-label">
+                                Fecha:
+                            </label>
+                            <input type="date" class="form-control" id="fechaEditar" required />
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="detalleEditar" class="form-label">
+                                Editar detalle
+                            </label>
+                            <textarea class="form-control" id="detalleEditar" rows="3"></textarea>
+                        </div> -->
+
+                        <div class="form-label" style="text-align: center;">
+                            <p class="detalleCompra">Editar datos de los productos de la venta</p>
+                        </div>
+                        <div class="subFormulario">
+                        
+                            <div class="mb-3">
+                                <label for="nombreVentaEditar" class="col-form-label">Nombre:</label>
+                                <input type="number" class="form-control" id="nombreVentaEditar" placeholder="Ingresar nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cantidaVentadEditar" class="col-form-label">Cantidad:</label>
+                                <input type="number" class="form-control" id="cantidaVentadEditar" placeholder="Ingresar cantidad">
+                            </div>
+                        </div>
+                        <div class="subFormulario">
+                            <div class="mb-3">
+                                <label for="precioVentaEditar" class="col-form-label">Precio:</label>
+                                <input type="number" class="form-control" id="precioVentaEditar"
+                                    placeholder="Ingresar precio unitario del producto">
+                            </div>
+                            <div class="mb-3">
+                                <label for="totalVentaEditar" class="col-form-label">Precio total:</label>
+                                <input type="number" class="form-control" id="totalVentaEditar" placeholder="" value="100.000" readonly>
+                            </div>
+                        </div>
+                        <div class="bottonAgregarProducto">
+                            <div> <button type="button" class="btn btn-info">Agregar producto</button> </div>
+                        </div>
+
+                        <label for="exampleDataList" class="form-label">
+                            Seleccionar estado:
+                        </label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="1">Habilitar</option>
+                            <option value="2">Inhabilitar</option>
+                        </select>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <input type="submit" class="btn btn-success" value="Guardar" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+.fondo {
+    background-color: rgb(252, 246, 246)
+}
+
+.titulo {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.contenedor {
+    /* display: flex; */
+    padding: 35px;
+    /* justify-content:space-around; */
+
+}
+
+/* .buscador{
+    position: fixed;
+} */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.seccion2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* boton de ver catalogo */
+.seccion3 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+.seccion4 {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.tabla {
+    margin: 10px 80px;
+}
+
+.modal-head-agregar {
+    background-color: #008000;
+}
+
+.modal-head-agregar h5 {
+    color: white;
+}
+
+.modal-head-editar {
+    background-color: #28c5e1;
+}
+
+.modal-head-editar h5 {
+    color: #020202;
+}
+
+/* estilo del sub formulario */
+.subFormulario {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottonAgregarProducto {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.detalleCompra {
+    padding: 10px;
+    font-weight: 500;
+}
+
+/*! estilo y tamaño de el icono de ver detalle y administrador  */
+
+.centrarIcono {
+    /* border: 1px solid black; */
+    /* margin-left: 20%; */
+    width: 35px;
+    /* height: px; */
+    cursor: pointer;
+}
+
+.centrarIcono:hover {
+    width: 38px;
+    /* color: #28c5e1; */
+}
+
+.centrarIconoDinero {
+    position: relative;
+    width: 30px;
+    top: -5px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+

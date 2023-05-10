@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="480" height="480">
+  <rect width="40" height="23" x="2" y="20" fill="#3ddab4" />
+  <path fill="#f55376" d="M46.235,15.761c2.334-2.334,2.334-6.118,0-8.452c-1.221-1.221-2.821-1.831-4.421-1.831 c-1.6,0-3.2,0.61-4.421,1.831l-1.869,1.869l0,0l-1.865-1.865c-2.442-2.442-6.401-2.442-8.843,0c-2.334,2.334-2.334,6.118,0,8.452 l10.71,10.71L46.235,15.761z" />
+  <rect width="34" height="17" x="5" y="23" fill="#7decd6" />
+  <circle cx="22" cy="31.5" r="5" fill="#3ddab4" />
+  <rect width="6" height="3" x="30" y="30" fill="#3ddab4" />
+  <rect width="6" height="3" x="8" y="30" fill="#3ddab4" />
+  <polygon fill="#eb0000" points="35.526,26.475 41.998,20 29.052,20" />
+</svg>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
+    <link rel="stylesheet" href="/css/cssgeneral.css">
+</head>
+
+<body class="fondo">
+    <header class="contenedor">
+        <h1 class="titulo">Usuarios</h1>
+        <!-- SidebarSearch Form -->
+
+        <!-- botón agregar -->
+        <div class="container-fluid seccion2">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Agregar
+                usuario</button>
+
+            <!--! modal de agregar cliente -->
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header modal-head-agregar">
+                            <h5 class="modal-title" id="exampleModalLabel">Agregar usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <!-- formulario para agregar un cliente -->
+                            <form action="">
+                                <div class="mb-3">
+                                    <label for="nombreGuardar" class="col-form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombreGuardarr"
+                                        placeholder="Ingresar nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="apellidoGuardar" class="col-form-label">Apellido:</label>
+                                    <input type="text" class="form-control" id="apellidoGuardar"
+                                        placeholder="Ingresar apellido">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
+                                    <input type="number" class="form-control" id="telefonoGuardar"
+                                        placeholder="Ingresar teléfono" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="emailGuardar" class="col-form-label">Email:</label>
+                                    <input type="email" class="form-control" id="emailGuardar"
+                                        placeholder="Ingresar email">
+                                </div>
+                                
+                                
+                                <div class="mb-3">
+                                    <label for="contraseñaGuardar" class="col-form-label">Contraseña:</label>
+                                    <input type="password" class="form-control" id="contraseñaGuardar"
+                                        placeholder="Ingresar contraseña">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contraseñaconfirmarGuardar" class="col-form-label">Confirmar contraseña:</label>
+                                    <input type="password" class="form-control" id="contraseñaconfirmarGuardar"
+                                        placeholder="Confirmar contraseña:">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rolGuardar" class="col-form-label">Rol:</label>
+                                    <select class="form-control">
+                                        <option>Seleccionar rol</option>
+                                        <option>Empleado</option>
+                                        <option>Vendedor</option>
+                                        <option>Comprador</option>
+                                      </select>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <input type="submit" class="btn btn-success" value="Guardar">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--! botón de buscar -->
+
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+
+        </div>
+
+        <!--! tabla para listar clientes -->
+    </header>
+    <div class="tabla">
+        <table class="table caption-top ">
+            <caption>Lista de usuarios</caption>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Jesús</td>
+                    <td>Cochero</td>
+                    <td>3240918282</td>
+                    <td>jesus@gmail.com</td>
+                    <td>Abministrador</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#modalEditar">Editar</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Herlyn</td>
+                    <td>David</td>
+                    <td>3023201200</td>
+                    <td>herlindavid@gmail.com</td>
+                    <td>Vendedor</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#modalEditar">Editar</button></td>
+                </tr>
+                
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Brian</td>
+                    <td>Pareja</td>
+                    <td>3220920192</td>
+                    <td>brian@gmail.com</td>
+                    <td>Empleado</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#modalEditar">Editar</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Tomas</td>
+                    <td>Vanegas</td>
+                    <td>3201929202</td>
+                    <td>tomas@gmail.com</td>
+                    <td>Comprador</td>
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#modalEditar">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- modal de editar cliente -->
+    <div class="modal" id="modalEditar">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-head-editar">
+                    <h5 class="modal-title">Editar datos del usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- formulario para editar los datos de la tabla clientes -->
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="nombreEditar" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombreEditar" placeholder="ingresar nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidoEditar" class="col-form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="apellidoEditar" placeholder="ingresar apellido">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
+                            <input type="number" class="form-control" id="telefonoEditar"
+                                placeholder="Ingresar teléfono">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailEditar" class="col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="emailEditar" placeholder="Ingresar email">
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label for="contraseñaEditar" class="col-form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="contraseñaEditar"
+                                placeholder="Ingresar contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contraseñaconfirmarEditar" class="col-form-label">Confirmar contraseña:</label>
+                            <input type="password" class="form-control" id="contraseñaconfirmarEditar"
+                                placeholder="Confirmar contraseña:">
+                        </div>
+                        <!-- <label for="exampleDataList" class="form-label">Estado:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="1">Habilitar</option>
+                            <option value="2">Inhabilitar</option>
+                        </select> -->
+                        <div class="mb-3">
+                            <label for="rolEditar" class="col-form-label">Rol:</label>
+                            <select class="form-control">
+                                <option>Empleado</option>
+                                <option>Vendedor</option>
+                                <option>Comprador</option>
+                              </select>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <input type="submit" class="btn btn-success" value="Guardar">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

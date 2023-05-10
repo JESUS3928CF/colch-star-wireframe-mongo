@@ -1,0 +1,124 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/*.div-principal{
+    border: 1px solid blue;
+    
+    margin:-20px 20px  ;
+    
+      
+}*/
+
+
+.div-segundario {
+    background-color: #14131b;
+    color: white;
+    display: inline-block;
+    border: 1px solid black;
+    width: 320px;
+    height: 130px;
+    margin-top: -30px;
+    margin-left: 33px;
+    margin-bottom: 09px;
+
+}
+
+.div-segundarioo {
+    background-color: #14131b;
+    color: white;
+    display: inline-block;
+    border: 1px solid black;
+    width: 320px;
+    height: 130px;
+    margin-left: 33px;
+
+}
+
+.p {
+    font-weight: bold;
+    font-size: 55px;
+    padding-left: 33px;
+
+
+}
+
+.p2 {
+    font-size: 25px;
+    padding-left: 20px;
+    margin-top: -10px;
+
+}
+
+img {
+    float: right;
+    margin-top: -70px;
+    margin-right: 10px;
+
+}
+
+.tercero {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 400px;
+    height: 230px;
+
+}
+
+.tercero1 {
+    border: 1px solid black;
+    background-color: rgb(230, 224, 224);
+    height: 180px;
+    width: 400px;
+    margin-left: 70px;
+
+
+}
+
+.tercero2 {
+    border: 1px solid black;
+    background-color: rgb(230, 224, 224);
+    height: 180px;
+    width: 400px;
+    float: right;
+    margin-top: -180px;
+    margin-right: 70px;
+
+
+
+}
+
+.pp {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.ppp {
+    font-size: 20px;
+
+    margin-bottom: 7px;
+    margin-top: 25px;
+    padding-left: 11px;
+    font-weight: 600;
+}
+
+.pppp {
+    font-size: 20px;
+
+    font-weight: 600;
+    padding-left: 11px;
+}
+
+.iii {
+    padding-top: 40px;
+
+}
+
+.contenedorTarjetas{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}

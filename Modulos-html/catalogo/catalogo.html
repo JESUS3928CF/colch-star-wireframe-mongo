@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
+    <link rel="stylesheet" href="/css/cssgeneral.css">
+    <link rel="stylesheet" href="/css/css/adminlte.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/imagenes/iconos/LogoPNG.png" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="fondo">
+    <header class="contenedor">
+        <h1 class="titulo">Catálogo</h1>
+        <!-- SidebarSearch Form -->
+        <!-- Botón para ver catalogo -->
+        <div class="seccion3">
+            <a href="#"><button type="button" class="btn btn-primary"> Ver catálogo</button></a>
+        </div>
+
+        <!-- botón para publicar prenda -->
+        <div class="container-fluid seccion2">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                data-bs-target="#publicarPrendaModal">Publicar prenda</button>
+
+            <!-- modal para publicar prenda -->
+
+            <div class="modal" id="publicarPrendaModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header modal-head-agregar">
+                            <h5 class="modal-title" id="modalPrenda">Publicar Prenda</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <!-- formulario para agregar una publicación al catalogo -->
+                            <form action="">
+                                <div class="mb-3">
+                                    <label for="nombreGuardarPrenda" class="col-form-label">Tipo de prenda:</label>
+                                    <input type="text" class="form-control" id="nombreGuardarPrenda"
+                                        placeholder="ingresar prenda" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Subir imagen de la prenda</label>
+                                    <input class="form-control" type="file" id="formFile" required>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <input type="submit" class="btn btn-success" value="Guardar">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- botón para buscar -->
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+
+            <!-- botón para mostrar la lista de siseños  -->
+            <a href="./listaDiseños.html"><button type="button" class="btn btn-secondary">Lista de diseños</button></a>
+
+        </div>
+
+    </header>
+    <div class="tabla">
+        <table class="table caption-top ">
+            <caption>Prendas básicas publicadas</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Tipo de prenda</th>
+                    <th scope="col">Ver imágenes</th>
+                    <th scope="col">Inhabilitar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">001</th>
+                    <td>Camisa</td>
+                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                    
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#editarPrendaModal">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">002</th>
+                    <td>Buzo con chompa</td>
+                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                    
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#editarPrendaModal">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">003</th>
+                    <td>Buzo sin chompa</td>
+                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                    
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#editarPrendaModal">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">004</th>
+                    <td>Camiseta</td>
+                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                    
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#editarPrendaModal">Editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- modal para editar prenda -->
+
+        <div class="modal" id="editarPrendaModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header modal-head-editar">
+                        <h5 class="modal-title" id="modalPrendaEditar">Editar publicación de la prenda</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- formulario para agregar un cliente -->
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="nombreEditarPrenda" class="col-form-label">Tipo de prenda:</label>
+                                <input type="text" class="form-control" id="nombreEditarPrenda"
+                                    placeholder="ingresar tipo de prenda">
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="cantidadPrendaEditar" class="col-form-label">Cantidad:</label>
+                                <input type="text" class="form-control" id="cantidadPrendaEditar"
+                                    placeholder="ingresar cantidad" value="" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="TamañosDiseñoEditar" class="col-form-label">Tipo de tela:</label>
+                                <input type="text" class="form-control" id="tamañosDiseñoEditar"
+                                    placeholder="ingresar tipo de tela" value="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="TamañosDiseñoEditar" class="col-form-label">Precio:</label>
+                                <input type="text" class="form-control" id="precioPrendaEditar"
+                                    placeholder="ingresar precio" value="" readonly>
+                            </div> -->
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Subir imagen de la prenda</label>
+                                <input class="form-control" type="file" id="archivoPrendaEditar">
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <input type="submit" class="btn btn-success" value="Guardar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
