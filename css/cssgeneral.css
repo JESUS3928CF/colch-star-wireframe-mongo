@@ -62,6 +62,11 @@
     background-color: #28c5e1;
 }
 
+.modal-head-info {
+    background-color: #6C757D;
+    color: white;
+}
+
 .modal-head-editar h5 {
     color: #020202;
 }
@@ -108,4 +113,3 @@
     display: flex;
     justify-content: center;
 }
-

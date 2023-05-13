@@ -145,7 +145,7 @@
                     <td>10/05/2023</td>
                     <td>Usuarios Roles-Proveedores-Productos-Clientes-Compras-Ventas-Catalogo</td>
                     <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#modalEditar">Ver</button></td>
+                        data-bs-target="#modalPermisos">Ver</button></td>
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                    
 
@@ -157,7 +157,7 @@
                     <td>10/05/2023</td>
                     <td>Proveedores Productos-Clientes-Compras-Ventas-Catalogo</td>
                     <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#modalEditar">Ver</button></td>
+                        data-bs-target="#modalPermisos">Ver</button></td>
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
@@ -169,7 +169,7 @@
                     <td>10/05/2023</td>
                     <td>Ventas - Compras</td>
                     <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#modalEditar">Ver</button></td>
+                        data-bs-target="#modalPermisos">Ver</button></td>
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
@@ -190,11 +190,34 @@
                     
                     <!--! formulario para editar los datos de un rol -->
                     <form action="">
-                        <label for="exampleDataList" class="form-label">Seleccionar rol:</label>
                         <div class="mb-3">
                             <label for="nombreRolGuardarr" class="col-form-label">Nombre del rol:</label>
                             <input type="text" class="form-control" id="nombreRolGuardarr"
-                                placeholder="Ingresar el nuevo nombre del rol">
+                                placeholder="Ingresar nombre del rol">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <p class="text-center">Permisos específicos de proveedor</p>
+                            </div>
+                            <div class="row">
+                                <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="vista" value="vista">
+                                    <label class="form-check-label" for="inlineCheckbox1">Vista</label>
+                                  </div>
+                                  <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="editar" value="editar">
+                                    <label class="form-check-label" for="inlineCheckbox2">Editar</label>
+                                  </div>
+                                  <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="agregar" value="agregar">
+                                    <label class="form-check-label" for="inlineCheckbox3">Agregar</label>
+                                  </div>
+                                  <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="eliminar" value="eliminar">
+                                    <label class="form-check-label" for="inlineCheckbox4">Eliminar</label>
+                                  </div>
+                            </div>
+                            
                         </div>
                         <br>
                         <label for="">Seleccionar permisos:</label>
@@ -219,13 +242,95 @@
                             <input class="form-check-input" type="checkbox" id="ventasEditar" checked>
                             <label class="form-check-label" for="ventasAgregar">Ventas</label>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="catalogoEditar" checked>
-                            <label class="form-check-label" for="catalogoAgregar">Catalogo</label>
-                        </div>
+                        
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                             <input type="submit" class="btn btn-success" value="Guardar">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--! modal para ver los permisos espesificos -->
+    <div class="modal" id="modalPermisos">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-head-info">
+                    <h5 class="modal-title">Permisos del rol</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <!--! formulario para los datos de un rol -->
+                    <div class="mb-3">
+                        <label for="rolEditar" class="col-form-label">Seleccione un modulo:</label>
+                        <select class="form-control">
+                            <option></option>
+                            <option>Proveedores</option>
+                            <option>Productos</option>
+                            <option>Clientes</option>
+                            <option>Compras</option>
+                            <option>Ventas</option>
+                          </select>
+                    </div>
+
+
+                    <form action="">
+                        <div class="container">
+                            <div class="row">
+                                <p class="text-center">Permisos específicos de proveedor</p>
+                            </div>
+                            <div class="row">
+                                <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="vistaVer" value="vista">
+                                    <label class="form-check-label" for="inlineCheckbox1">Vista</label>
+                                  </div>
+                                  <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="editarVer" value="editar">
+                                    <label class="form-check-label" for="inlineCheckbox2">Editar</label>
+                                  </div>
+                                  <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="agregarVer" value="agregar">
+                                    <label class="form-check-label" for="inlineCheckbox3">Agregar</label>
+                                  </div>
+                                  <div class="col form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="eliminarVer" value="eliminar">
+                                    <label class="form-check-label" for="inlineCheckbox4">Eliminar</label>
+                                  </div>
+                            </div>
+                            
+                        </div>
+                        <!-- <br>
+                        <label for="">Seleccionar permisos:</label>
+                        <br>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="proveedoresEditar">
+                            <label class="form-check-label" for="proveedoresAgregar">Proveedores</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="productosEditar" checked>
+                            <label class="form-check-label" for="productosAgregar">Productos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="clientesEditar" checked>
+                            <label class="form-check-label" for="clientesAgregar">Clientes</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="comprasEditar" checked>
+                            <label class="form-check-label" for="comprasAgregar">Compras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="ventasEditar" checked>
+                            <label class="form-check-label" for="ventasAgregar">Ventas</label>
+                        </div> -->
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Salir</button>
                         </div>
                     </form>
                 </div>
