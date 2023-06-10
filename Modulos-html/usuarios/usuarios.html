@@ -29,7 +29,7 @@
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Agregar
                 usuario</button>
 
-            <!--! modal de agregar cliente -->
+            <!--! modal de agregar usuario -->
 
             <div class="modal" id="myModal">
                 <div class="modal-dialog modal-dialog-centered">
@@ -40,22 +40,23 @@
                         </div>
                         <div class="modal-body">
 
-                            <!-- formulario para agregar un cliente -->
-                            <form action="">
+                            <!-- formulario para agregar un usuario -->
+                            <form action="" id="formularioagregarusuario">
                                 <div class="mb-3">
                                     <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreGuardarr"
-                                        placeholder="Ingresar nombre" required>
+                                    <input type="text" class="form-control" id="nombreGuardarr" name="nombreGuardar"
+                                        placeholder="Ingresar nombre">
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellidoGuardar" class="col-form-label">Apellido:</label>
-                                    <input type="text" class="form-control" id="apellidoGuardar"
+                                    <input type="text" class="form-control" id="apellidoGuardar" name="apellidoGuardar"
                                         placeholder="Ingresar apellido">
                                 </div>
                                 <div class="mb-3">
                                     <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
                                     <input type="number" class="form-control" id="telefonoGuardar"
-                                        placeholder="Ingresar teléfono" required>
+                                    name="telefonoGuardar"
+                                        placeholder="Ingresar teléfono" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="emailGuardar" class="col-form-label">Email:</label>
