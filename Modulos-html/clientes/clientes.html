@@ -40,36 +40,31 @@
                         <div class="modal-body">
                             
                             <!-- formulario para agregar un cliente -->
-                            <form action="">
+                            <form action="" id="formularioAgregarCliente">
                                 <div class="mb-3">
                                     <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreGuardarr" placeholder="Ingresar nombre" required>
+                                    <input type="text" class="form-control" id="nombreGuardarr" name="nombreGuardar" placeholder="Ingresar nombre">
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellidoGuardar" class="col-form-label">Apellido:</label>
-                                    <input type="text" class="form-control" id="apellidoGuardar" placeholder="Ingresar apellido">
+                                    <input type="text" class="form-control" id="apellidoGuardar" name="apellidoGuardar" placeholder="Ingresar apellido">
                                 </div>
                                 <div class="mb-3">
                                     <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
-                                    <input type="number" class="form-control" id="telefonoGuardar" placeholder="Ingresar teléfono" required>
+                                    <input type="number" class="form-control" id="telefonoGuardar" name="telefonoGuardar" placeholder="Ingresar teléfono" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="emailGuardar" class="col-form-label">Email:</label>
-                                    <input type="email" class="form-control" id="emailGuardar" placeholder="Ingresar email">
+                                    <input type="email" class="form-control" id="emailGuardar" name="emailGuardar" placeholder="Ingresar email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="direccionGuardar" class="col-form-label">Dirección:</label>
-                                    <input type="text" class="form-control" id="direccionGuardar" placeholder="Ingresar email">
+                                    <input type="text" class="form-control" id="direccionGuardar" name="direccionGuardar" placeholder="Ingresar email">
                                 </div>
-                                <!-- <label for="exampleDataList" class="form-label">Seleccionar estado:</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Habilitado</option>
-                                    <option value="2">Inhabilitado</option>
-                                </select> -->
                             
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                    <input type="submit" class="btn btn-success" value="Guardar">
+                                    <input type="submit" class="btn btn-success"  value="Guardar">
                                 </div>
                             </form>
                         </div>
@@ -203,6 +198,8 @@
         </div>
     </div>
 
+
+    <script src="../../js/validacionCliente.js"></script>
 
 </body>
 
