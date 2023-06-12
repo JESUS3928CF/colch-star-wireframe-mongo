@@ -46,16 +46,6 @@
                                 <input type="text" class="form-control" id="nombreGuardarr"
                                     placeholder="ingresar nombre" required>
                             </div>
-                            <!-- <div class="mb-3">
-                                <label for="precioDiseñoGuardar" class="col-form-label">Precio:</label>
-                                <input type="text" class="form-control" id="precioDiseñoGuardar"
-                                    placeholder="ingresar nombre" required value="100 x cm2">
-                            </div>
-                            <div class="mb-3">
-                                <label for="TamañosDiseñoGuardar1" class="col-form-label">Tamaño:</label>
-                                <input type="text" class="form-control" id="tamañosDiseñoGuardar1"
-                                    placeholder="ingresar nombre" required value="MIN: 2 X 2 - Max: 40 x 50 cm">
-                            </div> -->
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Subir imagen del diseño</label>
                                 <input class="form-control" type="file" id="formFile1" required>
@@ -71,10 +61,6 @@
             </div>
         </div>
 
-        <!--! modificar precio   -->
-
-
-        <!-- botón para buscar -->
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -110,11 +96,6 @@
                                     <input type="number" class="form-control" id="precioGuardar" placeholder="ingresar precio por tamaño"
                                         required>
                                 </div>
-                                <!-- <div class="mb-3">
-                                    <label for="formFile" class="form-label">Subir imagen del diseño</label>
-                                    <input class="form-control" type="file" id="formFile" required>
-                                </div> -->
-            
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                                     <input type="submit" class="btn btn-success" value="Guardar">
@@ -138,6 +119,7 @@
                     <th scope="col">Tamaños</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Ver imagen</th>
+                    <th scope="col">Publicado</th>
                     <th scope="col">Inhabilitar</th>
                     <th scope="col">Editar</th>
                 </tr>
@@ -149,7 +131,7 @@
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
                     <td><button type="button" class="btn btn-secondary">Ver</button></td>
-                    
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
                 </tr>
@@ -159,7 +141,7 @@
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
                     <td><button type="button" class="btn btn-secondary">Ver</button></td>
-                    
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
                 </tr>
@@ -169,7 +151,7 @@
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
                     <td><button type="button" class="btn btn-secondary">Ver</button></td>
-                    
+                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td> 
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
                 </tr>
@@ -193,16 +175,6 @@
                             <input type="text" class="form-control" id="nombreDiseñoGuardar"
                                 placeholder="Ingresar nombre">
                         </div>
-                        <!-- <div class="mb-3">
-                            <label for="precioDiseñoEditar" class="col-form-label">Precio:</label>
-                            <input type="text" class="form-control" id="precioDiseñoEditar"
-                                placeholder="Ingresar nombre" value="100 x cm2">
-                        </div>
-                        <div class="mb-3">
-                            <label for="TamañoDiseñoEditar" class="col-form-label">Tamaño:</label>
-                            <input type="text" class="form-control" id="tamañoDiseñoEditar"
-                                placeholder="Ingresar nombre" required value="MIN: 2 X 2 - Max: 40 x 50 cm">
-                        </div> -->
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Subir imagen del diseño</label>
                             <input class="form-control" type="file" id="archivoDiseño">

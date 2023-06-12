@@ -43,7 +43,6 @@
                         <div class="formulario">
 
                             <div class="modal-body">
-
                                 <!-- formulario para agregar un cliente -->
                                 <form action="">
                                     <div class="mb-3">
@@ -81,16 +80,6 @@
                                         <input type="text" class="form-control" id="telaGuardar"
                                             placeholder="Ingresar Tela" required />
                                     </div>
-
-
-
-                                    <!-- <label for="exampleDataList" class="form-label">
-                                        Seleccionar estado:
-                                    </label>
-                                     <select class="form-select" aria-label="Default select example">
-                                        <option value="1">Habilitado</option>
-                                        <option value="2">Inhabilitado</option>
-                                    </select>  -->
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
@@ -163,18 +152,20 @@
 
 
 
-
-            <!-- botón para mostrar la lista de diseños  -->
-            <a href="./prendas.html"><button type="button" class="btn btn-secondary">Lista de Prendas</button></a>
-            <!-- botón para mostrar la lista de prendas  -->
-            <a href="./listaDiseños.html"><button type="button" class="btn btn-secondary">Lista de diseños</button></a>
-
             <!-- boton de buscar -->
-
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+    
+                <!-- botón para mostrar la lista de diseños  -->
+                
+                <a href="./prendas.html"><button type="button" class="btn btn-secondary" id="ee">Lista de Prendas</button></a>
+                
+                
+                <!-- botón para mostrar la lista de prendas  -->
+                <a href="./listaDiseños.html"><button type="button" class="btn btn-secondary">Lista de diseños</button></a>
+                
 
 
 
@@ -192,9 +183,7 @@
                     <th scope="col">Producto</th>
                     <th scope="col">Cantidad</th>
                     <th scope="col">Precio</th>
-                    <th scope="col">Talla</th>
-                    <th scope="col">Tela</th>
-                    <th scope="col">Ver imagen</th>
+                    <th scope="col">Ver Detalle</th>
                     <th scope="col">Inhabilitar</th>
                     <th scope="col">Editar</th>
                 </tr>
@@ -205,26 +194,7 @@
                     <td>Camisas</td>
                     <td>2</td>
                     <td>25000</td>
-                    <td>
-                        <div class="mb-3">
-                            <select class="form-control">
-                                <option>M</option>
-                                <option>S</option>
-                                <option>L</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="mb-3">
-                            <select class="form-control">
-                                <option>Algodón licrado</option>
-                                <option>Tela Fría</option>
-                                <option>Piel de durazno</option>
-                            </select>
-                        </div>
-                    </td>
                     <td><button type="button" class="btn btn-secondary">Ver</button></td>
-
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
@@ -234,26 +204,7 @@
                     <td>Buzos</td>
                     <td>10</td>
                     <td>20000</td>
-                    <td>
-                        <div class="mb-3">
-                            <select class="form-control">
-                                <option>M</option>
-                                <option>S</option>
-                                <option>L</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="mb-3">
-                            <select class="form-control">
-                                <option>Algodón licrado</option>
-                                <option>Tela Fría</option>
-                                <option>Piel de durazno</option>
-                            </select>
-                        </div>
-                    </td>
                     <td><button type="button" class="btn btn-secondary">Ver</button></td>
-
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
@@ -263,24 +214,6 @@
                     <td>Sudaderas</td>
                     <td>7</td>
                     <td>35000</td>
-                    <td>
-                        <div class="mb-3">
-                            <select class="form-control">
-                                <option>M</option>
-                                <option>S</option>
-                                <option>L</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="mb-3">
-                            <select class="form-control">
-                                <option>Algodón licrado</option>
-                                <option>Tela Fría</option>
-                                <option>Piel de durazno</option>
-                            </select>
-                        </div>
-                    </td>
                     <td><button type="button" class="btn btn-secondary">Ver</button></td>
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -328,13 +261,6 @@
                                 <label for="telaEditar" class="col-form-label">Tela:</label>
                                 <input type="text" class="form-control" id="telaEditar" placeholder="Ingresar la tela">
                             </div>
-
-
-                            <!-- <label for="exampleDataList" class="form-label">Seleccionar estado:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="1">Habilitar</option>
-                            <option value="2">Inhabilitar</option>
-                        </select> -->
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
