@@ -37,7 +37,7 @@
                     <div class="modal-content">
                         <div class="modal-header modal-head-agregar">
                             <h5 class="modal-title" id="exampleModalLabel">Agregar cliente</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             
@@ -65,7 +65,7 @@
                                 </div>
                             
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" id="guardarCancelado" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                                     <input type="submit" class="btn btn-success"  value="Guardar">
                                 </div>
                             </form>
@@ -86,7 +86,7 @@
             </div>
             
 
-            <!-- boton de buscar -->
+            <!-- botón de buscar -->
 
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
@@ -168,40 +168,35 @@
             <div class="modal-content">
                 <div class="modal-header modal-head-editar">
                     <h5 class="modal-title">Editar datos del cliente</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- formulario para editar los datos de la tabla clientes -->
-                    <form action="">
-                        <div class="mb-3">
+                    <form action="" id="formularioEditarCliente">
+                        <div class="mb-3" name="divNombre">
                             <label for="nombreEditar" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombreEditar" placeholder="Ingresar nombre">
+                            <input type="text" class="form-control" name="nombreEditar" placeholder="Ingresar nombre">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3"  name="divApellido">
                             <label for="apellidoEditar" class="col-form-label">Apellido:</label>
-                            <input type="text" class="form-control" id="apellidoEditar" placeholder="Ingresar apellido">
+                            <input type="text" class="form-control" name="apellidoEditar" placeholder="Ingresar apellido">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3"  name="divTelefono">
                             <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="number" class="form-control" id="telefonoEditar" placeholder="Ingresar teléfono">
+                            <input type="number" class="form-control" name="telefonoEditar" placeholder="Ingresar teléfono">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3"  name="divEmail">
                             <label for="emailEditar" class="col-form-label">Email:</label>
-                            <input type="email" class="form-control" id="emailEditar" placeholder="Ingresar email">
+                            <input type="email" class="form-control" name="emailEditar" placeholder="Ingresar email">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3"  name="divDireccion">
                             <label for="direccionEditar" class="col-form-label">Dirección:</label>
-                            <input type="text" class="form-control" id="direccionEditar" placeholder="Ingresar email">
+                            <input type="text" class="form-control" name="direccionEditar" placeholder="Ingresar email">
                         </div>
 
-                        <!-- <label for="exampleDataList" class="form-label">Seleccionar estado:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="1">Habilitar</option>
-                            <option value="2">Inhabilitar</option>
-                        </select> -->
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" id="editarCancelado"  class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                             <input type="submit" class="btn btn-success"  value="Guardar">
                         </div>
                     </form>
@@ -211,8 +206,20 @@
         </div>
     </div>
 
+    <!--/ Mensaje de Editar cliente correctamente   -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-info text-white">
+                <strong class="me-auto text-black">Colch Star</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toast-body-editar" class="toast-body"></div>
+        </div>
+    </div>
 
-    <script src="../../js/validacionCliente.js"></script>
+
+    <script src="../../js/funcionalidadesCliente/validacionCliente.js"></script>
+    <script src="../../js/funcionalidadesCliente/validacionClienteEditar.js"></script>
 
 </body>
 
