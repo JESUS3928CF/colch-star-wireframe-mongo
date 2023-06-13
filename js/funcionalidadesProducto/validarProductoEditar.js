@@ -149,7 +149,7 @@
 
             formulario.reset();
 
-            mostrarToast('Cliente agregado correctamente');
+            mostrarToast('Producto editado correctamente');
         }
     }
 
