@@ -17,6 +17,9 @@
 
     <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
     <link rel="stylesheet" href="/css/cssgeneral.css">
+
+    <!--/ Lines agregados reciente mente  -->
+    <link rel="stylesheet" href="../../css/tailwind.min.css">
 </head>
 
 <body class="fondo">
@@ -35,27 +38,27 @@
                     <div class="modal-content">
                         <div class="modal-header modal-head-agregar">
                             <h5 class="modal-title" id="exampleModalLabel">Agregar proveedor</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             
                             <!-- formulario para agregar un cliente -->
-                            <form action="">
-                                <div class="mb-3">
+                            <form action="" id="formularioAgregarProveedor">
+                                <div class="mb-3" name="divNombre">
                                     <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreGuardarr" placeholder="Ingresar nombre" required>
+                                    <input type="text" class="form-control" name="nombreGuardar" placeholder="Ingresar nombre" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="apellidoGuardar" class="col-form-label">Teléfono:</label>
-                                    <input type="number" class="form-control" id="telefonoGuardar" placeholder="Ingresar teléfono">
+                                <div class="mb-3" name="divTelefono">
+                                    <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
+                                    <input type="number" class="form-control" name="telefonoGuardar" placeholder="Ingresar teléfono">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="telefonoGuardar" class="col-form-label">Dirección:</label>
-                                    <input type="text" class="form-control" id="direccionGuardar" placeholder="Ingresar dirección" required>
+                                <div class="mb-3" name="divDireccion">
+                                    <label for="direccionGuardar" class="col-form-label">Dirección:</label>
+                                    <input type="text" class="form-control" id="direccionGuardar" name="direccionGuardar" placeholder="Ingresar dirección" required>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" name="divContacto">
                                     <label for="contactoGuardar" class="col-form-label">Contacto:</label>
-                                    <input type="text" class="form-control" id="contactoGuardar" placeholder="Ingresar contacto" required>
+                                    <input type="text" class="form-control" id="contactoGuardar" name="contactoGuardar" placeholder="Ingresar contacto" required>
                                 </div>
                                 
                                
@@ -66,7 +69,7 @@
                                 </select> -->
                             
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="guardarCancelado">Cancelar</button>
                                     <input type="submit" class="btn btn-success" value="Guardar">
                                 </div>
                             </form>
@@ -74,8 +77,17 @@
                     </div>
                 </div>
             </div>
-            
 
+            <!--/ Mensaje de agregar cliente correctamente   -->
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-success text-white">
+                        <strong class="me-auto text-white">Colch Star</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toast-body-agregar" class="toast-body"></div>
+                </div>
+            </div>
             <!-- boton de buscar -->
 
             <form class="d-flex">
@@ -108,7 +120,7 @@
                     <td>3064567890</td>
                     <td>Calle 20 #23b-1</td>
                     <td>no</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
                 <tr>
@@ -117,7 +129,7 @@
                     <td>3037980012</td>
                     <td>Calle 45 #12a-3</td>
                     <td>no</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
                 <tr>
@@ -126,7 +138,7 @@
                     <td>3014442152</td>
                     <td>Cra 45 #20-1</td>
                     <td>no</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
                 <tr>
@@ -136,7 +148,7 @@
                     <td>3147815859</td>
                     <td>cr48#78-9</td>
                     <td>no</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
                 </th>
 
@@ -152,27 +164,27 @@
             <div class="modal-content">
                 <div class="modal-header modal-head-editar">
                     <h5 class="modal-title">Editar datos del proveedor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- formulario para editar los datos de la tabla clientes -->
-                    <form action="">
-                        <div class="mb-3">
+                    <form action="" id="formularioEditarProveedor">
+                        <div class="mb-3" name="divNombre">
                             <label for="nombreEditar" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombreEditar" placeholder="Ingresar nombre">
+                            <input type="text" class="form-control" id="nombreEditar" name="nombreEditar" placeholder="Ingresar nombre">
                         </div>
-                        <div class="mb-3">
-                            <label for="apellidoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="number" class="form-control" id="telefonoEditar" placeholder="Ingresar teléfono">
+                        <div class="mb-3" name="divTelefono">
+                            <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
+                            <input type="number" class="form-control" id="telefonoEditar" name="telefonoEditar" placeholder="Ingresar teléfono">
                         </div>
-                        <div class="mb-3">
-                            <label for="telefonoEditar" class="col-form-label">Dirección:</label>
-                            <input type="text" class="form-control" id="direccionEditar" placeholder="Ingresar dirección">
+                        <div class="mb-3" name="divDireccion">
+                            <label for="direccionEditar" class="col-form-label">Dirección:</label>
+                            <input type="text" class="form-control" id="direccionEditar" name="direccionEditar" placeholder="Ingresar dirección">
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3" name="divContacto">
                             <label for="contactoEditar" class="col-form-label">Contacto:</label>
-                            <input type="text" class="form-control" id="productoEditar" placeholder="Ingresar contacto">
+                            <input type="text" class="form-control" id="productoEditar" name="productoEditar" placeholder="Ingresar contacto">
                         </div>
 
                         <!-- <label for="exampleDataList" class="form-label">Seleccionar estado:</label>
@@ -182,7 +194,7 @@
                         </select> -->
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" id="editarCancelado" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                             <input type="submit" class="btn btn-success"  value="Guardar">
                         </div>
                     </form>
@@ -191,6 +203,22 @@
             </div>
         </div>
     </div>
+
+    <!--/ Mensaje de Editar cliente correctamente   -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-info text-white">
+                <strong class="me-auto text-black">Colch Star</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toast-body-editar" class="toast-body"></div>
+        </div>
+    </div>
+
+
+    <script src="../../js/funcionalidadesProveedor/validacionProveedor.js"></script>
+    <script src="../../js/funcionalidadesProveedor/validacionProveedorEditar.js"></script>
+    <script src="../../js/funcionalidadesCliente/cambiarEstado.js"></script>
 
 
 </body>
