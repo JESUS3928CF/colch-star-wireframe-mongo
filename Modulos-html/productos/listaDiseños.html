@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diseños</title>
-    
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,60 +21,62 @@
 
 <body class="fondo">
     <header class="contenedor">
-    <h1 class="titulo">Diseños</h1>
+        <h1 class="titulo">Diseños</h1>
 
-    <!-- botón para publicar diseño -->
-    <div class="container-fluid seccion2">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal1">Agregar
-            diseño</button>
+        <!-- botón para publicar diseño -->
+        <div class="container-fluid seccion2">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal1">Agregar
+                diseño</button>
 
-        <!-- modal de agregar diseño -->
+            <!-- modal de agregar diseño -->
 
-        <div class="modal" id="myModal1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header modal-head-agregar">
-                        <h5 class="modal-title" id="exampleModalLabel1">Agregar diseño</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+            <div class="modal" id="myModal1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header modal-head-agregar">
+                            <h5 class="modal-title" id="exampleModalLabel1">Agregar diseño</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
 
-                        <!-- formulario para agregar un cliente -->
-                        <form action="">
-                            <div class="mb-3">
-                                <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                <input type="text" class="form-control" id="nombreGuardarr"
-                                    placeholder="ingresar nombre" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Subir imagen del diseño</label>
-                                <input class="form-control" type="file" id="formFile1" required>
-                            </div>
+                            <!-- formulario para agregar un cliente -->
+                            <form action="">
+                                <div class="mb-3">
+                                    <label for="nombreGuardar" class="col-form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombreGuardarr"
+                                        placeholder="ingresar nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Subir imagen del diseño</label>
+                                    <input class="form-control" type="file" id="formFile1" required>
+                                </div>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                <input type="submit" class="btn btn-success" value="Guardar">
-                            </div>
-                        </form>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <input type="submit" class="btn btn-success" value="Guardar">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
 
-        <!-- botón para mostrar la lista de diseños  -->
-        <a href="./productos.html"><button type="button" class="btn btn-secondary">Atrás</button></a>
+            <!-- botón para mostrar la lista de diseños  -->
+            <a href="./productos.html"><button type="button" class="btn btn-secondary">Atrás</button></a>
 
         </div>
         <div class="seccion4">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModalPrecio">Modificar precio</button>
-            
+            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                data-bs-target="#myModalPrecio">Modificar precio</button>
+
             <!-- modal de agregar diseño -->
-            
+
             <div class="modal" id="myModalPrecio">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -83,7 +85,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-            
+
                             <!-- formulario para agregar un cliente -->
                             <form action="">
                                 <select class="form-select" aria-label="Default select example">
@@ -93,11 +95,12 @@
                                 </select>
                                 <div class="mb-3">
                                     <label for="precioGuardar" class="col-form-label">Precio:</label>
-                                    <input type="number" class="form-control" id="precioGuardar" placeholder="ingresar precio por tamaño"
-                                        required>
+                                    <input type="number" class="form-control" id="precioGuardar"
+                                        placeholder="ingresar precio por tamaño" required>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Cancelar</button>
                                     <input type="submit" class="btn btn-success" value="Guardar">
                                 </div>
                             </form>
@@ -108,7 +111,7 @@
         </div>
     </header>
 
-   
+
     <div class="tabla">
         <table class="table caption-top ">
             <caption>Lista de diseños</caption>
@@ -130,30 +133,36 @@
                     <td>Vaca</td>
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
-                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#modalDetalles">Ver</button></td>
                     <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#modalDiseño">Editar</button></td>
                 </tr>
                 <tr>
                     <th scope="row">002</th>
                     <td>Batman Logo</td>
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
-                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
-                    <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#modalDetalles">Ver</button></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#modalDiseño">Editar</button></td>
                 </tr>
                 <tr>
                     <th scope="row">003</th>
                     <td>Vaca</td>
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
-                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
-                    <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td> 
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#modalDetalles">Ver</button></td>
                     <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#modalDiseño">Editar</button></td>
                 </tr>
             </tbody>
         </table>
@@ -204,7 +213,7 @@
                     <div class="modal-body">
 
                         <div class="container">
-                            
+
                             <div class="col">
                                 <div class="row ">
                                     <p>Imagen Diseño:</p>
@@ -215,7 +224,7 @@
                                     </div>
                                 </div>
                             </div>
-                                
+
                         </div>
 
                     </div>
@@ -229,4 +238,3 @@
 </body>
 
 </html>
-

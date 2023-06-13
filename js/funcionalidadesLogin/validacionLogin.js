@@ -3,21 +3,21 @@
 
 
     const submit = document.querySelector(
-        '#formularioLogin input[type="submit"]'
+        '#submitIngresar'
     );
 
-    const atras = document.querySelector('#xAgregar');
+    // const atras = document.querySelector('#xAgregar');
 
     window.addEventListener('load', () => {
         submit.addEventListener('click', crearRol);
-        cancelar.addEventListener('click', recetearFormulario);
-        atras.addEventListener('click', recetearFormulario);
+        // cancelar.addEventListener('click', recetearFormulario);
+        // atras.addEventListener('click', recetearFormulario);
     });
 
-    function recetearFormulario(e){
-        e.preventDefault();
-        formulario.reset();
-    }
+    // function recetearFormulario(e){
+    //     e.preventDefault();
+    //     formulario.reset();
+    // }
 
     function crearRol(e) {
         e.preventDefault();
@@ -63,20 +63,22 @@
         }
 
         if (contrasena.value == '') {
-            imprimirAlerta('La contraseña es obligatoria', divUsuario, 'Usuario');
+            imprimirAlerta('La contraseña es obligatoria', divContraseña, 'Password');
             isValidado = false;
         }
 
         if (isValidado) {
             //* Serrando el modal
-            const modalBootstrap = bootstrap.Modal.getInstance(
-                document.querySelector('#myModal')
-            );
-            modalBootstrap.hide();
+            // const modalBootstrap = bootstrap.Modal.getInstance(
+            //     document.querySelector('#myModal')
+            // );
+            // modalBootstrap.hide();
 
             formulario.reset();
 
-            mostrarToast('Rol agregado correctamente');
+            location.href ="../../navbar.html";
+
+            // mostrarToast('Rol agregado correctamente');
         }
     }
 
@@ -116,13 +118,13 @@
         }
     }
 
-    function mostrarToast(mensaje) {
-        const toastDiv = document.querySelector('#toastAgregar'); //* Seleccionamos el toast que esta en nuestro HTML
-        const toastBody = document.querySelector('#toast-body-agregar'); //* Y también el body para agregar contenido a nuestro toast
-        /// Creamos la instancia
-        const toast = new bootstrap.Toast(toastDiv);
-        toastBody.textContent = mensaje;
-        /// Mostrando el mensaje
-        toast.show();
-    }
+    // function mostrarToast(mensaje) {
+    //     const toastDiv = document.querySelector('#toastAgregar'); //* Seleccionamos el toast que esta en nuestro HTML
+    //     const toastBody = document.querySelector('#toast-body-agregar'); //* Y también el body para agregar contenido a nuestro toast
+    //     /// Creamos la instancia
+    //     const toast = new bootstrap.Toast(toastDiv);
+    //     toastBody.textContent = mensaje;
+    //     /// Mostrando el mensaje
+    //     toast.show();
+    // }
 })();
