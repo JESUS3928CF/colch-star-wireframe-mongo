@@ -17,6 +17,10 @@
 
     <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
     <link rel="stylesheet" href="/css/cssgeneral.css">
+
+    <!--/ Lines agregados reciente mente  -->
+    <link rel="stylesheet" href="../../css/tailwind.min.css">
+    
 </head>
 
 <body class="fondo">
@@ -36,57 +40,57 @@
                     <div class="modal-content">
                         <div class="modal-header modal-head-agregar">
                             <h5 class="modal-title" id="exampleModalLabel">Agregar usuario</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
 
                             <!-- formulario para agregar un usuario -->
                             <form action="" id="formularioagregarusuario">
-                                <div class="mb-3">
+                                <div class="mb-3" name="divNombre">
                                     <label for="nombreGuardar" class="col-form-label">Nombre:</label>
                                     <input type="text" class="form-control" id="nombreGuardarr" name="nombreGuardar"
                                         placeholder="Ingresar nombre">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" name="divApellido">
                                     <label for="apellidoGuardar" class="col-form-label">Apellido:</label>
                                     <input type="text" class="form-control" id="apellidoGuardar" name="apellidoGuardar"
                                         placeholder="Ingresar apellido">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" name="divTelefono">
                                     <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
                                     <input type="number" class="form-control" id="telefonoGuardar"
                                     name="telefonoGuardar"
                                         placeholder="Ingresar teléfono" >
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" name="divEmail">
                                     <label for="emailGuardar" class="col-form-label">Email:</label>
-                                    <input type="email" class="form-control" id="emailGuardar"
+                                    <input type="email" class="form-control" id="emailGuardar" name="emailGuardar"
                                         placeholder="Ingresar email">
                                 </div>
                                 
                                 
-                                <div class="mb-3">
+                                <div class="mb-3" name="divContraseña">
                                     <label for="contraseñaGuardar" class="col-form-label">Contraseña:</label>
-                                    <input type="password" class="form-control" id="contraseñaGuardar"
+                                    <input type="password" class="form-control" id="contraseñaGuardar" name="contraseñaGuardar"
                                         placeholder="Ingresar contraseña">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" name="divConfirmarContraseña">
                                     <label for="contraseñaconfirmarGuardar" class="col-form-label">Confirmar contraseña:</label>
-                                    <input type="password" class="form-control" id="contraseñaconfirmarGuardar"
+                                    <input type="password" class="form-control" id="contraseñaconfirmarGuardar" name="contraseñaconfirmarGuardar"
                                         placeholder="Confirmar contraseña:">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" name="divselectRol">
                                     <label for="rolGuardar" class="col-form-label">Rol:</label>
-                                    <select class="form-control">
-                                        <option>Seleccionar rol</option>
-                                        <option>Empleado</option>
-                                        <option>Vendedor</option>
-                                        <option>Comprador</option>
+                                    <select class="form-control" name="selectRol">
+                                        <option value="">Seleccionar rol</option>
+                                        <option value="Empleado">Empleado</option>
+                                        <option value="Vendedor">Vendedor</option>
+                                        <option value="Comprador">Comprador</option>
                                       </select>
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger"
+                                    <button type="button" id="guardarCancelado" class="btn btn-danger"
                                         data-bs-dismiss="modal">Cancelar</button>
                                     <input type="submit" class="btn btn-success" value="Guardar">
                                 </div>
@@ -96,6 +100,16 @@
                 </div>
             </div>
 
+            <!--/ Mensaje de agregar usuario correctamente   -->
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-success text-white">
+                        <strong class="me-auto text-white">Colch Star</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toast-body-agregar" class="toast-body"></div>
+                </div>
+            </div>
 
             <!--! botón de buscar -->
 
@@ -131,7 +145,7 @@
                     <td>3240918282</td>
                     <td>jesus@gmail.com</td>
                     <td>Abministrador</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
@@ -142,7 +156,7 @@
                     <td>3023201200</td>
                     <td>herlindavid@gmail.com</td>
                     <td>Vendedor</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
@@ -154,7 +168,7 @@
                     <td>3220920192</td>
                     <td>brian@gmail.com</td>
                     <td>Empleado</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
@@ -165,7 +179,7 @@
                     <td>3201929202</td>
                     <td>tomas@gmail.com</td>
                     <td>Comprador</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
@@ -179,38 +193,38 @@
             <div class="modal-content">
                 <div class="modal-header modal-head-editar">
                     <h5 class="modal-title">Editar datos del usuario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- formulario para editar los datos de la tabla clientes -->
-                    <form action="">
-                        <div class="mb-3">
+                    <form action="" id="formularioEditarUsuario">
+                        <div class="mb-3" name="divNombre">
                             <label for="nombreEditar" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombreEditar" placeholder="Ingresar nombre">
+                            <input type="text" class="form-control" id="nombreEditar" name="nombreEditar" placeholder="Ingresar nombre">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" name="divApellido">
                             <label for="apellidoEditar" class="col-form-label">Apellido:</label>
-                            <input type="text" class="form-control" id="apellidoEditar" placeholder="Ingresar apellido">
+                            <input type="text" class="form-control" id="apellidoEditar" name="apellidoEditar" placeholder="Ingresar apellido">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" name="divTelefono">
                             <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="number" class="form-control" id="telefonoEditar"
+                            <input type="number" class="form-control" id="telefonoEditar" name="telefonoEditar"
                                 placeholder="Ingresar teléfono">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" name="divEmail">
                             <label for="emailEditar" class="col-form-label">Email:</label>
-                            <input type="email" class="form-control" id="emailEditar" placeholder="Ingresar email">
+                            <input type="email" class="form-control" id="emailEditar" name="emailEditar" placeholder="Ingresar email">
                         </div>
                         
                         
-                        <div class="mb-3">
+                        <div class="mb-3" name="divContraseña">
                             <label for="contraseñaEditar" class="col-form-label">Contraseña:</label>
-                            <input type="password" class="form-control" id="contraseñaEditar"
+                            <input type="password" class="form-control" id="contraseñaEditar" name="contraseñaEditar"
                                 placeholder="Ingresar contraseña">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" name="divConfirmarContraseña">
                             <label for="contraseñaconfirmarEditar" class="col-form-label">Confirmar contraseña:</label>
-                            <input type="password" class="form-control" id="contraseñaconfirmarEditar"
+                            <input type="password" class="form-control" id="contraseñaconfirmarEditar" name="contraseñaconfirmarEditar"
                                 placeholder="Confirmar contraseña:">
                         </div>
                         <!-- <label for="exampleDataList" class="form-label">Estado:</label>
@@ -218,17 +232,18 @@
                             <option value="1">Habilitar</option>
                             <option value="2">Inhabilitar</option>
                         </select> -->
-                        <div class="mb-3">
+                        <div class="mb-3" name="divselectRol">
                             <label for="rolEditar" class="col-form-label">Rol:</label>
-                            <select class="form-control">
-                                <option>Empleado</option>
-                                <option>Vendedor</option>
-                                <option>Comprador</option>
+                            <select class="form-control" name="selectRolEditar">
+                                <option value="">Seleccionar rol</option>
+                                <option value="Empleado">Empleado</option>
+                                <option value="Vendedor">Vendedor</option>
+                                <option value="Comprador">Comprador</option>
                               </select>
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" id="editarCancelado" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                             <input type="submit" class="btn btn-success" value="Guardar">
                         </div>
                     </form>
@@ -238,7 +253,22 @@
         </div>
     </div>
 
+    <!--/ Mensaje de Editar cliente correctamente   -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-info text-white">
+                <strong class="me-auto text-black">Colch Star</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toast-body-editar" class="toast-body"></div>
+        </div>
+    </div>
 
+
+
+    <script src="../../js/funcionalidadesUsuarios/validacionUsuario.js"></script>
+    <script src="../../js/funcionalidadesUsuarios/validacionUsuarioEditar.js"></script>
+    <script src="../../js/funcionalidadesUsuarios/cambiarEstado.js"></script>
 </body>
 
 </html>

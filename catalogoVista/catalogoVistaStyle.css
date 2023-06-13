@@ -54,14 +54,14 @@ header {
     transition: 0.5s;
 }
 
-.profile a{
+.profile a {
     display: flex;
     align-items: center;
     column-gap: 0.5rem;
     cursor: pointer;
 }
 
-.profile  img {
+.profile img {
     width: 40px;
     height: 40px;
     object-fit: cover;
@@ -526,7 +526,7 @@ header {
     .btn {
         max-width: 164px;
     }
-    
+
 }
 
 @media (max-width: 642px) {
@@ -543,32 +543,168 @@ header {
         height: 820px;
         object-fit: contain;
     }
-    
+
 }
 
 @media (max-width: 370px) {
-    .logo{
+    .logo {
         font-size: 1rem;
     }
-    .home-text{
+
+    .home-text {
         padding-bottom: 17rem;
     }
-    .home-text span{
+
+    .home-text span {
         font-size: 0.8rem;
     }
-    .home-text h1{
+
+    .home-text h1 {
         font-size: 1.4rem;
     }
 
-    .heading{
+    .heading {
         flex-direction: column;
         text-align: center;
     }
 
-    .heading btn{
+    .heading btn {
         margin-top: 1rem;
     }
-    .categories-container{
+
+    .categories-container {
         gap: 1.5rem;
     }
+}
+
+
+/* Estilo de la barra de búsqueda */
+/* this is a recreation of twitter search in css */
+.form {
+    --input-text-color: #020202;
+    --input-bg-color: #283542;
+    --focus-input-bg-color: transparent;
+    --text-color: #949faa;
+    --active-color: #1b9bee;
+    --width-of-input: 200px;
+    --inline-padding-of-input: 1.2em;
+    --gap: 0.9rem;
+}
+
+/* form style */
+.form {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: var(--width-of-input);
+    position: relative;
+    isolation: isolate;
+}
+
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background: var(--input-bg-color);
+    border-radius: 30px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* label styling */
+label {
+    width: 100%;
+    padding: 0.8em;
+    height: 40px;
+    padding-inline: var(--inline-padding-of-input);
+    display: flex;
+    align-items: center;
+}
+
+.search,
+.close-btn {
+    position: absolute;
+}
+
+/* styling search-icon */
+.search {
+    fill: var(--text-color);
+    left: var(--inline-padding-of-input);
+}
+
+/* svg -- size */
+svg {
+    width: 17px;
+    display: block;
+}
+
+/* styling of close button */
+.close-btn {
+    border: none;
+    right: var(--inline-padding-of-input);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--active-color);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* styling of input */
+.input {
+    color: var(--input-text-color);
+    width: 100%;
+    margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
+    background: none;
+    border: none;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--text-color)
+}
+
+/* input background change in focus */
+.input:focus~.fancy-bg {
+    border: 1px solid var(--active-color);
+    background: var(--focus-input-bg-color);
+}
+
+/* search icon color change in focus */
+.input:focus~.search {
+    fill: var(--active-color);
+}
+
+/* showing close button when typing */
+.input:valid~.close-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+
+.buscador-container {
+    display: flex;
+    justify-content: center;
 }
