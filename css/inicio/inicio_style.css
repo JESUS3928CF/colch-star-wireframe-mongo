@@ -44,3 +44,13 @@
 .bg-tarjeta2 {
     background: #EBEFFF;
 }
+
+
+/* Estilo de las gráficas */
+/* Estilo de las productos populares */
+.centrar {
+    display: flex;
+    justify-content: center;
+    padding-top: 58px;
+    margin-left: 10px;
+}
