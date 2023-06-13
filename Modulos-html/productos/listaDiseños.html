@@ -130,7 +130,7 @@
                     <td>Vaca</td>
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
-                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
                     <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
@@ -140,7 +140,7 @@
                     <td>Batman Logo</td>
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
-                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
                     <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
@@ -150,7 +150,7 @@
                     <td>Vaca</td>
                     <td>Pequeño (0-10cm) - Mediano (11-25cm) - Grande (26-60)</td>
                     <td>P (2000) - M (4000) - G (6000)</td>
-                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
                     <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td> 
                     <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalDiseño">Editar</button></td>
@@ -158,6 +158,7 @@
             </tbody>
         </table>
     </div>
+
     <!-- modal para editar diseño -->
     <div class="modal" id="modalDiseño">
         <div class="modal-dialog modal-dialog-centered">
@@ -189,7 +190,43 @@
             </div>
         </div>
     </div>
+
+    <!-- ver detalle de productos -->
+
+    <div class="modal" id="modalDetalles">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-head-editar">
+                    <h5 class="modal-title">Información del diseño</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="formulario">
+                    <div class="modal-body">
+
+                        <div class="container">
+                            
+                            <div class="col">
+                                <div class="row ">
+                                    <p>Imagen Diseño:</p>
+                                </div>
+                                <div class="row">
+                                    <div>
+                                        <img src="/imagenes/1153861.png" width="400px" height="250px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="../../js/funcionalidadesProducto/cambiarEstado.js"></script>
 </body>
 
 </html>
+
