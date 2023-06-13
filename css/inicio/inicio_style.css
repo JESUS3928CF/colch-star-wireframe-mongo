@@ -1,8 +1,46 @@
-/* body{
-    background-color: rgb(33, 19, 18);
-} */
-
-h1 {
-    text-align: center;
+/* Estilo del button de mas info */
+.masInfo {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
 }
 
+.masInfo::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #f1f4f4 0%, #66656d 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.masInfo:hover::before {
+    width: 9em;
+}
+
+/* Estilo de las card de la información generar */
+
+
+
+.bg-tarjeta {
+    background: #dfdfdf;
+}
+
+
+
+.bg-tarjeta2 {
+    background: #EBEFFF;
+}
