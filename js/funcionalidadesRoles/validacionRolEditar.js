@@ -109,8 +109,8 @@
     }
 
     function mostrarToast(mensaje) {
-        const toastDiv = document.querySelector('#toastAgregar'); //* Seleccionamos el toast que esta en nuestro HTML
-        const toastBody = document.querySelector('#toast-body-agregar'); //* Y también el body para agregar contenido a nuestro toast
+        const toastDiv = document.querySelector('#toastEditar'); //* Seleccionamos el toast que esta en nuestro HTML
+        const toastBody = document.querySelector('#toast-body-editar'); //* Y también el body para agregar contenido a nuestro toast
         /// Creamos la instancia
         const toast = new bootstrap.Toast(toastDiv);
         toastBody.textContent = mensaje;
