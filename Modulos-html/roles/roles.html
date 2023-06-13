@@ -17,6 +17,10 @@
 
     <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
     <link rel="stylesheet" href="/css/cssgeneral.css">
+
+    <!--/ Lines agregados reciente mente  -->
+    <link rel="stylesheet" href="../../css/tailwind.min.css">
+
 </head>
 
 <body class="fondo">
@@ -36,16 +40,16 @@
                     <div class="modal-content">
                         <div class="modal-header modal-head-agregar">
                             <h5 class="modal-title" id="exampleModalLabel">Agregar rol</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
 
                             <!--! formulario para agregar un rol -->
-                            <form action="">
-                                <div class="mb-3">
+                            <form action="" id="formularioagregarrol">
+                                <div class="mb-3" name="divNombre">
                                     <label for="nombreGuardar" class="col-form-label">Nombre del rol:</label>
-                                    <input type="text" class="form-control" id="nombreGuardarr"
-                                        placeholder="Ingresar nombre del rol" required>
+                                    <input type="text" class="form-control" id="nombreGuardarr" name="nombreGuardar"
+                                        placeholder="Ingresar nombre del rol">
                                 </div>
                                 <div class="container">
                                     <div class="row">
@@ -102,7 +106,7 @@
                                 </div>
                                 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger"
+                                    <button type="button" id="guardarCancelado" class="btn btn-danger"
                                         data-bs-dismiss="modal">Cancelar</button>
                                     <input type="submit" class="btn btn-success" value="Guardar">
                                 </div>
@@ -112,6 +116,16 @@
                 </div>
             </div>
 
+            <!--/ Mensaje de agregar rol correctamente   -->
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-success text-white">
+                        <strong class="me-auto text-white">Colch Star</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toast-body-agregar" class="toast-body"></div>
+                </div>
+            </div>
 
             <!--! botón de buscar -->
 
@@ -184,15 +198,15 @@
             <div class="modal-content">
                 <div class="modal-header modal-head-editar">
                     <h5 class="modal-title">Editar permisos del rol</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     
                     <!--! formulario para editar los datos de un rol -->
-                    <form action="">
-                        <div class="mb-3">
+                    <form action="" id="formularioeditarrol">
+                        <div class="mb-3" name="divNombre">
                             <label for="nombreRolGuardarr" class="col-form-label">Nombre del rol:</label>
-                            <input type="text" class="form-control" id="nombreRolGuardarr"
+                            <input type="text" class="form-control" id="nombreRolGuardarr" name="nombreGuardar"
                                 placeholder="Ingresar nombre del rol">
                         </div>
                         <div class="container">
@@ -244,7 +258,7 @@
                         </div>
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" id="editarCancelado" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                             <input type="submit" class="btn btn-success" value="Guardar">
                         </div>
                     </form>
@@ -256,7 +270,7 @@
 
 
 
-    <!--! modal para ver los permisos espesificos -->
+    <!--! modal para ver los permisos especificos -->
     <div class="modal" id="modalPermisos">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -267,15 +281,15 @@
                 <div class="modal-body">
                     
                     <!--! formulario para los datos de un rol -->
-                    <div class="mb-3">
-                        <label for="rolEditar" class="col-form-label">Seleccione un modulo:</label>
-                        <select class="form-control">
-                            <option></option>
-                            <option>Proveedores</option>
-                            <option>Productos</option>
-                            <option>Clientes</option>
-                            <option>Compras</option>
-                            <option>Ventas</option>
+                    <div class="mb-3" name="divpermisoEspecificos">
+                        <label for="rolEditar" class="col-form-label"></label>
+                        <select class="form-control" name="permisosEspecificos">
+                            <option value="">Seleccione un modulo:</option>
+                            <option value="Proveedores">Proveedores</option>
+                            <option value="Productos">Productos</option>
+                            <option value="Clientes">Clientes</option>
+                            <option value="Compras">Compras</option>
+                            <option value="Ventas">Ventas</option>
                           </select>
                     </div>
 
@@ -330,7 +344,7 @@
                         </div> -->
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Salir</button>
+                            <button type="button" id="editarSalir" class="btn btn-info" data-bs-dismiss="modal">Salir</button>
                         </div>
                     </form>
                 </div>
@@ -339,7 +353,21 @@
         </div>
     </div>
 
+        <!--/ Mensaje de Editar cliente correctamente   -->
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-info text-white">
+                    <strong class="me-auto text-black">Colch Star</strong>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div id="toast-body-editar" class="toast-body"></div>
+            </div>
+        </div>
 
+
+    <script src="../../js/funcionalidadesRoles/validacionRoles.js"></script>
+    <script src="../../js/funcionalidadesRoles/validacionRolEditar.js"></script>
+    <script src="../../js/funcionalidadesRoles/validacionPermisoEspecifico.js"></script>
 </body>
 
 </html>

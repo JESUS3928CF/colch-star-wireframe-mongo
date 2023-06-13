@@ -13,27 +13,23 @@
     <link rel="stylesheet" href="/css/estilo-usuarios/login.css" />
   </head>
   <body>
-    <div class="login_form_container">
+    <div class="login_form_container" id="myModal">
       <div class="login_form">
         <h2>Iniciar Sesión</h2>
-        <div class="input_group">
-          <i class="fa fa-user"></i>
-          <input
-            type="text"
-            placeholder="Usuario"
-            class="input_text"
-            autocomplete="off"
-          />
-        </div>
-        <div class="input_group">
-          <i class="fa fa-unlock-alt"></i>
-          <input
-            type="password"
-            placeholder="Contraseña"
-            class="input_text"
-            autocomplete="off"
-          />
-        </div>
+        <form action="" id="formularioLogin">
+          <div class="input_group" name="divUsuario">
+            <i class="fa fa-user"></i>
+              <input type="text" placeholder="Usuario" class="input_text" autocomplete="off" id="usuarioGuardarr" name="usuarioGuardar"
+                  placeholder="Ingresar nombre">
+          </div>
+
+          <div class="input_group" name="divContraseña">
+            <i class="fa fa-unlock-alt"></i>
+              <input type="password" placeholder="Contraseña" class="input_text" autocomplete="off" id="contraseñaGuardarr" name="contraseñaGuardar"
+                  placeholder="Ingresar nombre">
+          </div>
+          </form>
+
         <div class="button_group" id="login_button">
           <a href="/navbar.html">Ingresar</a>
         </div>
@@ -42,5 +38,6 @@
         </div>
       </div>
     </div>
+    <script src="../../js/funcionalidadesLogin/validacionLogin.js"></script>
   </body>
 </html>
