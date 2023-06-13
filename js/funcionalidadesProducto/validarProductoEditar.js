@@ -181,7 +181,7 @@
 
             divMensaje.textContent = mensaje;
 
-            lugar.parentNode.insertBefore(divMensajes, lugar.nextSibling);
+            lugar.parentNode.insertBefore( divMensaje, lugar.nextSibling);
 
             setTimeout(() => {
                 divMensaje.remove();
