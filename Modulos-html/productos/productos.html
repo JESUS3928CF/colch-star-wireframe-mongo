@@ -38,57 +38,48 @@
                             <h5 class="modal-title" id="exampleModalLabel">
                                 Agregar producto
                             </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button"  id="xAgregar"class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="formulario">
 
                             <div class="modal-body">
                                 <!-- formulario para agregar un cliente -->
-                                <form action="">
-                                    <div class="mb-3">
-                                        <label for="productoGuardar" class="col-form-label">
-                                            Producto:
-                                        </label>
-                                        <input type="text" class="form-control" id="productoGuardarr"
-                                            placeholder="Ingresar producto" required />
+                                <form action="" id="formularioAgregarProducto">
+
+                                    <div class="mb-3"  name ="divProducto" >
+                                        <label for="productoGuardar" class="col-form-label">Producto:</label>
+                                        <input type="text" class="form-control" id="productoGuardarr" name="productoGuardar" placeholder="Ingresar producto" required />
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="cantidadGuardar" class="col-form-label">
-                                            Cantidad:
-                                        </label>
-                                        <input type="number" class="form-control" id="cantidadGuardar"
-                                            placeholder="Ingresar cantidad" />
+
+                                    <div class="mb-3" name ="divCantidad">
+                                        <label for="cantidadGuardar" class="col-form-label">Cantidad:</label>
+                                        <input type="number" class="form-control" name="cantidadGuardar" id="cantidadGuardar" placeholder="Ingresar cantidad" />
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="precioGuardar" class="col-form-label">
-                                            Precio:
-                                        </label>
-                                        <input type="number" class="form-control" id="precioGuardar"
-                                            placeholder="Ingresar precio" />
+
+                                    <div class="mb-3" name ="divPrecio">
+                                        <label for="precioGuardar" class="col-form-label">Precio</label>
+                                        <input type="number" class="form-control" name="precioGuardar" id="precioGuardar"placeholder="Ingresar precio" />
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="tallaGuardar" class="col-form-label">
-                                            Talla:
-                                        </label>
-                                        <input type="text" class="form-control" id="tallaGuardar"
-                                            placeholder="Ingresar Talla" required />
+
+                                    <div class="mb-3" name ="divTalla">
+                                        <label for="tallaGuardar" class="col-form-label">Talla:</label>
+                                        <input type="text" class="form-control" id="tallaGuardar" name="tallaGuardar" placeholder="Ingresar Talla" required />
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="telaGuardar" class="col-form-label">
-                                            Tela:
-                                        </label>
-                                        <input type="text" class="form-control" id="telaGuardar"
-                                            placeholder="Ingresar Tela" required />
+
+                                    <div class="mb-3"name ="divTela">
+                                        <label for="telaGuardar" class="col-form-label">Tela:</label>
+                                        <input type="text" class="form-control" id="telaGuardar" name="telaGuardar" placeholder="Ingresar Tela" required />
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                            Cancelar
-                                        </button>
+                                        <button type="button"id="guardarCancelado"  class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                                         <input type="submit" class="btn btn-success" value="Guardar" />
                                     </div>
+
                                 </form>
                             </div>
+
+
                             <div class="modal-body ">
                                 <form action="">
                                     <div class="form-label" style="text-align: center;">
@@ -115,25 +106,30 @@
                                             <br>
                                             <label for="">Seleccionar Colores: </label>
                                             <br>
+
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" id="negroAgregar">
                                                 <label class="form-check-label" for="NegroAgregar">Negro</label>
                                             </div>
+
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" id="rojoAgregar"
                                                     checked>
                                                 <label class="form-check-label" for="rojoAgregar">Rojo</label>
                                             </div>
+
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" id="azulAgregar"
                                                     checked>
                                                 <label class="form-check-label" for="azulAgregar">Azul</label>
                                             </div>
+
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" id="verdeAgregar"
                                                     checked>
                                                 <label class="form-check-label" for="verdeAgregar">verde</label>
                                             </div>
+
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" id="grisAgregar"
                                                     checked>
@@ -147,6 +143,17 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!--/ Mensaje de agregar Producto correctamente   -->
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-success text-white">
+                        <strong class="me-auto text-white">Colch Star</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toast-body-agregar" class="toast-body"></div>
                 </div>
             </div>
 
@@ -194,8 +201,9 @@
                     <td>Camisas</td>
                     <td>2</td>
                     <td>25000</td>
-                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                          data-bs-target="#modalDetalles">Ver</button></td>
+                    <td><img  class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
@@ -204,9 +212,9 @@
                     <td>Buzos</td>
                     <td>10</td>
                     <td>20000</td>
-                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch off.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
+                    <td><img  class="centrarIcono estado"  src="/imagenes/iconos/light_switch off.svg" /></td>
+                    <td><button type="button" class="btn btn-info" 
                             data-bs-target="#modalEditar">Editar</button></td>
                 </tr>
                 <tr>
@@ -214,8 +222,8 @@
                     <td>Sudaderas</td>
                     <td>7</td>
                     <td>35000</td>
-                    <td><button type="button" class="btn btn-secondary">Ver</button></td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#modalDetalles">Ver</button></td>
+                    <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
                     <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#modalEditar">Editar</button></td>
 
@@ -226,48 +234,65 @@
 
 
     <!-- modal de editar cliente -->
+
     <div class="modal" id="modalEditar">
         <div class="modal-dialog modal-dialog-centered" style="width: 800px ; margin-left: 100px;">
             <div class="modal-content" style="width: 800px;">
                 <div class="modal-header modal-head-editar" style="width: 800px;">
                     <h5 class="modal-title">Editar datos del producto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="formulario">
                     <div class="modal-body">
-                        <!-- formulario para editar los datos de la tabla clientes -->
-                        <form action="">
-                            <div class="mb-3">
+
+                        <!-- formulario para editar los datos de la tabla producto -->
+                        <form action="" id="formularioEditarProducto">
+                            <div class="mb-3" name="divProducto">
                                 <label for="nombreEditar" class="col-form-label">Producto:</label>
-                                <input type="text" class="form-control" id="productoEditar"
-                                    placeholder="Ingresar producto">
+                                <input type="text" name="productoEditar" class="form-control" id="productoEditar"placeholder="Ingresar producto">
                             </div>
-                            <div class="mb-3">
+
+                            <div class="mb-3" name="divCantidad">
                                 <label for="apellidoEditar" class="col-form-label">Cantidad:</label>
-                                <input type="number" class="form-control" id="cantidadEditar"
-                                    placeholder="Ingresar cantidad">
+                                <input type="number" name="cantidadEditar" class="form-control" id="cantidadEditar"placeholder="Ingresar cantidad">
                             </div>
-                            <div class="mb-3">
+
+                            <div class="mb-3" name="divPrecio">
                                 <label for="precioEditar" class="col-form-label">Precio:</label>
-                                <input type="number" class="form-control" id="precioEditar"
-                                    placeholder="Ingresar el Precio">
+                                <input type="number" name="precioEditar" class="form-control" id="precioEditar" placeholder="Ingresar el Precio">
                             </div>
-                            <div class="mb-3">
+
+                            <div class="mb-3" name="divTalla">
                                 <label for="tallaEditar" class="col-form-label">Talla:</label>
-                                <input type="text" class="form-control" id="tallaEditar"
-                                    placeholder="Ingresar la talla ">
+                                <input type="text" name="tallaEditar" class="form-control" id="tallaEditar" placeholder="Ingresar la talla ">
                             </div>
-                            <div class="mb-3">
+
+                            <div class="mb-3" name="divTela">
                                 <label for="telaEditar" class="col-form-label">Tela:</label>
-                                <input type="text" class="form-control" id="telaEditar" placeholder="Ingresar la tela">
+                                <input type="text" name="telaEditar" class="form-control" id="telaEditar" placeholder="Ingresar la tela">
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" id="editarCancelado" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                                 <input type="submit" class="btn btn-success" value="Guardar">
                             </div>
+
                         </form>
                     </div>
+
+                       <!--/ Mensaje de Editar cliente correctamente   -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-info text-white">
+                <strong class="me-auto text-black">Colch Star</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toast-body-editar" class="toast-body"></div>
+        </div>
+    </div>
+
+                    
+                    <!-- ver detalle de productos -->
                     <div class="modal-body ">
                         <form action="">
                             <div class="form-label" style="text-align: center;">
@@ -324,7 +349,75 @@
         </div>
     </div>
 
+    
 
+
+    <div class="modal" id="modalDetalles">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-head-editar">
+                    <h5 class="modal-title">Información del producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="formulario">
+                    <div class="modal-body">
+
+                        <div class="container">
+                            <div class="col">
+                                <div class="row">
+                                    <p> Precio de Compra </p>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>Tela:<ul>
+                                            <li>Tela fria </li>
+                                        </ul> </li>
+                                        <li>Talla:<ul>
+                                                <li>S</li>
+                                                
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="col">
+                                <div class="row ">
+                                    <p>Imagen:</p>
+                                </div>
+                                <div class="row">
+                                    <div>
+                                        <img src="/imagenes/1153861.png" width="200px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col">
+                                    <ul>
+                                        <li>Color:<ul>
+                                            <li><div class="row">
+                                                <div class="col">
+                                                    <div> Amarillo <div style="border: 1px solid black; width: 50px; height: 50px; background-color: rgb(0, 0, 0);"></div></div>
+                                                </div>
+                                            </div></li>
+                                        </ul> </li>  
+                                    </ul>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/funcionalidadesProducto/cambiarEstado.js"></script>
+    <script src="../../js/funcionalidadesProducto/validarProducto.js"></script>
+    <script src="../../js/funcionalidadesProducto/validarProductoEditar.js"></script>
+    
 </body>
 
 </html>

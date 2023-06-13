@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
     <link rel="stylesheet" href="/css/cssgeneral.css">
     <link rel="stylesheet" href="/css/ModuloInicio.css">
+    <link rel="stylesheet" href="/css/inicio/inicio_style.css">
+    <link rel="stylesheet" href="/css/adminlte.min.css">
+    <link rel="stylesheet" href="/css/tailwind.min.css">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,80 +26,426 @@
 <body class="fondo">
     <header class="contenedor">
         <h1 class="titulo">Dashboard</h1>
-        <!-- SidebarSearch Form -->
-        <!-- <div class="container-fluid">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div> -->
+
     </header>
 
-    <div class="contenedorTarjetas">
-        <div class="div-segundario">
-            <p class="p">4
-            </p>
-            <img class="f" src="/imagenes/iconos/LogoPNG.png" alt="" width="89px" />
-            <p class="p2">Proveedores</p>
-        
+    <!-- Small boxes (Stat box) -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- small box -->
+                <div class="small-box bg-tarjeta text-dark ">
+                    <div class="inner ">
+                        <h3>18</h3>
+                
+                        <p>Total proveedores</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-phone'></i>
+                    </div>
+                    <div class="text-center py-3 pt-0">
+                        <button class="masInfo" onclick="window.location.href = '../proveedores/proveedores.html';"> Más Info 
+                        </button>
+                    </div>
+                    
+                    <!-- <a href="#" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a> -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col">
+                <!-- small box -->
+                <div class="small-box bg-tarjeta2 text-dark ">
+                    <div class="inner ">
+                        <h3>28</h3>
+            
+                        <p>Total clientes</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-child'></i>
+                    </div>
+                    <div class="text-center py-3 pt-0">
+                        <button class="masInfo" onclick="window.location.href = '../clientes/clientes.html';"> Más Info
+                        </button>
+                    </div>
+            
+                    <!-- <a href="#" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a> -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col">
+                <!-- small box -->
+                <div class="small-box bg-tarjeta text-dark ">
+                    <div class="inner ">
+                        <h3>12</h3>
+            
+                        <p>Total prendas</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-t-shirt'></i>
+                    </div>
+                    <div class="text-center py-3 pt-0">
+                        <button class="masInfo" onclick="window.location.href = '../productos/prendas.html';"> Más Info
+                        </button>
+                    </div>
+            
+                    <!-- <a href="#" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a> -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col">
+                <!-- small box -->
+                <div class="small-box bg-tarjeta2 text-dark ">
+                    <div class="inner ">
+                        <h3>54</h3>
+            
+                        <p>Total diseños</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-invader'></i>
+                    </div>
+                    <div class="text-center py-3 pt-0">
+                        <button class="masInfo" onclick="window.location.href = '../productos/listaDiseños.html';"> Más Info
+                        </button>
+                    </div>
+            
+                    <!-- <a href="#" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a> -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col">
+                <!-- small box -->
+                <div class="small-box bg-tarjeta text-dark ">
+                    <div class="inner ">
+                        <h3>28</h3>
+            
+                        <p>Total productos</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bxs-t-shirt'></i>
+                    </div>
+                    <div class="text-center py-3 pt-0">
+                        <button class="masInfo" onclick="window.location.href = '../productos/productos.html';"> Más Info
+                        </button>
+                    </div>
+            
+                    <!-- <a href="#" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a> -->
+                </div>
+            </div>
+            <!-- ./col -->
         </div>
-        
-        <div class="div-segundario">
-            <p class="p">3</p>
-            <img src="/imagenes/iconos/LogoPNG.png" alt="" width="89px" />
-            <p class="p2">Productos</p>
-        
-        </div>
-    </div>
-    <div class="contenedorTarjetas">
-        <div class="div-segundarioo">
-            <p class="p">4</p>
-            <img src="/imagenes/iconos/LogoPNG.png" alt="" width="89px" />
-            <p class="p2">Clientes</p>
     
-        </div>
-    
-        <div class="div-segundarioo">
-            <p class="p">195</p>
-            <img src="/imagenes/iconos/LogoPNG.png" alt="" width="89px" />
-            <p class="p2">Compras</p>
-    
-        </div>
-    </div>
-    
-    <div class="contenedorTarjetas">
-        <div class="div-segundarioo">
-            <p class="p">16</p>
-            <img src="/imagenes/iconos/LogoPNG.png" alt="" width="89px" />
-            <p class="p2">Ventas</p>
-        
-        </div>
-        
-        <div class="div-segundarioo">
-            <p class="p">4</p>
-            <img src="/imagenes/iconos/LogoPNG.png" alt="" width="89px" />
-            <p class="p2">Usuarios</p>
-        
-        </div>
-    </div>
-   
 
-    <div class="tercero">
 
-        <div class="tercero1">
-            <p class="pp">0.00</p>
-            <img class="iii" src="/imagenes/iconos/LogoPNG.png" alt="" width="89px">
-            <p class="ppp">Ventas:</p>
-            <p class="pppp">Ganancias:</p>
+    <!--/ gráficas  -->
+    <div class="row">
+        <!-- /.col-md-6 -->
+        <div class="col-lg-6">
+        
+        
+        
+            <div class="card">
+                <div class="card-header border-0">
+                    <h3 class="card-title">Prendas populares</h3>
+                    <!-- <div class="card-tools">
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div> -->
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/prendas/cBlanca.png" alt="">
+                        <p class="text-dark ">
+        
+                            Camisa de algodón licrado H
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">87</span>
+                        </p>
+                    </div>
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/prendas/cBlanca.png" alt="">
+                        <p class="text-dark ">
+        
+                            Buzo sin chompa H
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">63</span>
+                        </p>
+                    </div>
+        
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/prendas/cBlanca.png" alt="">
+                        <p class="text-dark ">
+        
+                            Camisa de algodón licrado F
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">57</span>
+                        </p>
+                    </div>
+        
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/prendas/cBlanca.png" alt="">
+                        <p class="text-dark ">
+        
+                            Camisa tela fría F
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">37</span>
+                        </p>
+                    </div>
+        
+                    <!-- /.d-flex -->
+                </div>
+            </div>
+        
+        
+        
         </div>
+        <!-- /.col-md-6 -->
+        <!-- lista de tareas -->
+        <div class="col-lg-6">
+            
+    <!-- TO DO List -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="ion ion-clipboard mr-1"></i>
+                Tareas pendientes
+            </h3>
+    
+            <div class="card-tools">
+                <ul class="pagination pagination-sm">
+                    <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <ul class="todo-list" data-widget="todo-list">
+                <li class="p-4">
+                    <!-- drag handle -->
+                    <span class="handle">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <!-- checkbox -->
+                    <div class="icheck-primary d-inline ml-2">
+                        <input type="checkbox" value="" name="todo1" id="todoCheck1">
+                        <label for="todoCheck1"></label>
+                    </div>
+                    <!-- todo text -->
+                    <span class="text">Entregar Pedido de Paola</span>
+                    <!-- Emphasis label -->
+                    <small class="badge badge-success"><i class="far fa-clock"></i> 4 hours</small>
+                    <small class="badge badge-success"><i class="far fa-clock"></i> 13/06/2023</small>
+                    
+                </li>
+                <li class="p-4">
+                    <span class="handle">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div class="icheck-primary d-inline ml-2">
+                        <input type="checkbox" value="" name="todo2" id="todoCheck2">
+                        <label for="todoCheck2"></label>
+                    </div>
+                    <span class="text">Entregar pedido de Juan Ramirez</span>
+                    <small class="badge badge-success"><i class="far fa-clock"></i> 4 hours</small>
+                    <small class="badge badge-success"><i class="far fa-clock"></i> 13/06/2023</small>
+                    <div class="tools">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-o"></i>
+                    </div>
+                </li>
+                <li class="p-4">
+                    <span class="handle">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div class="icheck-primary d-inline ml-2">
+                        <input type="checkbox" value="" name="todo3" id="todoCheck3">
+                        <label for="todoCheck3"></label>
+                    </div>
+                    <span class="text">Comprar 3 camisa tela fría talla L</span>
+                    <small class="badge badge-info"><i class="far fa-clock"></i> 1 day</small>
+                    <small class="badge badge-info"><i class="far fa-clock"></i> 12/06/2023</small>
+                    <div class="tools">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-o"></i>
+                    </div>
+                </li>
+                <li class="p-4">
+                    <span class="handle">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div class="icheck-primary d-inline ml-2">
+                        <input type="checkbox" value="" name="todo4" id="todoCheck4">
+                        <label for="todoCheck4"></label>
+                    </div>
+                    <span class="text">Comprar 2 buzos negros talla S negros</span>
+                    <small class="badge badge-info"><i class="far fa-clock"></i> 3 days</small>
+                    <small class="badge badge-info"><i class="far fa-clock"></i> 12/06/2023</small>
+                    <div class="tools">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-o"></i>
+                    </div>
+                </li>
+                <li class="p-4">
+                    <span class="handle">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div class="icheck-primary d-inline ml-2">
+                        <input type="checkbox" value="" name="todo5" id="todoCheck5">
+                        <label for="todoCheck5"></label>
+                    </div>
+                    <span class="text">Faltan diseños 13 por comprar</span>
+                    <small class="badge badge-danger"><i class="far fa-clock"></i> 1 semana</small>
+                    <small class="badge badge-danger"><i class="far fa-clock"></i> 06/06/2023</small>
+                    <div class="tools">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-o"></i>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <!-- <div class="card-footer clearfix">
+            <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+        </div> -->
+    </div>
+    <!-- /.card -->
+           
+        </div>
+        
 
-        <div class="tercero2">
-            <p class="pp">0.00</p>
-            <img class="iii" src="/imagenes/iconos/LogoPNG.png" alt="" width="89px">
-            <p class="ppp">Compras: 0</p>
-            <p class="pppp">Gastos: 0</p>
+        <!--/ Diseños populares  -->
+        <div class="col-lg-6">
+
+        
+            <div class="card">
+                <div class="card-header border-0">
+                    <h3 class="card-title">Prendas populares</h3>
+                    <!-- <div class="card-tools">
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div> -->
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/diseños/039.png" alt="">
+                        <p class="text-dark ">
+        
+                            Gwen Stasy
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">36</span>
+                        </p>
+                    </div>
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/diseños/057.png" alt="">
+                        <p class="text-dark ">
+        
+                            Mario
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">24</span>
+                        </p>
+                    </div>
+        
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/diseños/117.png" alt="">
+                        <p class="text-dark ">
+        
+                            Batman
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">18</span>
+                        </p>
+                    </div>
+        
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <img width="50px" class="centrar " src="../../catalogoVista/img/diseños/simpsons-12725.png" alt="">
+                        <p class="text-dark ">
+        
+                            Los Simpson
+                        </p>
+                        <p class="d-flex flex-column text-right">
+        
+                            <span class="font-weight-bold">
+                                <i class="ion ion-android-arrow-up text-success"></i> SE HA USADO
+                            </span>
+                            <span class="text-muted">10</span>
+                        </p>
+                    </div>
+        
+                    <!-- /.d-flex -->
+                </div>
+            </div>
+        
+            
+        
         </div>
     </div>
+    <!-- /.row -->
+    
+    
+    <!-- <script src="/js/funcionalidadesGenerales/adminlte.min.js"></script> -->
+    <!-- <script src="/js/funcionalidadesGenerales/demo.js"></script> -->
+    <!-- <script src="/js/funcionalidadesGenerales/dashboard.js"></script> -->
+    <!-- <script src="/js/funcionalidadesGenerales/dashboard3.js"></script> -->
+
+    </div>
+
 </body>
 
 </html>
