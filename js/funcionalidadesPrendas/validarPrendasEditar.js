@@ -1,13 +1,13 @@
 (() => {
-    const formulario = document.querySelector('#formularioEditarProducto');
+    const formulario = document.querySelector('#formularioEditarPrendas');
 
     const submit = document.querySelector(
-        '#formularioEditarProducto input[type="submit"]'
+        '#formularioEditarPrendas input[type="submit"]'
     );
 
     const cancelar = document.querySelector('#editarCancelado'); 
 
-    const atras = document.querySelector('#Editar');
+    const atras = document.querySelector('#xEditar');
 
     window.addEventListener('load', () => {
         submit.addEventListener('click', crearClientes);
@@ -31,24 +31,26 @@
         //* Campos a validar
 
         const producto = document.querySelector(
-            '#formularioEditarProducto input[name="productoEditar"]'
+            '#formularioEditarPrendas input[name="productoEditar"]'
         );
 
         const cantidad = document.querySelector(
-            '#formularioEditarProducto input[name="cantidadEditar"]'
+            '#formularioEditarPrendas input[name="cantidadEditar"]'
         );
 
         const precio = document.querySelector(
-            '#formularioEditarProducto input[name="precioEditar"]'
+            '#formularioEditarPrendas input[name="precioEditar"]'
         );
 
         const talla = document.querySelector(
-            '#formularioEditarProducto input[name="tallaEditar"]'
+            '#formularioEditarPrendas input[name="tallaEditar"]'
         );
 
         const tela = document.querySelector(
-            '#formularioEditarProducto input[name="telaEditar"]'
+            '#formularioEditarPrendas input[name="telaEditar"]'
         );
+
+        
 
         //- Expresiones Regulares
         const number = /^\D*$/;
@@ -58,24 +60,23 @@
 
         //* Contenedores del formularios
         const divProducto = document.querySelector(
-            '#formularioEditarProducto div[name="divProducto"]'
+            '#formularioEditarPrendas div[name="divProducto"]'
         );
 
         const divCantidad = document.querySelector(
-            '#formularioEditarProducto div[name="divCantidad"]'
+            '#formularioEditarPrendas div[name="divCantidad"]'
         );
-
         const divPrecio = document.querySelector(
-            '#formularioEditarProducto div[name="divPrecio"]'
+            '#formularioEditarPrendas div[name="divPrecio"]'
         );
 
         const divTalla = document.querySelector(
-            '#formularioEditarProducto div[name="divTalla"]'
+            '#formularioEditarPrendas div[name="divTalla"]'
+        );
+        const divTela = document.querySelector(
+            '#formularioEditarPrendas div[name="divTela"]'
         );
 
-        const divTela = document.querySelector(
-            '#formularioEditarProducto div[name="divTela"]'
-        );
 
         /// Lógica de validación
 
@@ -87,7 +88,7 @@
             isValidado = false;
         } else if (!number.test(producto.value)) {
             imprimirAlerta('Este Campo no puede contener números', divProducto,
-                'Producto');
+                'Nombre');
             isValidado = false;
         }
 
@@ -123,13 +124,13 @@
             );
             isValidado = false;
         }
-
-        //* Validaciones para la talla
+        //* Validaciones para  la talla
         if (talla.value == '') {
             imprimirAlerta('Este campo es obligatorio', divTalla, 'Talla');
             isValidado = false;
-        } 
-        //* Validaciones para la Tela
+        }
+
+        //* Validaciones para la tela
         if (tela.value == '') {
             imprimirAlerta('Este campo es obligatorio', divTela, 'Tela');
             isValidado = false;
@@ -149,7 +150,7 @@
 
             formulario.reset();
 
-            mostrarToast('Producto editado correctamente');
+            mostrarToast('Prenda editado correctamente');
         }
     }
 

@@ -45,7 +45,7 @@
 
                             <div class="modal-body">
 
-                                <!--* formulario para agregar un cliente -->
+                                <!--* formulario para agregar una prenda -->
                                 <form action="" id="formularioAgregarPrenda">
 
                                     <div class="mb-3" name="divPrenda">
@@ -239,7 +239,7 @@
                 </div>
             </div>
 
-            <!--/ Mensaje de agregar Producto correctamente   -->
+            <!--/ Mensaje de agregar Prenda correctamente   -->
             <div class="toast-container position-fixed top-0 end-0 p-3">
                 <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="toast-header bg-success text-white">
@@ -267,7 +267,7 @@
 
         </div>
 
-        <!-- tabla para listar clientes -->
+        <!-- tabla para listar prendas -->
     </header>
     <div class="tabla">
         <table class="table caption-top ">
@@ -326,44 +326,48 @@
     </div>
 
 
-    <!--! modal de editar cliente -->
+    <!--! modal de editar prenda -->
     <div class="modal" id="modalEditar">
         <div class="modal-dialog modal-dialog-centered" style="width: 800px ; margin-left: 100px;">
             <div class="modal-content" style="width: 800px;">
                 <div class="modal-header modal-head-editar" style="width: 800px;">
                     <h5 class="modal-title">Editar datos de la prenda</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" id="xEditar" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="formulario">
                     <div class="modal-body">
-                        <!-- formulario para editar los datos de la tabla clientes -->
-                        <form action="">
-                            <div class="mb-3">
+
+                        <!-- formulario para editar los datos de la tabla prenda -->
+                        <form action="" name="formularioEditarPrendas">
+                            <div class="mb-3" name="divProducto">
                                 <label for="nombreEditar" class="col-form-label">Producto:</label>
-                                <input type="text" class="form-control" id="productoEditar"
+                                <input type="text" class="form-control" name="productoEditar" id="productoEditar"
                                     placeholder="Ingresar producto">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" name="divCantidad">
                                 <label for="apellidoEditar" class="col-form-label">Cantidad:</label>
-                                <input type="number" class="form-control" id="cantidadEditar"
+                                <input type="number" class="form-control" name="cantidadEditar" id="cantidadEditar"
                                     placeholder="Ingresar cantidad">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" name="divPrecio">
                                 <label for="precioEditar" class="col-form-label">Precio:</label>
-                                <input type="number" class="form-control" id="precioEditar"
+                                <input type="number" class="form-control" name="precioEditar" id="precioEditar"
                                     placeholder="Ingresar el Precio">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" name="divTalla">
                                 <label for="tallaEditar" class="col-form-label">Talla:</label>
-                                <input type="text" class="form-control" id="tallaEditar"
+                                <input type="text" class="form-control" name="tallaEditar" id="tallaEditar"
                                     placeholder="Ingresar la talla ">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" name="divTela">
                                 <label for="telaEditar" class="col-form-label">Tela:</label>
-                                <input type="text" class="form-control" id="telaEditar" placeholder="Ingresar la tela">
+                                <input type="text" class="form-control" name="telaEditar" id="telaEditar"
+                                    placeholder="Ingresar la tela">
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger" name="editarCancelado"
+                                    data-bs-dismiss="modal">Cancelar</button>
                                 <input type="submit" class="btn btn-success" value="Guardar">
                             </div>
                         </form>
@@ -423,6 +427,19 @@
             </div>
         </div>
     </div>
+
+    <!--/ Mensaje de Editar prenda correctamente   -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-info text-white">
+                <strong class="me-auto text-black">Colch Star</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+            <div id="toast-body-editar" class="toast-body"></div>
+        </div>
+    </div>
+
     <!--! fin modal  -->
 
 
@@ -544,6 +561,7 @@
     </div>
     <script src="../../js/funcionalidadesProducto/cambiarEstado.js"></script>
     <script src="../../js/funcionalidadesPrendas/validarPrendas.js"></script>
+    <script src="../../js/funcionalidadesPrendas/validarPrendasEditar.js"></script>
 </body>
 
 </html>

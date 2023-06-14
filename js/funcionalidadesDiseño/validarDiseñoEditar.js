@@ -1,13 +1,13 @@
 (() => {
-    const formulario = document.querySelector('#formularioEditarProducto');
+    const formulario = document.querySelector('#formularioEditarDiseño');
 
     const submit = document.querySelector(
-        '#formularioEditarProducto input[type="submit"]'
+        '#formularioEditarDiseño input[type="submit"]'
     );
 
     const cancelar = document.querySelector('#editarCancelado'); 
 
-    const atras = document.querySelector('#Editar');
+    const atras = document.querySelector('#xEditar');
 
     window.addEventListener('load', () => {
         submit.addEventListener('click', crearClientes);
@@ -30,24 +30,12 @@
     function validarCliente() {
         //* Campos a validar
 
-        const producto = document.querySelector(
-            '#formularioEditarProducto input[name="productoEditar"]'
+        const nombre = document.querySelector(
+            '#formularioEditarDiseño input[name="nombreEditar"]'
         );
 
-        const cantidad = document.querySelector(
-            '#formularioEditarProducto input[name="cantidadEditar"]'
-        );
-
-        const precio = document.querySelector(
-            '#formularioEditarProducto input[name="precioEditar"]'
-        );
-
-        const talla = document.querySelector(
-            '#formularioEditarProducto input[name="tallaEditar"]'
-        );
-
-        const tela = document.querySelector(
-            '#formularioEditarProducto input[name="telaEditar"]'
+        const imagen = document.querySelector(
+            '#formularioEditarDiseño input[name="imagenEditar"]'
         );
 
         //- Expresiones Regulares
@@ -57,24 +45,12 @@
             /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
         //* Contenedores del formularios
-        const divProducto = document.querySelector(
-            '#formularioEditarProducto div[name="divProducto"]'
+        const divNombre = document.querySelector(
+            '#formularioEditarDiseño div[name="divNombre"]'
         );
 
-        const divCantidad = document.querySelector(
-            '#formularioEditarProducto div[name="divCantidad"]'
-        );
-
-        const divPrecio = document.querySelector(
-            '#formularioEditarProducto div[name="divPrecio"]'
-        );
-
-        const divTalla = document.querySelector(
-            '#formularioEditarProducto div[name="divTalla"]'
-        );
-
-        const divTela = document.querySelector(
-            '#formularioEditarProducto div[name="divTela"]'
+        const divImagen = document.querySelector(
+            '#formularioEditarDiseño div[name="divImagen"]'
         );
 
         /// Lógica de validación
@@ -82,16 +58,16 @@
         let isValidado = true;
 
         //* Validaciones para el producto
-        if (producto.value == '') {
-            imprimirAlerta('Este campo es obligatorio', divProducto, 'Producto');
+        if (nombre.value == '') {
+            imprimirAlerta('Este campo es obligatorio', divNombre, 'Nombre');
             isValidado = false;
-        } else if (!number.test(producto.value)) {
-            imprimirAlerta('Este Campo no puede contener números', divProducto,
-                'Producto');
+        } else if (!number.test(nombre.value)) {
+            imprimirAlerta('Este Campo no puede contener números', divNombre,
+                'Nombre');
             isValidado = false;
         }
 
-        //* Validaciones para la cantidad
+        //* Validaciones para la imagen
         if (cantidad.value == '') {
             imprimirAlerta(
                 'Este campo es obligatorio',
@@ -105,37 +81,6 @@
                 divCantidad,
                 'Cantidad'
             );
-            isValidado = false;
-        }
-        //* Validaciones para el precio
-        if (precio.value == '') {
-            imprimirAlerta(
-                'Este campo es obligatorio',
-                divPrecio,
-                'Precio'
-            );
-            isValidado = false;
-        } else if (!text.test(precio.value)) {
-            imprimirAlerta(
-                'Este campo no puede contener letras',
-                divPrecio,
-                'Precio'
-            );
-            isValidado = false;
-        }
-
-        //* Validaciones para la talla
-        if (talla.value == '') {
-            imprimirAlerta('Este campo es obligatorio', divTalla, 'Talla');
-            isValidado = false;
-        } 
-        //* Validaciones para la Tela
-        if (tela.value == '') {
-            imprimirAlerta('Este campo es obligatorio', divTela, 'Tela');
-            isValidado = false;
-        } else if (!number.test(tela.value)) {
-            imprimirAlerta('Este Campo no puede contener números', divTela,
-                'Tela');
             isValidado = false;
         }
         

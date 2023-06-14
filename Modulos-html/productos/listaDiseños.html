@@ -35,30 +35,44 @@
                     <div class="modal-content">
                         <div class="modal-header modal-head-agregar">
                             <h5 class="modal-title" id="exampleModalLabel1">Agregar diseño</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" id="xAgregar"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
 
                             <!-- formulario para agregar un cliente -->
-                            <form action="">
-                                <div class="mb-3">
+                            <form action="" id="formularioAgregarDiseño">
+                                <div class="mb-3" name="divNombre">
                                     <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreGuardarr"
+                                    <input type="text" class="form-control" name="nombreGuardar" id="nombreGuardarr"
                                         placeholder="ingresar nombre" required>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" name="divImagen">
                                     <label for="formFile" class="form-label">Subir imagen del diseño</label>
-                                    <input class="form-control" type="file" id="formFile1" required>
+                                    <input class="form-control" name="imagenGuardar" type="file" id="formFile1"
+                                        required>
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger"
+                                    <button type="button" class="btn btn-danger" id="guardarCancelado"
                                         data-bs-dismiss="modal">Cancelar</button>
                                     <input type="submit" class="btn btn-success" value="Guardar">
                                 </div>
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!--/ Mensaje de agregar Producto correctamente   -->
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-success text-white">
+                        <strong class="me-auto text-white">Colch Star</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                            aria-label="Close"></button>
+                    </div>
+                    <div id="toast-body-agregar" class="toast-body"></div>
                 </div>
             </div>
 
@@ -174,29 +188,43 @@
             <div class="modal-content">
                 <div class="modal-header modal-head-editar">
                     <h5 class="modal-title" id="PublicarDiseño">Editar el diseño</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" id="xEditar" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
-                    <!-- formulario para agregar un cliente -->
-                    <form action="">
-                        <div class="mb-3">
+                    <!-- formulario para editar un cliente -->
+                    <form action="" id="formularioEditarDiseño">
+                        <div class="mb-3" name="divNombre">
                             <label for="nombreDiseñoGuardar" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombreDiseñoGuardar"
+                            <input type="text" class="form-control" name="nombreEditar" id="nombreDiseñoGuardar"
                                 placeholder="Ingresar nombre">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" name="divImagen">
                             <label for="formFile" class="form-label">Subir imagen del diseño</label>
-                            <input class="form-control" type="file" id="archivoDiseño">
+                            <input class="form-control" name="imagenEditar" type="file" id="archivoDiseño">
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" id="editarCancelado"
+                                data-bs-dismiss="modal">Cancelar</button>
                             <input type="submit" class="btn btn-success" value="Guardar">
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!--/ Mensaje de Editar cliente correctamente   -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-info text-white">
+                <strong class="me-auto text-black">Colch Star</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+            <div id="toast-body-editar" class="toast-body"></div>
         </div>
     </div>
 
@@ -233,7 +261,8 @@
         </div>
     </div>
 
-
+    <script src="../../js/funcionalidadesDiseño/validarDiseño.js"></script>
+    <script src="../../js/funcionalidadesDiseño/validarDiseñoEditar.js"></script>
     <script src="../../js/funcionalidadesProducto/cambiarEstado.js"></script>
 </body>
 
