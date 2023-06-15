@@ -29,7 +29,7 @@
                 Agregar venta
             </button>
 
-            <!-- modal de agregar cliente -->
+            <!-- modal de agregar Venta -->
 
             <div class="modal" id="myModal">
                 <div class="modal-dialog modal-dialog-centered" style= "width: 800px ; margin-left: 100px;">
@@ -43,8 +43,8 @@
                         <div class="formulario">
                             
                             <div class="modal-body" >
-                                <!-- formulario para agregar un cliente -->
-                                <form action="">
+                                <!-- formulario para agregar una Venta -->
+                                <form action="" id="formularioParaAgregarVenta">
                                     <div class="mb-3">
                                         <label for="nombreGuardar" class="col-form-label">
                                             Nombre del cliente:
@@ -81,10 +81,9 @@
                                     </select> -->
                              
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                            Cancelar
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="cancelar"> Cancelar
                                         </button>
-                                        <input type="submit" class="btn btn-success" value="Guardar" />
+                                        <input type="submit" class="btn btn-success" value="Guardar" id="Guardar">
                                     </div>
                                 </form>
                             </div>
@@ -93,32 +92,78 @@
                                     <div class="form-label" style="text-align: center;">
                                         <p class="detalleCompra">Agregar datos de los productos de la venta</p>
                                     </div>
-                                    <div class="subFormulario">
-                            
-                                        <div class="mb-3">
-                                            <label for="nombreVentaAgregar" class="col-form-label">Nombre:</label>
-                                            <input type="number" class="form-control" id="nombreVentaAgregar" placeholder="Ingresar nombre">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="cantidaVentadAgregar" class="col-form-label">Cantidad:</label>
-                                            <input type="number" class="form-control" id="cantidaVentadAgregar" placeholder="Ingresar cantidad">
-                                        </div>
-                                    </div>
-                                    <div class="subFormulario">
-                                        <div class="mb-3">
-                                            <label for="precioVentaAgregar" class="col-form-label">Precio:</label>
-                                            <input type="number" class="form-control" id="precioVentaAgregar"
-                                                placeholder="Ingresar precio unitario del producto">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="totalVentaAgregar" class="col-form-label">Precio total:</label>
-                                            <input type="number" class="form-control" id="totalVentaAgregar" placeholder="" value="100.000"
-                                                readonly>
-                                        </div>
-                                    </div>
                                     <div class="bottonAgregarProducto">
-                                        <div> <button type="button" class="btn btn-info">Agregar producto</button> </div>
+                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Producto">
+                                            Agregar producto
+                                        </button>
+
+                                        <div class="modal" id="Producto">
+                                            <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
+                                                <div class="modal-content" style= "width: 800px ;" >
+                                                    <div class="modal-header modal-head-editar" style="width: 800px ">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            Agregar producto
+                                                        </h5>
+                                                        <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="formulario">
+                                                        <div class="modal-body" >
+                                                            <form action="" id="formularioParaAgregarVenta">
+                                                                <div class="mb-3">
+                                                                    <label for="nombreGuardar" class="col-form-label"> Producto:</label>
+                                                                    <select name="" id="select" class="form-control" title="Seleccionar" required>
+                                                                        <option value="Seleccionar" placeholder="Seleccionar">Seleccionar</option>
+                                                                        <option value="">001 camisa</option>
+                                                                        <option value="">002 busos</option>
+                                                                        <option value="">003 sudadera</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="nombreGuardar" class="col-form-label"> Cantidad:</label>
+                                                                    <input type="number" class="form-control" id="cantidad" placeholder="ingrese la cantidad del producto" required>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="nombreGuardar" class="col-form-label"> Precio:</label>
+                                                                    <input type="number" class="form-control" id="precio" placeholder="ingrese el precio de la venta" required>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="nombreGuardar" class="col-form-label"> Cliente:</label>
+                                                                    <select class="form-control" required id="select">
+                                                                        <option value="Seleccionar" placeholder="Seleccionar">Seleccionar Cliente</option>
+                                                                        <option value="">001 Mark</option>
+                                                                        <option value="">002 Jacob</option>
+                                                                        <option value="">003 Larry </option>
+                                                                        <option value="">004 Andres</option>
+                                                                    </select>
+                                                                   
+                                                                </div>
+
+                                                                <div class="mb-3">
+                                                                    <label for="nombreGuardar" class="col-form-label"> Fecha de entrega:</label>
+                                                                    <input type="date" class="form-control" id="Fecha" required>
+                                                                </div>
+
+                                                                <div class="mb-3">
+                                                                    <label for="nombreGuardar" class="col-form-label"> Descripcion del producto:</label>
+                                                                    <textarea class="form-control" id="descripcion"></textarea>
+                                                                </div>
+
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="cancelar"> Cancelar
+
+                                                                    </button>
+                                                                    <input type="submit" class="btn btn-success" value="Agregar a la venta" id="Guardar">
+                                                                </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>           
                                     </div>
+
+                                       
                                 </form>
                             </div>
                         </div>
@@ -161,13 +206,8 @@
                     <td>3017835457</td>
                     <td>Calle 78 #49b-12</td>
                     <td>12/12/2023</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
-                    <td>
-                        <select name="" id="">
-                            <option value="">En proceso</option>
-                            <option value="">Finalizado</option>
-                        </select>
-                    </td> 
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
                     <!-- <td>
                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
                             Editar
@@ -180,14 +220,9 @@
                     <td>3037985512</td>
                     <td>Calle 92 #51a-66</td>
                     <td>12/12/2023</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
-                   
-                    <td>
-                        <select name="" id="">
-                            <option value="">En proceso</option>
-                            <option value="">Finalizado</option>
-                        </select>
-                    </td> 
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                   
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+
                     <!-- <td>
                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
                             Editar
@@ -200,14 +235,9 @@
                     <td>302448895</td>
                     <td>Cra 25 #22-14</td>
                     <td>12/12/2023</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
-                    
-                    <td>
-                        <select name="" id="">
-                            <option value="">En proceso</option>
-                            <option value="">Finalizado</option>
-                        </select>
-                    </td> 
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                    
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+
                     <!-- <td>
                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
                             Editar
@@ -221,14 +251,9 @@
                     <td>3224758020</td>
                     <td>Cll 25#1-04</td>
                     <td>12/12/2023</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
-                   
-                    <td>
-                        <select name="" id="">
-                            <option value="">En proceso</option>
-                            <option value="">Finalizado</option>
-                        </select>
-                    </td> 
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                   
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+
                     <!-- <td>
                         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
                             Editar
@@ -238,6 +263,64 @@
             </tbody>
         </table>
     </div>
+    <div class="modal" id="Detalle">
+        <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
+            <div class="modal-content" style= "width: 800px ;" >
+                <div class="modal-header modal-head" style="width: 800px; background-color:black; color:white">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Detalle de venta
+                    </h5>
+                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="formulario">
+                    <div class="modal-body" >
+                        <form action="" id="Detalle">
+                         <div class="mb-3">
+                            <center>
+                                <label for="nombreGuardar" style="text-align: center;"> Producto #1</label>
+                                <br>
+                                <label for="nombreGuardar" for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;"> 001 camisa</label>
+                            </center>
+                         </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar" class="col-form-label"> Cantidad:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">2</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar"> Precio:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">35.000</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar"> Subtotal:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">70.000</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar"  style="margin-left: 60%; position: absolute;top: 105px; left: 40px;" > Fecha de produccion:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; margin-left: 60%; position: absolute;top: 133px; left: 40px;">20/05/2023</label>
+                                
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombreGuardar" class="col-form-label" style="margin-left: 60%; position: absolute;top: 185px; left: 40px;"> Fecha de entrega:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; margin-left: 60%; position: absolute;top: 220px; left: 40px;">29/05/2023</label>
+
+                                
+                            </div>
+
+                            <div class="mb-3">
+                            <center>
+                                <label for="nombreGuardar" class="col-form-label"> Descripcion del producto:</label>
+                                <p for="nombreGuardar" class="input-group-text" style= "width: 500px;">El bluson debe de tenr un diseño de rosa en el centro de la <br> parte frontal de la prenda y en la parte de atras</p>
+                            </center>
+
+                        
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="cancelar"> Regresar </button>
+                            </div>
+
 
     <!-- modal de editar cliente -->
     <div class="modal" id="modalEditar">
@@ -333,4 +416,4 @@
     </div>
 </body>
 
-</html>
+</html

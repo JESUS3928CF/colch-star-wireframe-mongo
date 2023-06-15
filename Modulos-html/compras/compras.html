@@ -121,6 +121,9 @@
                                     <div class="bottonAgregarProducto">
                                         <div> <button type="button" class="btn btn-info">Agregar producto</button> </div>
                                     </div>
+                                    
+
+
                                 </form>
                             </div>
                         </div>
@@ -160,7 +163,7 @@
                     <td>Daniel</td>
                     <td>400.000</td>
                     <td>10/10/2024</td>
-                    <td> <img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                    
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     
                 </tr>
@@ -169,7 +172,7 @@
                     <td>Daniel</td>
                     <td>1.400.000</td>
                     <td>10/10/2024</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                    
                     <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                     
                 </tr>
@@ -178,7 +181,7 @@
                     <td>Juan</td>
                     <td>700.000</td>
                     <td>10/10/2024</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                    
                     <td><img  class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                    
                 </tr>
@@ -187,7 +190,7 @@
                     <td>Felipe</td>
                     <td>100.000</td>
                     <td>10/10/2024</td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></td>
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                    
                     <td><img  class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
                 </tr>
             </tbody>
@@ -282,6 +285,48 @@
             </div>
         </div>
     </div> -->
+
+
+    <div class="modal" id="DetalleCompra">
+        <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
+            <div class="modal-content" style= "width: 800px ;" >
+                <div class="modal-header modal-head" style="width: 800px; background-color:black; color:white">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Detalle de compra
+                    </h5>
+                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="formulario">
+                    <div class="modal-body" >
+                        <form action="" id="Detalle">
+                         <div class="mb-3">
+                            <center>
+                                <label for="nombreGuardar" style="text-align: center;"> Producto #1</label>
+                                <br>
+                                <label for="nombreGuardar" for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;"> 001 camisa</label>
+                            </center>
+                         </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar" class="col-form-label"> Cantidad:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">2</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar"> Precio:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">35.000</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar"> Subtotal:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">70.000</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombreGuardar"  style="margin-left: 60%; position: absolute;top: 155px; left: 40px;" > Fecha de compra:</label>
+                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; margin-left: 60%; position: absolute;top: 183px; left: 40px;">20/05/2023</label>
+                                
+                            </div>
+                                    
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="cancelar"> Regresar </button>
+                            </div>
 
 
 </body>
