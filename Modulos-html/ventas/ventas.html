@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
     <link rel="stylesheet" href="/css/cssgeneral.css" />
+    
 </head>
 
 <body class="fondo">
@@ -38,62 +39,53 @@
                             <h5 class="modal-title" id="exampleModalLabel">
                                 Agregar venta
                             </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" name="xAgregar" aria-label="Close"></button>
                         </div>
                         <div class="formulario">
                             
                             <div class="modal-body" >
                                 <!-- formulario para agregar una Venta -->
                                 <form action="" id="formularioParaAgregarVenta">
-                                    <div class="mb-3">
+                                    <div class="mb-3" name="nombre">
                                         <label for="nombreGuardar" class="col-form-label">
                                             Nombre del cliente:
                                         </label>
-                                        <input type="text" class="form-control" id="nombreGuardarr" placeholder="Ingresar nombre" required />
+                                        <input type="text" class="form-control" name="nombreGuardar" id="nombreGuardar" placeholder="Ingresar nombre" >
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="apellidoGuardar" class="col-form-label">
+                                    <div class="mb-3" name="telefono">
+                                        <label for="telefonoGuardar" class="col-form-label">
                                             Teléfono:
                                         </label>
-                                        <input type="number" class="form-control" id="telefonoGuardar" placeholder="Ingresar teléfono" />
+                                        <input type="number" class="form-control" name="telefonoGuardar" id="telefonoGuardar" placeholder="Ingresar teléfono" >
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="telefonoGuardar" class="col-form-label">
+                                    <div class="mb-3" name="direccion">
+                                        <label for="" class="col-form-label">
                                             Dirección:
                                         </label>
-                                        <input type="text" class="form-control" id="direccionGuardar" placeholder="Ingresar dirección" required />
+                                        <input type="text" class="form-control" name="direccionGuardar" id="direccionGuardar" placeholder="Ingresar dirección"  />
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-3" name="fecha">
                                         <label for="telefonoGuardar" class="col-form-label">
                                             Fecha:
                                         </label>
-                                        <input type="date" class="form-control" id="productoGuardar" required />
+                                        <input type="date" class="form-control" name="FechaGuardar" id="FechaGuardar"  />
                                     </div>
-                            
-                            
-                            
-                                    <!-- <label for="exampleDataList" class="form-label">
-                                        Seleccionar estado:
-                                    </label>
-                                     <select class="form-select" aria-label="Default select example">
-                                        <option value="1">Habilitado</option>
-                                        <option value="2">Inhabilitado</option>
-                                    </select> -->
-                             
+                          
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="cancelar"> Cancelar
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" name="cancelar" id="cancelar"> Cancelar
                                         </button>
-                                        <input type="submit" class="btn btn-success" value="Guardar" id="Guardar">
+                                        <input type="submit" class="btn btn-success" value="Guardar" id="Guardar" >
                                     </div>
                                 </form>
                             </div>
+                                      <!-- formulario para agregar un producto -->
+
                             <div class="modal-body ">
-                                <form action="">
                                     <div class="form-label" style="text-align: center;">
                                         <p class="detalleCompra">Agregar datos de los productos de la venta</p>
                                     </div>
                                     <div class="bottonAgregarProducto">
-                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#Producto">
+                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" name="xAgregar" data-bs-target="#Producto">
                                             Agregar producto
                                         </button>
 
@@ -104,14 +96,14 @@
                                                         <h5 class="modal-title" id="exampleModalLabel">
                                                             Agregar producto
                                                         </h5>
-                                                        <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <button type="button" id="xEditar" class="btn-close" name="xAgregar" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="formulario">
                                                         <div class="modal-body" >
-                                                            <form action="" id="formularioParaAgregarVenta">
+                                                            <form action="" id="formularioParaAgregarProducto">
                                                                 <div class="mb-3">
                                                                     <label for="nombreGuardar" class="col-form-label"> Producto:</label>
-                                                                    <select name="" id="select" class="form-control" title="Seleccionar" required>
+                                                                    <select name="producto"  class="form-control" title="Seleccionar" >
                                                                         <option value="Seleccionar" placeholder="Seleccionar">Seleccionar</option>
                                                                         <option value="">001 camisa</option>
                                                                         <option value="">002 busos</option>
@@ -120,15 +112,15 @@
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="nombreGuardar" class="col-form-label"> Cantidad:</label>
-                                                                    <input type="number" class="form-control" id="cantidad" placeholder="ingrese la cantidad del producto" required>
+                                                                    <input type="number" class="form-control" name="cantidad" placeholder="ingrese la cantidad del producto" >
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="nombreGuardar" class="col-form-label"> Precio:</label>
-                                                                    <input type="number" class="form-control" id="precio" placeholder="ingrese el precio de la venta" required>
+                                                                    <input type="number" class="form-control" name="precio" placeholder="ingrese el precio de la venta" >
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="nombreGuardar" class="col-form-label"> Cliente:</label>
-                                                                    <select class="form-control" required id="select">
+                                                                    <select class="form-control" name="cliente">
                                                                         <option value="Seleccionar" placeholder="Seleccionar">Seleccionar Cliente</option>
                                                                         <option value="">001 Mark</option>
                                                                         <option value="">002 Jacob</option>
@@ -140,19 +132,19 @@
 
                                                                 <div class="mb-3">
                                                                     <label for="nombreGuardar" class="col-form-label"> Fecha de entrega:</label>
-                                                                    <input type="date" class="form-control" id="Fecha" required>
+                                                                    <input type="date" class="form-control" name="Fecha" >
                                                                 </div>
 
                                                                 <div class="mb-3">
                                                                     <label for="nombreGuardar" class="col-form-label"> Descripcion del producto:</label>
-                                                                    <textarea class="form-control" id="descripcion"></textarea>
+                                                                    <textarea class="form-control" name="descripcion"></textarea>
                                                                 </div>
 
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="cancelar"> Cancelar
 
                                                                     </button>
-                                                                    <input type="submit" class="btn btn-success" value="Agregar a la venta" id="Guardar">
+                                                                    <input type="submit" class="btn btn-success" value="Agregar Producto" name="GuardarProducto">
                                                                 </div>
                                                         </div>
 
@@ -169,6 +161,17 @@
                         </div>
                        
                     </div>
+                </div>
+            </div>
+
+
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-success text-white">
+                        <strong class="me-auto text-white">Colch Star</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toast-body-agregar" class="toast-body"></div>
                 </div>
             </div>
 
@@ -196,7 +199,6 @@
                     <th scope="col">Fecha</th>
                     <th scope="col">Ver detalle</th>
                     <th scope="col">Estado</th>
-                    <!-- <th scope="col">Editar</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -207,27 +209,18 @@
                     <td>Calle 78 #49b-12</td>
                     <td>12/12/2023</td>
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <!-- <td>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
-                            Editar
-                        </button>
-                    </td> -->
+                    <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
+                   
                 </tr>
                 <tr>
                     <th scope="row">02</th>
-                    <td>Lorena</td>
+                    <td>Tomas</td>
                     <td>3037985512</td>
-                    <td>Calle 92 #51a-66</td>
+                    <td>Cr45#85-102</td>
                     <td>12/12/2023</td>
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                   
                     <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
 
-                    <!-- <td>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
-                            Editar
-                        </button>
-                    </td> -->
                 </tr>
                 <tr>
                     <th scope="row">03</th>
@@ -237,12 +230,6 @@
                     <td>12/12/2023</td>
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                    
                     <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-
-                    <!-- <td>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
-                            Editar
-                        </button>
-                    </td> -->
                 </tr>
 
                 <tr>
@@ -254,14 +241,11 @@
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                   
                     <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
 
-                    <!-- <td>
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">
-                            Editar
-                        </button>
-                    </td> -->
+                    
                 </tr>
             </tbody>
         </table>
+        <!-- Modal de detalle-->
     </div>
     <div class="modal" id="Detalle">
         <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
@@ -322,98 +306,14 @@
                             </div>
 
 
-    <!-- modal de editar cliente -->
-    <div class="modal" id="modalEditar">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header modal-head-editar">
-                    <h5 class="modal-title">Editar los datos de la venta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- formulario para editar los datos de la tabla clientes -->
-                    <form action="">
-                        <div class="mb-3">
-                            <label for="nombreEditar" class="col-form-label">
-                                Nombre del cliente:
-                            </label>
-                            <input type="text" class="form-control" id="nombreEditar" placeholder="Ingresar nombre" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="apellidoEditar" class="col-form-label">
-                                Teléfono:
-                            </label>
-                            <input type="number" class="form-control" id="telefonoEditar"
-                                placeholder="Ingresar teléfono" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefonoEditar" class="col-form-label">
-                                Dirección:
-                            </label>
-                            <input type="text" class="form-control" id="direccionEditar"
-                                placeholder="Ingresar dirección" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="fechaEditar" class="col-form-label">
-                                Fecha:
-                            </label>
-                            <input type="date" class="form-control" id="fechaEditar" required />
-                        </div>
-                        <!-- <div class="mb-3">
-                            <label for="detalleEditar" class="form-label">
-                                Editar detalle
-                            </label>
-                            <textarea class="form-control" id="detalleEditar" rows="3"></textarea>
-                        </div> -->
+    
 
-                        <div class="form-label" style="text-align: center;">
-                            <p class="detalleCompra">Editar datos de los productos de la venta</p>
-                        </div>
-                        <div class="subFormulario">
-                        
-                            <div class="mb-3">
-                                <label for="nombreVentaEditar" class="col-form-label">Nombre:</label>
-                                <input type="number" class="form-control" id="nombreVentaEditar" placeholder="Ingresar nombre">
-                            </div>
-                            <div class="mb-3">
-                                <label for="cantidaVentadEditar" class="col-form-label">Cantidad:</label>
-                                <input type="number" class="form-control" id="cantidaVentadEditar" placeholder="Ingresar cantidad">
-                            </div>
-                        </div>
-                        <div class="subFormulario">
-                            <div class="mb-3">
-                                <label for="precioVentaEditar" class="col-form-label">Precio:</label>
-                                <input type="number" class="form-control" id="precioVentaEditar"
-                                    placeholder="Ingresar precio unitario del producto">
-                            </div>
-                            <div class="mb-3">
-                                <label for="totalVentaEditar" class="col-form-label">Precio total:</label>
-                                <input type="number" class="form-control" id="totalVentaEditar" placeholder="" value="100.000" readonly>
-                            </div>
-                        </div>
-                        <div class="bottonAgregarProducto">
-                            <div> <button type="button" class="btn btn-info">Agregar producto</button> </div>
-                        </div>
+               
+    <script src="/js/funcionalidadesVentas/cambiarEstado.js"></script>
+    <script src="/js/funcionalidadesVentas/validacionVentas.js"></script>
+    <script src="/js/funcionalidadesVentas/ValidarProducto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-                        <label for="exampleDataList" class="form-label">
-                            Seleccionar estado:
-                        </label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="1">Habilitar</option>
-                            <option value="2">Inhabilitar</option>
-                        </select>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                Cancelar
-                            </button>
-                            <input type="submit" class="btn btn-success" value="Guardar" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html

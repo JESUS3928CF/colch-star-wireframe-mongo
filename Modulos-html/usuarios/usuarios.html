@@ -58,9 +58,7 @@
                                 </div>
                                 <div class="mb-3" name="divTelefono">
                                     <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
-                                    <input type="number" class="form-control" id="telefonoGuardar"
-                                    name="telefonoGuardar"
-                                        placeholder="Ingresar teléfono" >
+                                    <input type="text" class="form-control" id="telefonoGuardar" name="telefonoGuardar" placeholder="Ingresar teléfono" >
                                 </div>
                                 <div class="mb-3" name="divEmail">
                                     <label for="emailGuardar" class="col-form-label">Email:</label>
@@ -70,7 +68,7 @@
                                 
                                 
                                 <div class="mb-3" name="divContraseña">
-                                    <label for="contraseñaGuardar" class="col-form-label">Contraseña:</label>
+                                    <label for="contraseñaGuardar" class="col-form-label" >Contraseña:</label>
                                     <input type="password" class="form-control" id="contraseñaGuardar" name="contraseñaGuardar"
                                         placeholder="Ingresar contraseña">
                                 </div>
@@ -101,15 +99,7 @@
             </div>
 
             <!--/ Mensaje de agregar usuario correctamente   -->
-            <div class="toast-container position-fixed top-0 end-0 p-3">
-                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header bg-success text-white">
-                        <strong class="me-auto text-white">Colch Star</strong>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div id="toast-body-agregar" class="toast-body"></div>
-                </div>
-            </div>
+            
 
             <!--! botón de buscar -->
 
@@ -208,7 +198,7 @@
                         </div>
                         <div class="mb-3" name="divTelefono">
                             <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="number" class="form-control" id="telefonoEditar" name="telefonoEditar"
+                            <input type="text" class="form-control" id="telefonoEditar" name="telefonoEditar"
                                 placeholder="Ingresar teléfono">
                         </div>
                         <div class="mb-3" name="divEmail">
@@ -253,22 +243,14 @@
         </div>
     </div>
 
-    <!--/ Mensaje de Editar cliente correctamente   -->
-    <div class="toast-container position-fixed top-0 end-0 p-3">
-        <div id="toastEditar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header bg-info text-white">
-                <strong class="me-auto text-black">Colch Star</strong>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div id="toast-body-editar" class="toast-body"></div>
-        </div>
-    </div>
 
 
 
     <script src="../../js/funcionalidadesUsuarios/validacionUsuario.js"></script>
     <script src="../../js/funcionalidadesUsuarios/validacionUsuarioEditar.js"></script>
     <script src="../../js/funcionalidadesUsuarios/cambiarEstado.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

@@ -1,76 +1,106 @@
 (() => {
-    const formulario = document.querySelector('#formularioagregarrol');
+    const formulario = document.querySelector('#formularioParaAgregarVenta');
 
 
     const submit = document.querySelector(
-        '#formularioagregarrol input[type="submit"]'
+        '#formularioParaAgregarVenta input[type="submit"]'
     );
 
-    const cancelar = document.querySelector('#guardarCancelado');
+   
+
+    const cancelar = document.querySelector('#cancelar');
     const atras = document.querySelector('#xAgregar');
 
     window.addEventListener('load', () => {
-        submit.addEventListener('click', crearRol);
+        submit.addEventListener('click', crearVenta);
         cancelar.addEventListener('click', recetearFormulario);
         atras.addEventListener('click', recetearFormulario);
     });
 
+  
     function recetearFormulario(e){
         e.preventDefault();
         formulario.reset();
     }
 
-    function crearRol(e) {
+    function crearVenta(e) {
         e.preventDefault();
 
         /// Validar el formulario
-        validarRol();
+        validarVenta();
     }
 
-    function validarRol() {
+
+    function validarVenta() {
         //* Campos a validar
 
         const nombre = document.querySelector(
-            '#formularioagregarrol input[name="nombreGuardar"]'
+            '#formularioParaAgregarVenta input[name="nombreGuardar"]'
         );
+
+        const telefono = document.querySelector(
+            '#formularioParaAgregarVenta input[name="telefonoGuardar"]'
+        );
+
+        const direccion = document.querySelector(
+            '#formularioParaAgregarVenta input[name="direccionGuardar"]'
+        );
+
+       
+
 
         //- Expresiones Regulares
         const number = /^\D*$/;
-        const regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s][A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
-
-        //* Contenedores del formularios
-        const divNombre = document.querySelector(
-            '#formularioagregarrol div[name="divNombre"]'
-        );
-        
+        const text = /^[^a-zA-Z]*$/;
+         
         /// Lógica de validación
 
         let isValidado = true;
 
         //* Validaciones para el nombre
-        if (nombre.value == '') {
+
+        if(nombre.value=='' && telefono.value=="" && direccion.value==""){
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'El nombre es obligatorio',
+                text: 'Los campos son obligatorios',
                  })
-             isValidado = false;
+                   isValidado = false 
+        
 
-        } else if (!number.test(nombre.value)) {
+        }else  if (nombre.value == '') {
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
                 text: 'El nombre no puede contener números',
-                 })
-            isValidado = false;
-        }else if (!regex.test(nombre.value)){
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'El nombre no puede ser un espacio',
-                 })
+              })
+              isValidado = false
+        
+           
+        } else if (!number.test(nombre.value)) {
+            imprimirAlerta('El nombre no puede contener números', nombre),
+                'Nombre';
             isValidado = false;
         }
+
+        //* Validaciones para teléfono
+        if (telefono.value == '') {
+            imprimirAlerta('El teléfono es obligatorio',telefono,'Telefono');
+            isValidado = false;
+        } else if (!text.test(telefono.value)) {
+            imprimirAlerta('El teléfono no puede contener letras',telefono,'Telefono');
+            isValidado = false;
+        }
+
+        if(direccion.value==''){
+            imprimirAlerta('La direccion es obligatoria',direccion);
+        }
+
+
+
+       
+      
+        
 
         if (isValidado) {
             //* Serrando el modal
@@ -81,7 +111,7 @@
 
             formulario.reset();
 
-            mostrarToast('Rol agregado correctamente');
+            mostrarToast('Venta agregada correctamente');
         }
     }
 
@@ -103,6 +133,7 @@
                 'text-center',
                 'border',
                 `alerta${clase}`
+                
             );
 
             divMensaje.classList.add(

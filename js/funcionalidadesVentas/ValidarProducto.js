@@ -1,87 +1,115 @@
 (() => {
-    const formulario = document.querySelector('#formularioagregarrol');
+    const formulario = document.querySelector('#formularioParaAgregarProducto');
 
 
     const submit = document.querySelector(
-        '#formularioagregarrol input[type="submit"]'
+        '#formularioParaAgregarProducto input[type="submit"]'
     );
 
-    const cancelar = document.querySelector('#guardarCancelado');
+   
+
+    const cancelar = document.querySelector('#cancelar');
     const atras = document.querySelector('#xAgregar');
 
     window.addEventListener('load', () => {
-        submit.addEventListener('click', crearRol);
+        submit.addEventListener('click', crearProducto);
         cancelar.addEventListener('click', recetearFormulario);
         atras.addEventListener('click', recetearFormulario);
     });
+
+   
 
     function recetearFormulario(e){
         e.preventDefault();
         formulario.reset();
     }
 
-    function crearRol(e) {
+    function crearProducto(e) {
         e.preventDefault();
 
         /// Validar el formulario
-        validarRol();
+        validarProducto();
     }
 
-    function validarRol() {
+
+    function validarProducto() {
         //* Campos a validar
 
-        const nombre = document.querySelector(
-            '#formularioagregarrol input[name="nombreGuardar"]'
+        const producto = document.querySelector(
+            '#formularioParaAgregarProducto select[name="producto"]'
+        );
+
+        const Cantidad = document.querySelector(
+            '#formularioParaAgregarProducto input[name="cantidad"]'
+        );
+
+        const precio=document.querySelector(
+            '#formularioParaAgregarProducto input[name="precio"]'
+        );
+
+        const cliente = document.querySelector(
+            '#formularioParaAgregarProducto select[name="cliente"]'
+        );
+
+        const fecha =document.querySelector(
+            '#formularioParaAgregarProducto input[name="Fecha"]'
+        );
+
+        const descripcion = document.querySelector(
+            '#formularioParaAgregarProducto textarea[name="descripcion"]'
         );
 
         //- Expresiones Regulares
         const number = /^\D*$/;
-        const regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s][A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
-
-        //* Contenedores del formularios
-        const divNombre = document.querySelector(
-            '#formularioagregarrol div[name="divNombre"]'
-        );
-        
+        const text = /^[^a-zA-Z]*$/;
+         
         /// Lógica de validación
 
         let isValidado = true;
 
         //* Validaciones para el nombre
-        if (nombre.value == '') {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'El nombre es obligatorio',
-                 })
-             isValidado = false;
+       
 
-        } else if (!number.test(nombre.value)) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'El nombre no puede contener números',
-                 })
+        //* Validaciones para teléfono
+        if (Cantidad.value == '') {
+            imprimirAlerta('La cantidad  es obligatoria',Cantidad);
             isValidado = false;
-        }else if (!regex.test(nombre.value)){
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'El nombre no puede ser un espacio',
-                 })
+        } else if (!text.test(Cantidad.value)) {
+            imprimirAlerta('La cantidad no puede contener letras',Cantidad,'Telefono');
             isValidado = false;
         }
+
+        if (precio.value == '') {
+            imprimirAlerta('El precio es obligatoria',precio);
+            isValidado = false;
+        } else if (!text.test(precio.value)) {
+            imprimirAlerta('El precio no puede contener letras',precio,'Telefono');
+            isValidado = false;
+        }
+
+       
+        
+        if (descripcion.value == '') {
+            imprimirAlerta('la descripcion es obligatorio', descripcion);
+            isValidado = false;
+        }else if (!number.test(descripcion.value)) {
+            imprimirAlerta('la descripcion no puede contener números', descripcion),
+                'Nombre';
+            isValidado = false;
+        }
+
+
 
         if (isValidado) {
             //* Serrando el modal
             const modalBootstrap = bootstrap.Modal.getInstance(
-                document.querySelector('#myModal')
+                document.querySelector('#Producto')
             );
             modalBootstrap.hide();
 
             formulario.reset();
 
-            mostrarToast('Rol agregado correctamente');
+            mostrarToast('Venta agregada correctamente');
         }
     }
 
@@ -103,6 +131,7 @@
                 'text-center',
                 'border',
                 `alerta${clase}`
+                
             );
 
             divMensaje.classList.add(

@@ -34,6 +34,10 @@
             '#formularioagregarusuario input[name="nombreGuardar"]'
         );
 
+        console.log(nombre.value);
+
+
+
         const apellido = document.querySelector(
             '#formularioagregarusuario input[name="apellidoGuardar"]'
         );
@@ -62,141 +66,160 @@
 
         //- Expresiones Regulares
         const number = /^\D*$/;
+        const regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s][A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
         const text = /^[^a-zA-Z]*$/;
+
         const email_val =
             /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-        //* Contenedores del formularios
-        const divNombre = document.querySelector(
-            '#formularioagregarusuario div[name="divNombre"]'
-        );
-
-        const divApellido = document.querySelector(
-            '#formularioagregarusuario div[name="divApellido"]'
-        );
-
-        const divTelefono = document.querySelector(
-            '#formularioagregarusuario div[name="divTelefono"]'
-        );
-
-        const divEmail = document.querySelector(
-            '#formularioagregarusuario div[name="divEmail"]'
-        );
-
-        const divContraseña = document.querySelector(
-            '#formularioagregarusuario div[name="divContraseña"]'
-        );
-
-        const divConfirmarContraseña = document.querySelector(
-            '#formularioagregarusuario div[name="divConfirmarContraseña"]'
-        );
-
-        const divselectRol = document.querySelector(
-            '#formularioagregarusuario div[name="divselectRol"]'
-        );
-        
+    
+       
         /// Lógica de validación
-
         let isValidado = true;
 
-        //* Validaciones para el nombre
-        if (nombre.value == '') {
-            imprimirAlerta('El nombre es obligatorio', divNombre, 'Nombre');
-            isValidado = false;
+        //* Validaciones para todos los campos
+        if(nombre.value=='' && apellido.value=="" && telefono.value=="" && email.value=="" && contraseña.value=="" && confirmarContraseña.value=="" && selectedOption===""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Todos los campos son obligatorios',
+                 })
+                   isValidado = false 
+
+        //* Validaciones para el  campo nombre
+        }else if (nombre.value == '') {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El nombre es obligatorio',
+                 })
+                   isValidado = false 
         } else if (!number.test(nombre.value)) {
-            imprimirAlerta('El nombre no puede contener números', divNombre),
-                'Nombre';
-            isValidado = false;
-        }
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El nombre no puede contener números',
+                 })
+            isValidado = false; 
+            
+        }else if (!nombre.value.trimStart()){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El nombre no puede ser un espacio',
+                     })
+                isValidado = false;      
 
-        //* Validaciones para teléfono
-        if (telefono.value == '') {
-            imprimirAlerta(
-                'El teléfono es obligatorio',
-                divTelefono,
-                'Telefono'
-            );
-            isValidado = false;
-        } else if (!text.test(telefono.value)) {
-            imprimirAlerta(
-                'El teléfono no puede contener letras',
-                divTelefono,
-                'Telefono'
-            );
-            isValidado = false;
-        }
         //* Validaciones para el apellido
-        if (apellido.value == '') {
-            imprimirAlerta(
-                'El apellido es obligatorio',
-                divApellido,
-                'Apellido'
-            );
+        
+        }else if (apellido.value == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El apellido es obligatorio',
+                 })
             isValidado = false;
-        }else if (!number.test(apellido.value)) {
-            imprimirAlerta(
-                'El apellido no puede contener números',
-                divApellido,
-                'Apellido'
-            );
+        }else if (!number.test(apellido.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El apellido no puede contener números',
+                 })
             isValidado = false;
-        }
+        }else if (!apellido.value.trimStart()){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El Apellido  no puede ser un espacio',
+                     })
+                isValidado = false;        
+            
+        //* Validaciones para teléfono
+        }else if (telefono.value == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El teléfono es obligatorio',
+                 })
+            isValidado = false;
 
+        } else if (!text.test(telefono.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El teléfono no pueden ser letras',
+                 })
+            isValidado = false;
+        }else if (!telefono.value.trimStart()){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El telefono no puede ser un espacio',
+                     })
+                isValidado = false;        
+            
         //* Validaciones para el gmail
-        if (email.value == '') {
-            imprimirAlerta(
-                'El email es obligatorio',
-                divEmail,
-                'Email'
-            );
+        } else if (email.value == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El email es obligatorio',
+                 })
             isValidado = false;
         }else if (!email_val.test(email.value) && email.value != '') {
-            imprimirAlerta(
-                'El formato de gmail es incorrecto',
-                divEmail,
-                'Email'
-            );
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El formato de gmail es incorrecto',
+                 })
             isValidado = false;
-        }
+        }else if (!email.value.trimStart()){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El email no puede ser un espacio',
+                     })
+                isValidado = false;        
 
-        //* Validaciones para la contraseña
-        if (contraseña.value == '') {
-            imprimirAlerta(
-                'La contraseña es obligatoria',
-                divContraseña,
-                'Contraseña'
-            );
+          //* Validaciones para la contraseña
+        }else if (contraseña.value == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La contraseña es obligatoria',
+                 })
             isValidado = false;
-        }
 
         //* Validaciones para la confirmacion de contraseña
-        if (confirmarContraseña.value == '') {
-            imprimirAlerta(
-                'La contraseña es obligatoria',
-                divConfirmarContraseña,
-                'Confirmar'
-            );
+        } else  if (confirmarContraseña.value == '') {
+             Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Confirma la contraseña',
+              })
+            isValidado = false;
+            
+
+        } else if(contraseña.value!=confirmarContraseña.value){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Las contraseñas no coinciden',
+              })
+            isValidado = false; 
+
+            //*Validacion de rol
+        }else  if (selectedOption === '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Seleccione un rol',
+              })
             isValidado = false; 
         }
 
-        else if(contraseña.value!=confirmarContraseña.value){
-            imprimirAlerta(
-                'Las contraseñas no coinciden',
-                divConfirmarContraseña,
-                'Confirmar'
-            );
-            isValidado = false; 
-        }
 
-        if (selectedOption === '') {
-            imprimirAlerta(
-                'Seleccione un rol',
-                divselectRol,
-                'Roles'
-            );
-            isValidado = false; 
-        }
-
+        
         if (isValidado) {
             //* Serrando el modal
             const modalBootstrap = bootstrap.Modal.getInstance(
@@ -206,45 +229,17 @@
 
             formulario.reset();
 
-            mostrarToast('Usuario agregado correctamente');
+            
+
+            mostrarToast(  Swal.fire(
+                'Usuario agregado correctamente',
+                '',
+                'success'
+              ));
         }
     }
 
-    function imprimirAlerta(mensaje, lugar, clase) {
-        /// Verificar que no exista la alerta
-        const alert = document.querySelector(`.alerta${clase}`);
-
-        if (!alert) {
-            //? Crear alerta
-            const divMensaje = document.createElement('div');
-
-            divMensaje.classList.add(
-                // 'px-2',
-                'py-1',
-                'rounded',
-                'max-w-lg',
-                'mx-auto',
-                'mt-2',
-                'text-center',
-                'border',
-                `alerta${clase}`
-            );
-
-            divMensaje.classList.add(
-                'bg-red-100',
-                'border-red-400',
-                'text-red-700'
-            );
-
-            divMensaje.textContent = mensaje;
-
-            lugar.parentNode.insertBefore(divMensaje, lugar.nextSibling);
-
-            setTimeout(() => {
-                divMensaje.remove();
-            }, 4500);
-        }
-    }
+    
 
     function mostrarToast(mensaje) {
         const toastDiv = document.querySelector('#toastAgregar'); //* Seleccionamos el toast que esta en nuestro HTML
@@ -255,4 +250,16 @@
         /// Mostrando el mensaje
         toast.show();
     }
+
+    
+// }else if (!nombre.value.trimStart()){
+//     Swal.fire({
+//         icon: 'error',
+//         title: 'Error',
+//         text: 'El nombre no puede ser un espacio',
+//          })
+//     isValidado = false;    
+
+
+
 })();
