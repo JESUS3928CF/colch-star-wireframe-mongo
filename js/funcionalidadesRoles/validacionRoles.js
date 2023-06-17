@@ -36,7 +36,6 @@
 
         //- Expresiones Regulares
         const number = /^\D*$/;
-        const regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s][A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
 
         //* Contenedores del formularios
 
@@ -61,14 +60,14 @@
                 text: 'El nombre no puede contener números',
                  })
             isValidado = false;
-        }else if (!regex.test(nombre.value)){
+        }else if (!nombre.value.trimStart()){
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
                 text: 'El nombre no puede ser un espacio',
                  })
-            isValidado = false;
-        }
+            isValidado = false;  
+    }
 
         if (isValidado) {
             //* Serrando el modal
