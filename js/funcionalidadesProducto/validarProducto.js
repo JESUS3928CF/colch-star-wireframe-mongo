@@ -51,13 +51,8 @@
 
         //- Expresiones Regulares
         const number = /^\D*$/;
-        const regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s][A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
         const text = /^[^a-zA-Z]*$/;
-
-        const email_val =
-            /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-
+        const signo = /[|°!"#$%&/()=?¿]/;
 
         /// Lógica de validación
 
@@ -89,51 +84,154 @@
             })
             isValidado = false;
 
+        }else if (!producto.value.trimStart()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El producto no puede ser un espacio',
+            })
+            isValidado = false;
+        }else if (signo.test(producto.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el Producto',
+                 })
+            isValidado = false;    
+
             //validacion de cantidad
         } else if (cantidad.value == '') {
 
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'la cantidad es obligatorio',
+                text: 'La cantidad es obligatorio',
             })
             isValidado = false;
 
-        } else if (!nombre.value.trimStart()) {
+        }else if (!text.test(cantidad.value)){
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'la cantidad no puede ser un espacio',
+                text: 'La cantidad no pueden contener letras'
             })
-            isValidado = false;
+            isValidado=false
+
+        }else if (!cantidad.value.trimStart()){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text:'La cantidad no puede ser un campo vacio'
+            });
+            isValidado=false
+
+        }else if (signo.test(cantidad.value)){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text: 'No se puede poner signos en la cantidad'
+            })
+            isValidado=false
+
+        
             //validacion de precio
         } else if (precio.value == '') {
 
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'el precio  es obligatorio',
+                text: 'El precio  es obligatorio',
             })
             isValidado = false;
+        }else if (!text.test(precio.value)){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text: 'El precio no puede contener letras'
+            })
+            isValidado=false
+        }else if (!precio.value.trimStart()){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text:'El precio no puede ser un campo vacio'
+            });
+            isValidado=false
+
+
+        }else if (signo.test(precio.value)){
+            Swal.fire({
+                icon:'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el precio'
+            })
+
+            isValidado=false
 
             //validacion de talla
 
         } else if (talla.value == '') {
-
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'la talla es obligatorio',
+                text: 'La talla es obligatorio',
+            })
+            isValidado = false
+
+        }else if(!number.test(talla.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La talla no puede tener numero',
+            })
+            isValidado = false
+
+        }else if (!talla.value.trimStart()){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La talla no puede ser un campo vacio',
+            })
+            isValidado = false
+
+        }else if(signo.test(talla.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en la talla',
             })
             isValidado = false
         }
+
         //validacion tela
         else if (tela.value == '') {
 
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'la tela es obligatorio',
+                text: 'La tela es obligatorio',
+            })
+            isValidado = false
+        }else if (!number.test(tela.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La tela no puede tener numeros',
+            })
+            isValidado = false
+        }else if (!tela.value.trimStart()){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La tela no puede ser un campo vacio',
+            })
+            isValidado = false
+
+        }else if(signo.test(tela.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en la tela',
             })
             isValidado = false
         }
@@ -154,7 +252,7 @@
 
 
             mostrarToast(Swal.fire(
-                'Usuario agregado correctamente',
+                'Producto agregado correctamente',
                 '',
                 'success'
             ));

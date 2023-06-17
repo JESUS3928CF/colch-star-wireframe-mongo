@@ -36,10 +36,7 @@
 
         //- Expresiones Regulares
         const number = /^\D*$/;
-
-        //* Contenedores del formularios
-
-        
+        var signo = /[|°!"#$%&/()=?¿]/;
         /// Lógica de validación
 
         let isValidado = true;
@@ -67,7 +64,14 @@
                 text: 'El nombre no puede ser un espacio',
                  })
             isValidado = false;  
-    }
+        }else if (signo.test(nombre.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el nombre',
+                 })
+            isValidado = false;
+        }
 
         if (isValidado) {
             //* Serrando el modal

@@ -62,9 +62,8 @@
 
         //- Expresiones Regulares
         const number = /^\D*$/;
-        const regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s][A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
-        const text = /^[^a-zA-Z]*$/;
         const tel = /^\d+$/
+        var signo = /[|°!"#$%&/()=?¿]/;
         const email_val =
             /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
@@ -92,7 +91,7 @@
                 title: 'Error',
                 text: 'El nombre es obligatorio',
                  })
-                   isValidado = false 
+                   isValidado = false        
         } else if (!number.test(nombre.value)) {
             Swal.fire({
                 icon: 'error',
@@ -107,7 +106,15 @@
                     title: 'Error',
                     text: 'El nombre no puede ser un espacio',
                      })
-                isValidado = false;        
+                isValidado = false;
+
+        }else if (signo.test(nombre.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el nombre',
+                 })
+            isValidado = false;        
        
         //* Validaciones para el apellido
         }else if (apellido.value == '') {
@@ -130,7 +137,15 @@
                     title: 'Error',
                     text: 'El nombre no puede ser un espacio',
                      })
-                isValidado = false;             
+                isValidado = false;  
+
+        }else if (signo.test(apellido.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el apellido',
+                 })
+            isValidado = false; 
             
         //* Validaciones para teléfono
         }else if (telefono.value == '') {
@@ -155,10 +170,14 @@
                     title: 'Error',
                     text: 'El nombre no puede ser un espacio',
                      })
-                isValidado = false;        
-
-
-
+                isValidado = false;
+        }else if (signo.test(telefono.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el telefono',
+                 })
+            isValidado = false;
         //* Validaciones para el email
         } else if (email.value == '') {
             Swal.fire({
