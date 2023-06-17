@@ -51,11 +51,14 @@
 
         //- Expresiones Regulares
         const number = /^\D*$/;
+        const regex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s][A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
         const text = /^[^a-zA-Z]*$/;
+
         const email_val =
             /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-
+    
+       
+        
         /// Lógica de validación
 
         let isValidado = true;
@@ -170,3 +173,4 @@
         toast.show();
     }
 })();
+
