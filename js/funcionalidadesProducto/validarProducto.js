@@ -56,9 +56,9 @@
 
         const email_val =
             /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    
-       
-        
+
+
+
         /// Lógica de validación
 
         let isValidado = true;
@@ -107,7 +107,7 @@
             })
             isValidado = false;
             //validacion de precio
-        }else if (precio.value == '') {
+        } else if (precio.value == '') {
 
             Swal.fire({
                 icon: 'error',
@@ -151,13 +151,13 @@
 
             formulario.reset();
 
-            
 
-            mostrarToast(  Swal.fire(
+
+            mostrarToast(Swal.fire(
                 'Usuario agregado correctamente',
                 '',
                 'success'
-              ));
+            ));
         }
     }
 
