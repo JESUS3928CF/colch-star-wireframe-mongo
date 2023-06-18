@@ -1,13 +1,12 @@
 (() => {
-    const formulario = document.querySelector('#formularioEditarPrendas');
+    const formulario = document.querySelector('#formularioAgregarPrenda');
 
     const submit = document.querySelector(
-        '#formularioEditarPrendas input[type="submit"]'
+        '#formularioAgregarPrenda input[type="submit"]'
     );
 
-    const cancelar = document.querySelector('#editarCancelado'); 
-
-    const atras = document.querySelector('#xEditar');
+    const cancelar = document.querySelector('#guardarCancelado');
+    const atras = document.querySelector('#xAgregar');
 
     window.addEventListener('load', () => {
         submit.addEventListener('click', crearClientes);
@@ -31,115 +30,215 @@
         //* Campos a validar
 
         const producto = document.querySelector(
-            '#formularioEditarPrendas input[name="productoEditar"]'
+            '#formularioAgregarPrenda input[name="productoGuardar"]'
         );
 
         const cantidad = document.querySelector(
-            '#formularioEditarPrendas input[name="cantidadEditar"]'
+            '#formularioAgregarPrenda input[name="cantidadGuardar"]'
         );
 
         const precio = document.querySelector(
-            '#formularioEditarPrendas input[name="precioEditar"]'
+            '#formularioAgregarPrenda input[name="precioGuardar"]'
         );
 
         const talla = document.querySelector(
-            '#formularioEditarPrendas input[name="tallaEditar"]'
+            '#formularioAgregarPrenda input[name="tallaGuardar"]'
         );
 
         const tela = document.querySelector(
-            '#formularioEditarPrendas input[name="telaEditar"]'
+            '#formularioAgregarPrenda input[name="telaGuardar"]'
         );
-
-        
 
         //- Expresiones Regulares
         const number = /^\D*$/;
         const text = /^[^a-zA-Z]*$/;
-        const email_val =
-            /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-        //* Contenedores del formularios
-        const divProducto = document.querySelector(
-            '#formularioEditarPrendas div[name="divProducto"]'
-        );
-
-        const divCantidad = document.querySelector(
-            '#formularioEditarPrendas div[name="divCantidad"]'
-        );
-        const divPrecio = document.querySelector(
-            '#formularioEditarPrendas div[name="divPrecio"]'
-        );
-
-        const divTalla = document.querySelector(
-            '#formularioEditarPrendas div[name="divTalla"]'
-        );
-        const divTela = document.querySelector(
-            '#formularioEditarPrendas div[name="divTela"]'
-        );
-
+        const signo = /[|°!"#$%&/()=?¿]/;
 
         /// Lógica de validación
 
         let isValidado = true;
 
-        //* Validaciones para el producto
-        if (producto.value == '') {
-            imprimirAlerta('Este campo es obligatorio', divProducto, 'Producto');
-            isValidado = false;
+        //* Validaciones para todos los campos
+        if (producto.value == '' && cantidad.value == "" && precio.value == "" && talla.value == "" && tela.value == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Todos los campos son obligatorios',
+            })
+            isValidado = false
+
+            //* Validaciones para producto
+        } else if (producto.value == '') {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El producto es obligatorio',
+            })
+            isValidado = false
         } else if (!number.test(producto.value)) {
-            imprimirAlerta('Este Campo no puede contener números', divProducto,
-                'Nombre');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El producto no puede contener números',
+            })
             isValidado = false;
-        }
 
-        //* Validaciones para la cantidad
-        if (cantidad.value == '') {
-            imprimirAlerta(
-                'Este campo es obligatorio',
-                divCantidad,
-                'Cantidad'
-            );
+        }else if (!producto.value.trimStart()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El producto no puede ser un espacio',
+            })
             isValidado = false;
-        } else if (!text.test(cantidad.value)) {
-            imprimirAlerta(
-                'Este campo no puede contener letras',
-                divCantidad,
-                'Cantidad'
-            );
-            isValidado = false;
-        }
-        //* Validaciones para el precio
-        if (precio.value == '') {
-            imprimirAlerta(
-                'Este campo es obligatorio',
-                divPrecio,
-                'Precio'
-            );
-            isValidado = false;
-        } else if (!text.test(precio.value)) {
-            imprimirAlerta(
-                'Este campo no puede contener letras',
-                divPrecio,
-                'Precio'
-            );
-            isValidado = false;
-        }
-        //* Validaciones para  la talla
-        if (talla.value == '') {
-            imprimirAlerta('Este campo es obligatorio', divTalla, 'Talla');
-            isValidado = false;
-        }
+        }else if (signo.test(producto.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el Producto',
+                 })
+            isValidado = false;    
 
-        //* Validaciones para la tela
-        if (tela.value == '') {
-            imprimirAlerta('Este campo es obligatorio', divTela, 'Tela');
+            //validacion de cantidad
+        } else if (cantidad.value == '') {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La cantidad es obligatorio',
+            })
             isValidado = false;
-        } else if (!number.test(tela.value)) {
-            imprimirAlerta('Este Campo no puede contener números', divTela,
-                'Tela');
-            isValidado = false;
-        }
+
+        }else if (!text.test(cantidad.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La cantidad no pueden contener letras'
+            })
+            isValidado=false
+
+        }else if (!cantidad.value.trimStart()){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text:'La cantidad no puede ser un campo vacio'
+            });
+            isValidado=false
+
+        }else if (signo.test(cantidad.value)){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text: 'No se puede poner signos en la cantidad'
+            })
+            isValidado=false
+
         
+            //validacion de precio
+        } else if (precio.value == '') {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El precio  es obligatorio',
+            })
+            isValidado = false;
+        }else if (!text.test(precio.value)){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text: 'El precio no puede contener letras'
+            })
+            isValidado=false
+        }else if (!precio.value.trimStart()){
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text:'El precio no puede ser un campo vacio'
+            });
+            isValidado=false
+
+
+        }else if (signo.test(precio.value)){
+            Swal.fire({
+                icon:'error',
+                title: 'Error',
+                text: 'No se puede poner signos en el precio'
+            })
+
+            isValidado=false
+
+            //validacion de talla
+
+        } else if (talla.value == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La talla es obligatorio',
+            })
+            isValidado = false
+
+        }else if(!number.test(talla.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La talla no puede tener numero',
+            })
+            isValidado = false
+
+        }else if (!talla.value.trimStart()){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La talla no puede ser un campo vacio',
+            })
+            isValidado = false
+
+        }else if(signo.test(talla.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en la talla',
+            })
+            isValidado = false
+        }
+
+        //validacion tela
+        else if (tela.value == '') {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La tela es obligatorio',
+            })
+            isValidado = false
+        }else if (!number.test(tela.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La tela no puede tener numeros',
+            })
+            isValidado = false
+        }else if (!tela.value.trimStart()){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La tela no puede ser un campo vacio',
+            })
+            isValidado = false
+
+        }else if(signo.test(tela.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'No se puede poner signos en la tela',
+            })
+            isValidado = false
+        }
+
+
+
+
 
         if (isValidado) {
             //* Serrando el modal
@@ -150,49 +249,21 @@
 
             formulario.reset();
 
-            mostrarToast('Prenda editado correctamente');
+
+
+            mostrarToast(Swal.fire(
+                'Producto agregado correctamente',
+                '',
+                'success'
+            ));
         }
     }
 
-    function imprimirAlerta(mensaje, lugar, clase) {
-        /// Verificar que no exista la alerta
-        const alert = document.querySelector(`.alerta${clase}`);
 
-        if (!alert) {
-            //? Crear alerta
-            const divMensaje = document.createElement('div');
-
-            divMensaje.classList.add(
-                // 'px-2',
-                'py-1',
-                'rounded',
-                'max-w-lg',
-                'mx-auto',
-                'mt-2',
-                'text-center',
-                'border',
-                `alerta${clase}`
-            );
-
-            divMensaje.classList.add(
-                'bg-red-100',
-                'border-red-400',
-                'text-red-700'
-            );
-
-            divMensaje.textContent = mensaje;
-
-            lugar.parentNode.insertBefore( divMensaje, lugar.nextSibling);
-
-            setTimeout(() => {
-                divMensaje.remove();
-            }, 4500);
-        }
-    }
 
     function mostrarToast(mensaje) {
-        const toastDiv = document.querySelector('#toastEditar'); //* Seleccionamos el toast que esta en nuestro HTML
-        const toastBody = document.querySelector('#toast-body-editar'); //* Y también el body para agregar contenido a nuestro toast
+        const toastDiv = document.querySelector('#toastAgregar'); //* Seleccionamos el toast que esta en nuestro HTML
+        const toastBody = document.querySelector('#toast-body-agregar'); //* Y también el body para agregar contenido a nuestro toast
         /// Creamos la instancia
         const toast = new bootstrap.Toast(toastDiv);
         toastBody.textContent = mensaje;
@@ -200,3 +271,4 @@
         toast.show();
     }
 })();
+

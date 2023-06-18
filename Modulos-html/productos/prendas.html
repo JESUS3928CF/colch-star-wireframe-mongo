@@ -38,7 +38,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">
                                 Agregar prenda
                             </h5>
-                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal"
+                            <button type="button" id="xAgregar" name="xAgregar" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
                         <div class="formulario">
@@ -51,7 +51,7 @@
                                     <div class="mb-3" name="divPrenda">
                                         <label for="productoGuardar" class="col-form-label">Prenda: </label>
                                         <input type="text" class="form-control" name="prendaGuardar"
-                                            id="productoGuardarr" placeholder="Ingresar Prenda" />
+                                            id="prendaGuardar" placeholder="Ingresar Prenda" />
                                     </div>
 
                                     <div class="subFormulario">
@@ -71,14 +71,14 @@
                                                     <div class="row mb-3" name="divProveedor">
                                                         <label for=""> Proveedor: </label>
                                                         <input type="text" class="form-control" name="proveedorGuardar"
-                                                            id="productoGuardarr" placeholder="Ingresar el proveedor" />
+                                                            id="proveedorGuardar" placeholder="Ingresar el proveedor" />
                                                     </div>
 
                                                     <div class="row mb-3" name="divCantidad">
                                                         <label for="productoGuardar"
                                                             class="col-form-label">Cantidad:</label>
                                                         <input type="text" class="form-control" name="cantidadGuardar"
-                                                            id="productoGuardarr" placeholder="cantidad" />
+                                                            id="cantidadGuardar" placeholder="cantidad" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -226,11 +226,11 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" id="guardarCancelado" class="btn btn-danger"
+                                    <button type="button" id="guardarCancelado" name="guardarCancelado" class="btn btn-danger"
                                         data-bs-dismiss="modal">
                                         Cancelar
                                     </button>
-                                    <input type="submit" class="btn btn-success" value="Guardar" />
+                                    <input type="submit" class="btn btn-success" name="guardarPrenda" value="Guardar" />
                                 </div>
                                 </form>
                             </div>
@@ -261,7 +261,7 @@
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
 
-            <!-- botón para mostrar la lista de siseños  -->
+            <!-- botón para mostrar la lista de diseños  -->
             <a href="./productos.html"><button type="button" class="btn btn-secondary">Atrás</button></a>
 
 
@@ -562,6 +562,9 @@
     <script src="../../js/funcionalidadesProducto/cambiarEstado.js"></script>
     <script src="../../js/funcionalidadesPrendas/validarPrendas.js"></script>
     <script src="../../js/funcionalidadesPrendas/validarPrendasEditar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </body>
 
 </html>
