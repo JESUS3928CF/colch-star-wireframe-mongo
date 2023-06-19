@@ -1,9 +1,7 @@
 (() => {
     const formulario = document.querySelector('#formularioAgregarPrenda');
 
-    const submit = document.querySelector(
-        '#formularioAgregarPrenda input[type="submit"]'
-    );
+    const submit = document.querySelector('#buttonSubmit');
 
     const cancelar = document.querySelector('#guardarCancelado');
     const atras = document.querySelector('#guardarPrenda');
@@ -45,214 +43,118 @@
         //- Expresiones Regulares
         const number = /^\D*$/;
         const text = /^[^a-zA-Z]*$/;
-        const signo = /[|°!"#$%&/()=?¿]/;
+        const email_val =
+            /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        //* Contenedores del formularios
+        const divPrenda = document.querySelector(
+            '#formularioAgregarPrenda div[name="divPrenda"]'
+        );
+
+        const divProveedor = document.querySelector(
+            '#formularioAgregarPrenda div[name="divProveedor"]'
+        );
+
+        const divCantidad = document.querySelector(
+            '#formularioAgregarPrenda div[name="divCantidad"]'
+        );
+
 
         /// Lógica de validación
 
         let isValidado = true;
 
-        //* Validaciones para todos los campos
-        if (prenda.value == '' && cantidad.value == "" && proveedor.value == "") {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Todos los campos son obligatorios',
-            })
-            isValidado = false
+        //* Validaciones para la prenda
+        if (prenda.value == '') {
+            imprimirAlerta('Este campo es obligatorio', divPrenda, 'Prenda');
+            isValidado = false;
+        } else if (!number.test(prenda.value)) {
+            imprimirAlerta('Este Campo no puede contener números', divPrenda,
+                'Prenda');
+            isValidado = false;
         }
-            //* Validaciones para producto
-        // } else if (producto.value == '') {
 
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'El producto es obligatorio',
-        //     })
-        //     isValidado = false
-        // } else if (!number.test(producto.value)) {
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'El producto no puede contener números',
-        //     })
-        //     isValidado = false;
-
-        // }else if (!producto.value.trimStart()) {
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'El producto no puede ser un espacio',
-        //     })
-        //     isValidado = false;
-        // }else if (signo.test(producto.value)) {
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'No se puede poner signos en el Producto',
-        //          })
-        //     isValidado = false;    
-
-        //     //validacion de cantidad
-        // } else if (cantidad.value == '') {
-
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La cantidad es obligatorio',
-        //     })
-        //     isValidado = false;
-
-        // }else if (!text.test(cantidad.value)){
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La cantidad no pueden contener letras'
-        //     })
-        //     isValidado=false
-
-        // }else if (!cantidad.value.trimStart()){
-        //     Swal.fire({
-        //         icon:'error',
-        //         title:'Error',
-        //         text:'La cantidad no puede ser un campo vacio'
-        //     });
-        //     isValidado=false
-
-        // }else if (signo.test(cantidad.value)){
-        //     Swal.fire({
-        //         icon:'error',
-        //         title:'Error',
-        //         text: 'No se puede poner signos en la cantidad'
-        //     })
-        //     isValidado=false
-
-        
-        //     //validacion de precio
-        // } else if (precio.value == '') {
-
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'El precio  es obligatorio',
-        //     })
-        //     isValidado = false;
-        // }else if (!text.test(precio.value)){
-        //     Swal.fire({
-        //         icon:'error',
-        //         title:'Error',
-        //         text: 'El precio no puede contener letras'
-        //     })
-        //     isValidado=false
-        // }else if (!precio.value.trimStart()){
-        //     Swal.fire({
-        //         icon:'error',
-        //         title:'Error',
-        //         text:'El precio no puede ser un campo vacio'
-        //     });
-        //     isValidado=false
-
-
-        // }else if (signo.test(precio.value)){
-        //     Swal.fire({
-        //         icon:'error',
-        //         title: 'Error',
-        //         text: 'No se puede poner signos en el precio'
-        //     })
-
-        //     isValidado=false
-
-        //     //validacion de talla
-
-        // } else if (talla.value == '') {
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La talla es obligatorio',
-        //     })
-        //     isValidado = false
-
-        // }else if(!number.test(talla.value)){
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La talla no puede tener numero',
-        //     })
-        //     isValidado = false
-
-        // }else if (!talla.value.trimStart()){
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La talla no puede ser un campo vacio',
-        //     })
-        //     isValidado = false
-
-        // }else if(signo.test(talla.value)){
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'No se puede poner signos en la talla',
-        //     })
-        //     isValidado = false
-        // }
-
-        // //validacion tela
-        // else if (tela.value == '') {
-
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La tela es obligatorio',
-        //     })
-        //     isValidado = false
-        // }else if (!number.test(tela.value)){
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La tela no puede tener numeros',
-        //     })
-        //     isValidado = false
-        // }else if (!tela.value.trimStart()){
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'La tela no puede ser un campo vacio',
-        //     })
-        //     isValidado = false
-
-        // }else if(signo.test(tela.value)){
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Error',
-        //         text: 'No se puede poner signos en la tela',
-        //     })
-        //     isValidado = false
-        // }
-
-
-
+        //* Validaciones para la proveedor
+        if (proveedor.value == '') {
+            imprimirAlerta(
+                'Este campo es obligatorio',
+                divProveedor,
+                'Proveedor'
+            );
+            isValidado = false;
+        } else if (!number.test(proveedor.value)) {
+            imprimirAlerta(
+                'Este campo no puede contener letras',
+                divProveedor,
+                'Proveedor'
+            );
+            isValidado = false;
+        }
+        //* Validaciones para la cantidad
+        if (cantidad.value == '') {
+            imprimirAlerta(
+                'Este campo es obligatorio',
+                divCantidad,
+                'Cantidad'
+            );
+            isValidado = false;
+        } else if (!text.test(cantidad.value)) {
+            imprimirAlerta(
+                'Este campo no puede contener letras',
+                divCantidad,
+                'Cantidad'
+            );
+            isValidado = false;
+        }
 
 
         if (isValidado) {
             //* Serrando el modal
             const modalBootstrap = bootstrap.Modal.getInstance(
-                document.querySelector('#myModal')
+                document.querySelector('#prenda')
             );
             modalBootstrap.hide();
-
             formulario.reset();
 
-
-
-            mostrarToast(Swal.fire(
-                'Producto agregado correctamente',
-                '',
-                'success'
-            ));
+            mostrarToast('Prenda agregada correctamente');
         }
     }
 
+    function imprimirAlerta(mensaje, lugar, clase) {
+        /// Verificar que no exista la alerta
+        const alert = document.querySelector(`.alerta${clase}`);
 
+        if (!alert) {
+            //? Crear alerta
+            const divMensaje = document.createElement('div');
+
+            divMensaje.classList.add(
+                // 'px-2',
+                'py-1',
+                'rounded',
+                'max-w-lg',
+                'mx-auto',
+                'mt-2',
+                'text-center',
+                'border',
+                `alerta${clase}`
+            );
+
+            divMensaje.classList.add(
+                'bg-red-100',
+                'border-red-400',
+                'text-red-700'
+            );
+
+            divMensaje.textContent = mensaje;
+
+            lugar.parentNode.insertBefore(divMensaje, lugar.nextSibling);
+
+            setTimeout(() => {
+                divMensaje.remove();
+            }, 4500);
+        }
+    }
 
     function mostrarToast(mensaje) {
         const toastDiv = document.querySelector('#toastAgregar'); //* Seleccionamos el toast que esta en nuestro HTML

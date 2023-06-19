@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="mb-3" name="divTelefono">
                                     <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
-                                    <input type="number" class="form-control" id="telefonoGuardar" name="telefonoGuardar" placeholder="Ingresar teléfono" >
+                                    <input type="text" class="form-control" id="telefonoGuardar" name="telefonoGuardar" placeholder="Ingresar teléfono" >
                                 </div>
                                 <div class="mb-3" name="divEmail">
                                     <label for="emailGuardar" class="col-form-label">Email:</label>
@@ -184,11 +184,11 @@
                         </div>
                         <div class="mb-3"  name="divTelefono">
                             <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="number" class="form-control" name="telefonoEditar" placeholder="Ingresar teléfono">
+                            <input type="text" class="form-control" name="telefonoEditar" placeholder="Ingresar teléfono">
                         </div>
                         <div class="mb-3"  name="divEmail">
                             <label for="emailEditar" class="col-form-label">Email:</label>
-                            <input type="email" class="form-control" name="emailEditar" placeholder="Ingresar email">
+                            <input type="text" class="form-control" name="emailEditar" placeholder="Ingresar email">
                         </div>
                         <div class="mb-3"  name="divDireccion">
                             <label for="direccionEditar" class="col-form-label">Dirección:</label>
@@ -198,7 +198,7 @@
 
                         <div class="modal-footer">
                             <button type="button" id="editarCancelado"  class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                            <input type="submit" class="btn btn-success"  value="Guardar">
+                            <input type="submit" id="GuardarEditarCliente" class="btn btn-success"  value="Guardar">
                         </div>
                     </form>
                 </div>
@@ -222,6 +222,8 @@
     <script src="../../js/funcionalidadesCliente/validacionCliente.js"></script>
     <script src="../../js/funcionalidadesCliente/validacionClienteEditar.js"></script>
     <script src="../../js/funcionalidadesCliente/cambiarEstado.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </body>
  
