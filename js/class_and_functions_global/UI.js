@@ -1,6 +1,6 @@
 import PeticionesBackend from './PeticionesBackend.js';
 
-const peticionesBackend = new PeticionesBackend();
+const peticionesBackend = new PeticionesBackend('http://localhost:3000/api/v1/clientes');
 const paginacionDiv = document.querySelector('#paginacion');
 
 const registrosPorPagina = 10;

@@ -1,10 +1,10 @@
 export default class PeticionesBackend {
-    constructor() {
-        this.urlClientes = 'http://localhost:3000/api/v1/clientes';
+    constructor(url) {
+        this.url = url;
     }
     async findAll() {
         try {
-            const respuesta = await fetch(this.urlClientes);
+            const respuesta = await fetch(this.url);
             const resultado = await respuesta.json();
 
             console.log(resultado);
@@ -23,7 +23,7 @@ export default class PeticionesBackend {
 
         
         try {
-            const respuesta = await fetch(this.urlClientes);
+            const respuesta = await fetch(this.url);
             const resultado = await respuesta.json();
 
             let totalPaginas =  calcularPaginas(resultado.length)
