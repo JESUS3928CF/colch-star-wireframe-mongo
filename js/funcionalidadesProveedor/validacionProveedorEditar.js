@@ -179,45 +179,15 @@
 
             formulario.reset();
 
-            mostrarToast('Proveedor editado correctamente');
+            mostrarToast( Swal.fire(
+                'Proveedor editado  correctamente',
+                '',
+                'success'
+              ))
         }
     }
 
-    function imprimirAlerta(mensaje, lugar, clase) {
-        /// Verificar que no exista la alerta
-        const alert = document.querySelector(`.alerta${clase}`);
-
-        if (!alert) {
-            //? Crear alerta
-            const divMensaje = document.createElement('div');
-
-            divMensaje.classList.add(
-                // 'px-2',
-                'py-1',
-                'rounded',
-                'max-w-lg',
-                'mx-auto',
-                'mt-2',
-                'text-center',
-                'border',
-                `alerta${clase}`
-            );
-
-            divMensaje.classList.add(
-                'bg-red-100',
-                'border-red-400',
-                'text-red-700'
-            );
-
-            divMensaje.textContent = mensaje;
-
-            lugar.parentNode.insertBefore(divMensaje, lugar.nextSibling);
-
-            setTimeout(() => {
-                divMensaje.remove();
-            }, 4500);
-        }
-    }
+  
 
     function mostrarToast(mensaje) {
         const toastDiv = document.querySelector('#toastEditar'); //* Seleccionamos el toast que esta en nuestro HTML

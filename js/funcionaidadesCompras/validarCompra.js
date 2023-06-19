@@ -207,7 +207,7 @@
             formulario.reset();
 
             mostrarToast( Swal.fire(
-                'Usuario editado correctamente',
+                'Compra agregada correctamente',
                 '',
                 'success'
               ))
