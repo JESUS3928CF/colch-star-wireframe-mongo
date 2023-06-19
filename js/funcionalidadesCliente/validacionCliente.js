@@ -1,6 +1,4 @@
-import ClientePeticiones from "./class/ClientePeticiones.js";
 
-const clientePeticiones = new ClientePeticiones();
 
 (() => {
     const formulario = document.querySelector('#formularioAgregarCliente');
@@ -13,7 +11,6 @@ const clientePeticiones = new ClientePeticiones();
     const atras = document.querySelector('#xAgregar');
 
     window.addEventListener('load', () => {
-        clientePeticiones.findAll();
         submit.addEventListener('click', crearClientes);
         cancelar.addEventListener('click', recetearFormulario);
         atras.addEventListener('click', recetearFormulario);
