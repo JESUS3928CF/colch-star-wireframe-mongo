@@ -255,7 +255,7 @@
         }
     }
 
-    t
+    
     function mostrarToast(mensaje) {
         const toastDiv = document.querySelector('#toastEditar'); //* Seleccionamos el toast que esta en nuestro HTML
         const toastBody = document.querySelector('#toast-body-editar'); //* Y también el body para agregar contenido a nuestro toast

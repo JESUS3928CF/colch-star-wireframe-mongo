@@ -112,7 +112,8 @@
 
         <!--! tabla para listar clientes -->
     </header>
-    <div class="tabla">
+
+    <div class="tabla" id="tablaClientes">
         <table class="table caption-top ">
             <caption>Lista de usuarios</caption>
             <thead>
@@ -128,53 +129,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Jesús</td>
-                    <td>Cochero</td>
-                    <td>3240918282</td>
-                    <td>jesus@gmail.com</td>
-                    <td>Abministrador</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Herlyn</td>
-                    <td>David</td>
-                    <td>3023201200</td>
-                    <td>herlindavid@gmail.com</td>
-                    <td>Vendedor</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Brian</td>
-                    <td>Pareja</td>
-                    <td>3220920192</td>
-                    <td>brian@gmail.com</td>
-                    <td>Empleado</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Tomas</td>
-                    <td>Vanegas</td>
-                    <td>3201929202</td>
-                    <td>tomas@gmail.com</td>
-                    <td>Comprador</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
             </tbody>
         </table>
+    </div>
+
+    <div id="registros" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+
+    </div>
+    <!-- Paginador de mis registros  -->
+    <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+
     </div>
 
     <!-- modal de editar cliente -->
@@ -246,9 +210,11 @@
 
 
 
-    <script src="../../js/funcionalidadesUsuarios/validacionUsuario.js"></script>
-    <script src="../../js/funcionalidadesUsuarios/validacionUsuarioEditar.js"></script>
-    <script src="../../js/funcionalidadesUsuarios/cambiarEstado.js"></script>
+    <script type="module" src="../../js/class_and_functions_global/UI.js"></script>
+    <script src="../../js/funcionalidadesUsuarios/listarUsuario.js" type="module"></script>
+    <script src="../../js/funcionalidadesUsuarios/validacionUsuario.js" type="module"></script>
+    <script src="../../js/funcionalidadesUsuarios/validacionUsuarioEditar.js" ></script>
+    <script src="../../js/funcionalidadesUsuarios/cambiarEstado.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

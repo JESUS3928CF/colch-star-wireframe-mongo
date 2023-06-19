@@ -10,6 +10,8 @@
     const atras = document.querySelector('#xAgregar');
 
     window.addEventListener('load', () => {
+
+
         submit.addEventListener('click', crearUsuarios);
         cancelar.addEventListener('click', recetearFormulario);
         atras.addEventListener('click', recetearFormulario);
@@ -23,12 +25,17 @@
     function crearUsuarios(e) {
         e.preventDefault();
 
+
+
         /// Validar el formulario
         validarUsuario();
     }
 
     function validarUsuario() {
         //* Campos a validar
+
+        console.log('Que es');
+
 
         const nombre = document.querySelector(
             '#formularioagregarusuario input[name="nombreGuardar"]'
