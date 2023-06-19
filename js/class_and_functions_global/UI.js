@@ -8,7 +8,6 @@ let paginaActual = 1; // Página actual
 
 
 async function paginadorClientes(registrosPorPagina) {
-    console.log('que pasa');
 
     const totalPaginas = await peticionesBackend.findTotalRegistros(
         registrosPorPagina
@@ -50,7 +49,7 @@ export async function imprimirPaginador() {
             button.textContent = value;
             button.classList.add(
                 'siguiente',
-                'bg-yellow-400',
+                'bg-gray-600',
                 'px-4',
                 'py-1',
                 'mr-2',
@@ -79,10 +78,7 @@ export async function imprimirPaginador() {
 
 export function buscarRegistros(paginaActual) {
 
-    console.log(paginaActual, "pagina actual");
-
-    console.log(registrosPorPagina, paginaActual, "compárenlo");
-    console.log((paginaActual - 1) * registrosPorPagina );
+    /// Url de usuarios con parámetros
     const url = `http://localhost:3000/api/v1/usuarios?limit=${registrosPorPagina}&offset=${
         (paginaActual - 1) * registrosPorPagina
     }`;

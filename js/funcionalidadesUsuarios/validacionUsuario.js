@@ -25,12 +25,17 @@
     function crearUsuarios(e) {
         e.preventDefault();
 
+
+
         /// Validar el formulario
         validarUsuario();
     }
 
     function validarUsuario() {
         //* Campos a validar
+
+        console.log('Que es');
+
 
         const nombre = document.querySelector(
             '#formularioagregarusuario input[name="nombreGuardar"]'
