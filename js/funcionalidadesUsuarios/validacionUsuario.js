@@ -262,11 +262,8 @@ const usuarioPeticiones = new UsuarioPeticiones();
                 document.querySelector('#myModal')
             );
             modalBootstrap.hide();
-
             formulario.reset();
-
             
-
             mostrarToast(  Swal.fire(
                 'Usuario agregado correctamente',
                 '',

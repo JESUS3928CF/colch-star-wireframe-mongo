@@ -83,7 +83,7 @@
             formulario.reset();
 
             mostrarToast( Swal.fire(
-                'Usuario editado correctamente',
+                'Rol agregado  correctamente',
                 '',
                 'success'
               ))

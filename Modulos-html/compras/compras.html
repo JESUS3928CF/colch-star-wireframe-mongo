@@ -45,31 +45,31 @@
                             
                             <div class="modal-body">
 
-                                <!--* formulario para agregar un cliente -->
-                                <form action="">
+                                <!--* formulario para agregar una compra -->
+                                <form action="" id="formularioagregarCompra">
                                     <div class="mb-3">
                                         <label for="nombreGuardar" class="col-form-label">
                                             Nombre del Proveedor:
                                         </label>
-                                        <input type="text" class="form-control" id="nombreGuardarr" placeholder="Ingresar nombre" required />
+                                        <input type="text" class="form-control" id="nombreGuardar" name="nombreGuardar" placeholder="Ingresar nombre"  />
                                     </div>
                                     <!-- <div class="mb-3">
                                         <label for="cantidadGuardar" class="col-form-label">
                                             Numero de factura:
                                         </label>
-                                        <input type="number" class="form-control" id="cantidadGuardar" placeholder="Ingresar cantidad" />
+                                        <input type="text" class="form-control" id="cantidadGuardar" placeholder="Ingresar cantidad" />
                                     </div>
                                     <div class="mb-3">
                                         <label for="ivaCompraGuardar" class="col-form-label">
                                             Iva:
                                         </label>
-                                        <input type="number" class="form-control" id="ivaCompraGuardar" placeholder="Ingresar porcentaje iva" required />
+                                        <input type="text" class="form-control" id="ivaCompraGuardar" placeholder="Ingresar porcentaje iva"  />
                                     </div> -->
                                     <div class="mb-3">
                                         <label for="fechaGuardar" class="col-form-label">
                                             Fecha:
                                         </label>
-                                        <input type="date" class="form-control" id="fechaGuardar" required />
+                                        <input type="date" class="form-control" id="fechaGuardar"  />
                                     </div>
                             
                             
@@ -86,12 +86,12 @@
                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
                                             Cancelar
                                         </button>
-                                        <input type="submit" class="btn btn-success" value="Guardar" />
+                                        <input type="submit" id="compraG" class="btn btn-success" value="Guardar" />
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-body ">
-                                <form action="">
+                                <form action="" id="formularioagregarCompra">
                                     <div class="form-label" style="text-align: center;">
                                         <p class="detalleCompra">Agregar datos de los productos de la compra</p>
                                     </div>
@@ -99,22 +99,22 @@
                             
                                         <div class="mb-3">
                                             <label for="nombreCompraAgregar" class="col-form-label">Nombre:</label>
-                                            <input type="number" class="form-control" id="nombreCompraAgregar" placeholder="Ingresar nombre">
+                                            <input type="text" class="form-control" id="nombreCompraAgregar" name="nombreCompraAgregar" placeholder="Ingresar nombre">
                                         </div>
                                         <div class="mb-3">
                                             <label for="cantidadCompraAgregar" class="col-form-label">Cantidad:</label>
-                                            <input type="number" class="form-control" id="cantidaCompraAgregar" placeholder="Ingresar cantidad">
+                                            <input type="text" class="form-control" id="cantidaCompraAgregar" name="cantidaCompraAgregar" placeholder="Ingresar cantidad">
                                         </div>
                                     </div>
                                     <div class="subFormulario">
                                         <div class="mb-3">
                                             <label for="precioCompraAgregar" class="col-form-label">Precio:</label>
-                                            <input type="number" class="form-control" id="precioCompraAgregar"
+                                            <input type="text" class="form-control" id="precioCompraAgregar" name="precioCompraAgregar"
                                                 placeholder="Ingresar precio unitario del producto">
                                         </div>
                                         <div class="mb-3">
                                             <label for="totalCompraAgregar" class="col-form-label">Precio total:</label>
-                                            <input type="number" class="form-control" id="totalCompraAgregar" placeholder="" value="100.000"
+                                            <input type="text" class="form-control" id="totalCompraAgregar" placeholder="" value="100.000"
                                                 readonly>
                                         </div>
                                     </div>
@@ -164,7 +164,8 @@
                     <td>400.000</td>
                     <td>10/10/2024</td>
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
+
                     
                 </tr>
                 <tr>
@@ -173,7 +174,7 @@
                     <td>1.400.000</td>
                     <td>10/10/2024</td>
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
                     
                 </tr>
                 <tr>
@@ -182,7 +183,7 @@
                     <td>700.000</td>
                     <td>10/10/2024</td>
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img  class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
                    
                 </tr>
                 <tr>
@@ -191,7 +192,8 @@
                     <td>100.000</td>
                     <td>10/10/2024</td>
                     <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img  class="centrarIcono" src="/imagenes/iconos/light_switch on.svg" /></td>
+                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
+
                 </tr>
             </tbody>
         </table>
@@ -221,16 +223,16 @@
                         </div> -->
                         <!-- <div class="mb-3">
                             <label for="cantidadEditar" class="col-form-label">Cantidad:</label>
-                            <input type="number" class="form-control" id="cantidadEditar" placeholder="Ingresar cantidad">
+                            <input type="text" class="form-control" id="cantidadEditar" placeholder="Ingresar cantidad">
                         </div>
                         <div class="mb-3">
                             <label for="totalEditar" class="col-form-label">Total compra:</label>
-                            <input type="number" class="form-control" id="totalEditar" placeholder="Ingresar total">
+                            <input type="text" class="form-control" id="totalEditar" placeholder="Ingresar total">
                         </div> -->
                         <!-- <div class="mb-3">
                             <label for="ivaCompraEditar" class="col-form-label">Iva:</label>
-                            <input type="number" class="form-control" id="ivaCompraEditar"
-                                placeholder="Ingresar Porcentaje del iva" required>
+                            <input type="text" class="form-control" id="ivaCompraEditar"
+                                placeholder="Ingresar Porcentaje del iva" >
                         </div>
                         <div class="mb-3">
                             <label for="fechaEditar" class="col-form-label">Fecha:</label>
@@ -250,24 +252,24 @@
 
                             <div class="mb-3">
                                 <label for="nombreProductoEditar" class="col-form-label">Nombre:</label>
-                                <input type="number" class="form-control" id="nombreProductoEditar"
+                                <input type="text" class="form-control" id="nombreProductoEditar"
                                     placeholder="Ingresar nombre">
                             </div>
                             <div class="mb-3">
                                 <label for="cantidaProductodEditar" class="col-form-label">Cantidad:</label>
-                                <input type="number" class="form-control" id="cantidadProductoEditar"
+                                <input type="text" class="form-control" id="cantidadProductoEditar"
                                     placeholder="Ingresar cantidad">
                             </div>
                         </div>
                         <div class="subFormulario">
                             <div class="mb-3">
                                 <label for="precioProductoEditar" class="col-form-label">Precio:</label>
-                                <input type="number" class="form-control" id="precioProductoEditar"
+                                <input type="text" class="form-control" id="precioProductoEditar"
                                     placeholder="Ingresar precio unitario del producto">
                             </div>
                             <div class="mb-3">
                                 <label for="totalEditar" class="col-form-label">Precio total:</label>
-                                <input type="number" class="form-control" id="totalEditar" placeholder=""
+                                <input type="text" class="form-control" id="totalEditar" placeholder=""
                                     value="100.000" readonly>
                             </div>
                         </div>
@@ -328,5 +330,9 @@
                                 <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="cancelar"> Regresar </button>
                             </div>
 </body>
-<script src="/js/funcionalidadesCliente/cambiarEstado.js"></script>
+<script src="/js/funcionaidadesCompras/validarCompra.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/funcionalidadesUsuarios/cambiarEstado.js"></script>
+
+
 </html>

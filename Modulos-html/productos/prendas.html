@@ -26,12 +26,12 @@
 
         <!-- botón agregar -->
         <div class="container-fluid seccion2">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Agregar
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#prenda">Agregar
                 Prenda</button>
 
             <!--! modal de agregar prenda -->
 
-            <div class="modal" id="myModal">
+            <div class="modal" id="prenda">
                 <div class="modal-dialog modal-dialog-centered" style="width: 800px ; margin-left: 100px;">
                     <div class="modal-content" style="width: 800px ;">
                         <div class="modal-header modal-head-agregar" style="width: 800px">
@@ -230,7 +230,7 @@
                                         data-bs-dismiss="modal">
                                         Cancelar
                                     </button>
-                                    <input type="submit" class="btn btn-success" name="guardarPrenda" value="Guardar" />
+                                    <input type="submit" class="btn btn-success" value="Guardar" />
                                 </div>
                                 </form>
                             </div>
@@ -239,17 +239,7 @@
                 </div>
             </div>
 
-            <!--/ Mensaje de agregar Prenda correctamente   -->
-            <div class="toast-container position-fixed top-0 end-0 p-3">
-                <div id="toastAgregar" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header bg-success text-white">
-                        <strong class="me-auto text-white">Colch Star</strong>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
-                            aria-label="Close"></button>
-                    </div>
-                    <div id="toast-body-agregar" class="toast-body"></div>
-                </div>
-            </div>
+           
 
 
 
@@ -562,9 +552,6 @@
     <script src="../../js/funcionalidadesProducto/cambiarEstado.js"></script>
     <script src="../../js/funcionalidadesPrendas/validarPrendas.js"></script>
     <script src="../../js/funcionalidadesPrendas/validarPrendasEditar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 </body>
 
 </html>
