@@ -52,6 +52,8 @@
         //- Expresiones Regulares
         const number = /^\D*$/;
         const text = /^[^a-zA-Z]*$/;
+        const signo = /[|°!"#$%&/()=?¿"]/
+       
          
         /// Lógica de validación
 
@@ -63,44 +65,82 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'Los campos son obligatorios',
-                 })
-                   isValidado = false 
+                text: 'Todos los  campos son obligatorios',
+           })
+          isValidado = false 
         
 
         }else  if (nombre.value == '') {
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'El nombre no puede contener números',
-              })
+                text: 'El nombre es obligatorio',
+           })
               isValidado = false
         
            
         } else if (!number.test(nombre.value)) {
-            imprimirAlerta('El nombre no puede contener números', nombre),
-                'Nombre';
+            Swal.fire({
+                icon:'error',
+                title:'Error',
+                text: 'El nombre no puede tener numeros'
+            })
+           
             isValidado = false;
-        }
-
+        }else if (!nombre.value.trimStart()){
+            Swal.fire({
+                icon:'error',
+                title: 'Error',
+                text: 'El campo nombre no puede ser un espacio'
+            })
+            isValidado=false
+        }else if (signo.test(nombre.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El nombre no puede tener signos'
+            })
+            isValidado=false
         //* Validaciones para teléfono
-        if (telefono.value == '') {
-            imprimirAlerta('El teléfono es obligatorio',telefono,'Telefono');
+        } else if (telefono.value == '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El telefono es obligatorio'
+            })
             isValidado = false;
         } else if (!text.test(telefono.value)) {
-            imprimirAlerta('El teléfono no puede contener letras',telefono,'Telefono');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El telefono no puede tener letras'
+            })
+           
             isValidado = false;
+        }else if (!telefono.value.trimStart()){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El telefono no puede ser espacio'
+            })
+            isValidado=false
+
+        }else if (signo.test(telefono.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'El telefono no puede tener signos'
+            })
+            isValidado=false
+            //*Validacion de direcciones
+        }else if(direccion.value==''){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'La dirreccion es obligatoria'
+            })
+            isValidado=false
         }
-
-        if(direccion.value==''){
-            imprimirAlerta('La direccion es obligatoria',direccion);
-        }
-
-
-
-       
-      
-        
 
         if (isValidado) {
             //* Serrando el modal
@@ -110,47 +150,15 @@
             modalBootstrap.hide();
 
             formulario.reset();
-
-            mostrarToast('Venta agregada correctamente');
+            mostrarToast( Swal.fire(
+                    'Venta agregada correctamente',
+                    '',
+                    'success'
+                  ))
         }
     }
 
-    function imprimirAlerta(mensaje, lugar, clase) {
-        /// Verificar que no exista la alerta
-        const alert = document.querySelector(`.alerta${clase}`);
-
-        if (!alert) {
-            //? Crear alerta
-            const divMensaje = document.createElement('div');
-
-            divMensaje.classList.add(
-                // 'px-2',
-                'py-1',
-                'rounded',
-                'max-w-lg',
-                'mx-auto',
-                'mt-2',
-                'text-center',
-                'border',
-                `alerta${clase}`
-                
-            );
-
-            divMensaje.classList.add(
-                'bg-red-100',
-                'border-red-400',
-                'text-red-700'
-            );
-
-            divMensaje.textContent = mensaje;
-
-            lugar.parentNode.insertBefore(divMensaje, lugar.nextSibling);
-
-            setTimeout(() => {
-                divMensaje.remove();
-            }, 4500);
-        }
-    }
+   
 
     function mostrarToast(mensaje) {
         const toastDiv = document.querySelector('#toastAgregar'); //* Seleccionamos el toast que esta en nuestro HTML
