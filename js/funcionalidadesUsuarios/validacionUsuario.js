@@ -1,8 +1,3 @@
-//! IMPORTANDO LA CLASE DE PETICIONES 
-import UsuarioPeticiones from "./class/UsuarioPeticiones.js";
-
-const usuarioPeticiones = new UsuarioPeticiones();
-
 (() => {
     const formulario = document.querySelector('#formularioagregarusuario');
 
@@ -16,12 +11,6 @@ const usuarioPeticiones = new UsuarioPeticiones();
 
     window.addEventListener('load', () => {
 
-        //! ACA TRAIGO LOS USUARIOS DESDE EL BACKEND
-        // usuarioPeticiones.findAll();
-        fetch('http://localhost:3000/usuarios')
-            .then((resultado) => resultado.json())
-            .then((registros) => console.log(registros))
-            .catch(e => console.log(e + "error"));
 
         submit.addEventListener('click', crearUsuarios);
         cancelar.addEventListener('click', recetearFormulario);
