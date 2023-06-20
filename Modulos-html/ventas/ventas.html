@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
     <link rel="stylesheet" href="/css/cssgeneral.css" />
+
+    <link rel="stylesheet" href="/css/tailwind.min.css">
     
 </head>
 
@@ -178,66 +180,22 @@
 
         <!--! tabla para listar las ventas -->
     </header>
-    <div class="tabla">
-        <table class="table caption-top">
-            <caption>Lista de ventas</caption>
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre cliente</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Ver detalle</th>
-                    <th scope="col">Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">01</th>
-                    <td>Carlos</td>
-                    <td>3017835457</td>
-                    <td>Calle 78 #49b-12</td>
-                    <td>12/12/2023</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono estado"  src="/imagenes/iconos/light_switch on.svg" /></td>
-                   
-                </tr>
-                <tr>
-                    <th scope="row">02</th>
-                    <td>Tomas</td>
-                    <td>3037985512</td>
-                    <td>Cr45#85-102</td>
-                    <td>12/12/2023</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                   
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
+    
 
-                </tr>
-                <tr>
-                    <th scope="row">03</th>
-                    <td>Manuel</td>
-                    <td>302448895</td>
-                    <td>Cra 25 #22-14</td>
-                    <td>12/12/2023</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                    
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                </tr>
 
-                <tr>
-                    <th scope="col">04</th>
-                    <td>Pablo</td>
-                    <td>3224758020</td>
-                    <td>Cll 25#1-04</td>
-                    <td>12/12/2023</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>                   
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
 
-                    
-                </tr>
-            </tbody>
-        </table>
-        <!-- Modal de detalle-->
-    </div>
+        <!--/ Los registros se generan por JS  -->
+        <div class="tabla" id="tablaClientes">
+            <table class="table caption-top ">
+                
+                
+        
+            </table>
+        </div>
+        <!-- Paginador de mis registros  -->
+        <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+        
+        </div>
     <div class="modal" id="Detalle">
         <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
             <div class="modal-content" style= "width: 800px ;" >
@@ -297,7 +255,8 @@
                             </div>
 
 
-    
+    <script type="module" src="../../js/class_and_functions_global/UIVentas.js"></script>
+    <script type="module" src="../../js/funcionalidadesVentas/listarVentas.js"></script>
 
                
     <script src="/js/funcionalidadesVentas/cambiarEstado.js"></script>
