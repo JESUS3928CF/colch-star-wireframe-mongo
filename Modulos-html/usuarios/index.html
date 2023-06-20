@@ -8,19 +8,20 @@
 <body>
     <!-- LOGIN FORM CREATION -->
     <div class="background"></div>
-    <div class="container">
+    <div class="container"  id="myModal">
         <div class="login-section">
             <div class="form-box login">
-                <form action="">
+                <form action="" id="formularioLogin">
+                    <div class="input_group" name="divUsuario"></div>
                     <h2>¡Bienvenido!</h2>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email">
+                        <input type="email" class="input_text" autocomplete="off" id="usuarioGuardarr" name="usuarioGuardar">
                         <label >Email</label>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box" name="divContraseña">
                         <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
-                        <input type="password">
+                        <input type="password" class="input_text" autocomplete="off" id="contraseñaGuardarr" name="contraseñaGuardar">
                         <label>Contraseña</label>
                     </div>
                     <div class="button_group" id="login_button">
@@ -49,9 +50,9 @@
             </div>
         </div>
     </div>
-     <!-- SIGN UP FORM CREATION -->
 
     <script src="index.js"></script>
+    <script src="../../js/funcionalidadesLogin/validacionLogin.js"></script>
 </body>
 
 </html>
