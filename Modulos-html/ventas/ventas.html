@@ -39,7 +39,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">
                                 Agregar venta
                             </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" name="xAgregar" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" id="xAgregar" aria-label="Close"></button>
                         </div>
                         <div class="formulario">
                             
@@ -238,6 +238,21 @@
         </table>
         <!-- Modal de detalle-->
     </div>
+
+    <div class="tabla" id="tablaVentas">
+        <table class="table caption-top">
+            
+        </table>
+        <!-- Modal de detalle-->
+    </div>
+
+
+    <!-- Paginador de mis registros  -->
+    <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+    
+    </div>
+
+
     <div class="modal" id="Detalle">
         <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
             <div class="modal-content" style= "width: 800px ;" >
@@ -297,7 +312,9 @@
                             </div>
 
 
-    
+    <script type="module" src="../../js/class_and_functions_global/UIVentas.js">
+    </script>
+    <script src="/js/funcionalidadesVentas/listarVentas.js" type="module"></script>
 
                
     <script src="/js/funcionalidadesVentas/cambiarEstado.js"></script>

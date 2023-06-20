@@ -25,6 +25,7 @@
 
     function crearVenta(e) {
         e.preventDefault();
+        console.log("lll");
 
         /// Validar el formulario
         validarVenta();
