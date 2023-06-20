@@ -1,6 +1,6 @@
 import PeticionesBackend from './PeticionesBackend.js';
 
-const peticionesBackend = new PeticionesBackend('http://localhost:3000/api/v1/usuarios');
+const peticionesBackend = new PeticionesBackend('http://localhost:3000/api/v1/clientes');
 const paginacionDiv = document.querySelector('#paginacion');
 
 const registrosPorPagina = 10;
@@ -8,7 +8,7 @@ const buttonsForPage = 10; /// variable para cantidad de botones que me va a mos
 let paginaActual = 1; // Página actual
 
 
-async function paginador(registrosPorPagina) {
+async function paginadorClientes(registrosPorPagina) {
 
     const totalPaginas = await peticionesBackend.findTotalRegistros(
         registrosPorPagina
@@ -28,7 +28,7 @@ export async function imprimirPaginador() {
         paginacionDiv.removeChild(paginacionDiv.firstChild);
     }
 
-    const totalPaginas = await paginador(registrosPorPagina);
+    const totalPaginas = await paginadorClientes(registrosPorPagina);
     const iterador = crearPaginador(totalPaginas);
 
     let botonesMostrados = 0; // Contador de botones mostrados
@@ -80,7 +80,7 @@ export async function imprimirPaginador() {
 export function buscarRegistros(paginaActual) {
 
     /// Url de usuarios con parámetros
-    const url = `http://localhost:3000/api/v1/usuarios?limit=${registrosPorPagina}&offset=${
+    const url = `http://localhost:3000/api/v1/clientes?limit=${registrosPorPagina}&offset=${
         (paginaActual - 1) * registrosPorPagina
     }`;
 
@@ -94,69 +94,71 @@ export function buscarRegistros(paginaActual) {
 
 //!  Aca se crea la tabla con sus registros
  function mostrarRegistros(resultado) {
-    const tablaClientesDiv = document.querySelector('#tablaClientes');
+     console.log(resultado);
 
-    // Limpiar el contenido anterior
-    tablaClientesDiv.innerHTML = '';
+     const tablaClientesDiv = document.querySelector('#tablaClientes');
 
-    // Crear la tabla
-    const tabla = document.createElement('table');
-    tabla.classList.add('table', 'caption-top');
+     // Limpiar el contenido anterior
+     tablaClientesDiv.innerHTML = '';
 
-    // Crear el encabezado de la tabla
-    const thead = document.createElement('thead');
-    const encabezado = document.createElement('tr');
+     // Crear la tabla
+     const tabla = document.createElement('table');
+     tabla.classList.add('table', 'caption-top');
 
-    // Añadir los encabezados de las columnas
-    const encabezadosColumnas = [
-        'ID',
-        'Nombre',
-        'Apellido',
-        'Teléfono',
-        'Email',
-        'Rol',
-        'Estado',
-        'Editar',
-    ];
-    encabezadosColumnas.forEach((encabezadoColumna) => {
-        const th = document.createElement('th');
-        th.scope = 'col';
-        th.textContent = encabezadoColumna;
-        encabezado.appendChild(th);
-    });
+     // Crear el encabezado de la tabla
+     const thead = document.createElement('thead');
+     const encabezado = document.createElement('tr');
 
-    thead.appendChild(encabezado);
-    tabla.appendChild(thead);
+     // Añadir los encabezados de las columnas
+     const encabezadosColumnas = [
+         'ID',
+         'Nombre',
+         'Apellido',
+         'Teléfono',
+         'Email',
+         'Dirección',
+         'Inhabilitar',
+         'Editar',
+     ];
+     encabezadosColumnas.forEach((encabezadoColumna) => {
+         const th = document.createElement('th');
+         th.scope = 'col';
+         th.textContent = encabezadoColumna;
+         encabezado.appendChild(th);
+     });
 
-    // Crear el cuerpo de la tabla
-    const tbody = document.createElement('tbody');
+     thead.appendChild(encabezado);
+     tabla.appendChild(thead);
 
-    resultado.forEach((registro) => {
-        const fila = document.createElement('tr');
+     // Crear el cuerpo de la tabla
+     const tbody = document.createElement('tbody');
 
-        // Añadir las celdas con los datos de cada registro
-        const datosRegistro = [
-            registro.id_usuario,
-            registro.nombre,
-            registro.apellido,
-            registro.telefono,
-            registro.email,
-            registro.fk_rol,
-            registro.estado
-                ? '<img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" />'
-                : '<img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" />',
-            '<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>',
-        ];
+     resultado.forEach((registro) => {
+         const fila = document.createElement('tr');
 
-        datosRegistro.forEach((dato) => {
-            const celda = document.createElement('td');
-            celda.innerHTML = dato;
-            fila.appendChild(celda);
-        });
+         // Añadir las celdas con los datos de cada registro
+         const datosRegistro = [
+             registro.id_cliente,
+             registro.nombre,
+             registro.apellido,
+             registro.telefono,
+             registro.email,
+             registro.direccion,
+             registro.estado
+                 ? '<img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" />'
+                 : '<img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" />',
+             '<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>',
+         ];
 
-        tbody.appendChild(fila);
-    });
+         datosRegistro.forEach((dato) => {
+             const celda = document.createElement('td');
+             celda.innerHTML = dato;
+             fila.appendChild(celda);
+         });
 
-    tabla.appendChild(tbody);
-    tablaClientesDiv.appendChild(tabla);
-}
+         tbody.appendChild(fila);
+     });
+
+     tabla.appendChild(tbody);
+     tablaClientesDiv.appendChild(tabla);
+ }

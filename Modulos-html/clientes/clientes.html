@@ -89,7 +89,9 @@
 
         <!-- tabla para listar clientes -->
     </header>
-    <div class="tabla">
+
+    <!--/ Los registros se generan por JS  -->
+    <div class="tabla" id="tablaClientes">
         <table class="table caption-top ">
             <caption>Lista de clientes</caption>
             <thead>
@@ -102,57 +104,17 @@
                     <th scope="col">Dirección</th>
                     <th scope="col">Inhabilitar</th>
                     <th scope="col">Editar</th>
-
+    
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">001</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>3243545325</td>
-                    <td>mark@gmail.com</td>
-                    <td>Calle 20 #80-20</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
-
-                </tr>
-                <tr>
-                    <th scope="row">002</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>3115632135</td>
-                    <td>jacob@gmail.com</td>
-                    <td>Calle 20 #80-20</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
-
-                </tr>
-                <tr>
-                    <th scope="row">003</th>
-                    <td>Larry</td>
-                    <td>Sanchez</td>
-                    <td>3105332107</td>
-                    <td>larry@gmail.com</td>
-                    <td>Calle 20 #80-20</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg"/></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
-
-                </tr>
-                <tr>
-                    <th scope="row">004</th>
-                    <td>Andres</td>
-                    <td>Lopez</td>
-                    <td>3235456530</td>
-                    <td>andres@gmail.com</td>
-                    <td>Calle 20 #80-20</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg"/></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button></td>
-
-                </tr>
-            </tbody>
+            
         </table>
     </div>
+    <!-- Paginador de mis registros  -->
+    <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+    
+    </div>
+
 
     <!-- modal de editar cliente -->
     <div class="modal" id="modalEditar">
@@ -198,7 +160,10 @@
         </div>
     </div>
     
-    
+    <!--/ scripts agregados  -->
+    <script type="module" src="../../js/class_and_functions_global/UIClientes.js"></script>
+    <script type="module" src="../../js/funcionalidadesCliente/listarClientes.js"></script>
+
     <script src="../../js/funcionalidadesCliente/validacionCliente.js"></script>
     <script src="../../js/funcionalidadesCliente/validacionClienteEditar.js"></script>
     <script src="../../js/funcionalidadesCliente/cambiarEstado.js"></script>
