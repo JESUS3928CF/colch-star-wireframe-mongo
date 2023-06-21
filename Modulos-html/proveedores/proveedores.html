@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-          
+
             <!-- boton de buscar -->
 
             <form class="d-flex">
@@ -95,9 +95,9 @@
 
         </div>
 
-        <!-- tabla para listar clientes -->
+        <!-- tabla para listar proveedor -->
     </header>
-    <div class="tabla">
+    <div class="tabla" id="tablaProveedor">
         <table class="table caption-top ">
             <caption>Lista de proveedores</caption>
             <thead>
@@ -111,56 +111,15 @@
                     <th scope="col">Editar</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">01</th>
-                    <td>Daniel</td>
-                    <td>3064567890</td>
-                    <td>Calle 20 #23b-1</td>
-                    <td>no</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">02</th>
-                    <td>Mark</td>
-                    <td>3037980012</td>
-                    <td>Calle 45 #12a-3</td>
-                    <td>no</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">03</th>
-                    <td>Juan</td>
-                    <td>3014442152</td>
-                    <td>Cra 45 #20-1</td>
-                    <td>no</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
-                <tr>
-
-                    <th scope="row">04
-                    <td>Felipe</td>
-                    <td>3147815859</td>
-                    <td>cr48#78-9</td>
-                    <td>no</td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                    </th>
-
-                </tr>
-            </tbody>
         </table>
     </div>
+     <!-- Paginador de mis registros  -->
+     <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+    
+     </div>
 
 
-    <!-- modal de editar cliente -->
+    <!-- modal de editar proveedor -->
     <div class="modal" id="modalEditar">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -213,6 +172,10 @@
     </div>
 
     </div>
+
+     <!--/ scripts agregados  -->
+     <script type="module" src="../../js/class_and_functions_global/UIProveedor.js"></script>
+     <script type="module" src="../../js/funcionalidadesProveedor/listarProveedor.js"></script>
 
 
     <script src="../../js/funcionalidadesProveedor/validacionProveedor.js"></script>
