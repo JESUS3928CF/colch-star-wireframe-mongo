@@ -129,7 +129,7 @@
 
         <!--! tabla para listar clientes -->
     </header>
-    <div class="tabla">
+    <div class="tabla" id="tablaRoles">
         <table class="table caption-top ">
             <caption>Lista de roles</caption>
             <thead>
@@ -137,51 +137,16 @@
                     <th scope="col">ID</th>
                     <th scope="col">Roles</th>
                     <th scope="col">Fecha de creación</th>
-                    <th scope="col">Permisos</th>
-                    <th scope="col">Permisos específicos</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Editar</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Administrador</td>
-                    <td>10/05/2023</td>
-                    <td>Usuarios Roles-Proveedores-Productos-Clientes-Compras-Ventas-Catalogo</td>
-                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#modalPermisos">Ver</button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                   
-
-                    <td><img width="35px" src="/imagenes/iconos/crossing_out.svg" alt=""></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Empleado</td>
-                    <td>10/05/2023</td>
-                    <td>Proveedores Productos-Clientes-Compras-Ventas-Catalogo</td>
-                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#modalPermisos">Ver</button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Vendedor</td>
-                    <td>10/05/2023</td>
-                    <td>Ventas - Compras</td>
-                    <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#modalPermisos">Ver</button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" /></td>
-                    <td><button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#modalEditar">Editar</button></td>
-                </tr>
-            </tbody>
+            </thead>            
         </table>
     </div>
+     <!-- Paginador de mis registros  -->
+     <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+    
+     </div>
 
     <!--! modal de editar cliente -->
     <div class="modal" id="modalEditar">
@@ -344,7 +309,10 @@
         </div>
     </div>
 
-      
+      <!--/ scripts agregados  -->
+     <script type="module" src="../../js/class_and_functions_global/UIRoles.js"></script>
+     <script type="module" src="../../js/funcionalidadesRoles/listarRoles.js"></script>
+
 
 
     <script src="../../js/funcionalidadesRoles/validacionRoles.js"></script>
