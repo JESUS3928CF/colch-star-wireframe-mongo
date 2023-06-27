@@ -177,7 +177,7 @@
             formulario.reset();
 
             mostrarToast( Swal.fire(
-                'Proveedor agregado correctamente',
+                'Proveedor agregado exitosamente',
                 '',
                 'success'
             ));

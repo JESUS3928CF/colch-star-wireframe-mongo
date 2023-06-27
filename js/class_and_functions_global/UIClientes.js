@@ -133,6 +133,8 @@ export function buscarRegistros(paginaActual) {
      // Crear el cuerpo de la tabla
      const tbody = document.createElement('tbody');
 
+    //  console.log(registro);
+
      resultado.forEach((registro) => {
          const fila = document.createElement('tr');
 

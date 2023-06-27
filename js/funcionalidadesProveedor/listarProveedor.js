@@ -10,4 +10,3 @@ import {imprimirPaginador,buscarRegistros} from '../class_and_functions_global/U
     });
 })();
 
- 
