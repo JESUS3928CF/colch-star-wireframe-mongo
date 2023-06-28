@@ -25,81 +25,11 @@
 <body class="fondo">
     <header class="contenedor">
         <h1 class="titulo">Proveedores</h1>
-        <!-- SidebarSearch Form -->
-
-        <!-- botón agregar -->
-        <div class="container-fluid seccion2">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Agregar
-                proveedor</button>
-
-            <!-- modal de agregar cliente -->
-
-            <div class="modal" id="myModal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header modal-head-agregar">
-                            <h5 class="modal-title" id="exampleModalLabel">Agregar proveedor</h5>
-                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                            <!-- formulario para agregar un cliente -->
-                            <form action="" id="formularioAgregarProveedor">
-                                <div class="mb-3" name="divNombre">
-                                    <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" name="nombreGuardar"
-                                        placeholder="Ingresar nombre" required>
-                                </div>
-                                <div class="mb-3" name="divTelefono">
-                                    <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
-                                    <input type="text" class="form-control" name="telefonoGuardar"
-                                        placeholder="Ingresar teléfono">
-                                </div>
-                                <div class="mb-3" name="divDireccion">
-                                    <label for="direccionGuardar" class="col-form-label">Dirección:</label>
-                                    <input type="text" class="form-control" id="direccionGuardar"
-                                        name="direccionGuardar" placeholder="Ingresar dirección" required>
-                                </div>
-                                <div class="mb-3" name="divContacto">
-                                    <label for="contactoGuardar" class="col-form-label">Contacto:</label>
-                                    <input type="text" class="form-control" id="contactoGuardar" name="contactoGuardar"
-                                        placeholder="Ingresar contacto" required>
-                                </div>
-
-
-                                <!-- <label for="exampleDataList" class="form-label">Seleccionar estado:</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Habilitado</option>
-                                    <option value="2">Inhabilitado</option>
-                                </select> -->
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
-                                        id="guardarCancelado">Cancelar</button>
-                                    <input type="submit" class="btn btn-success" value="Guardar">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- boton de buscar -->
-
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-
-        </div>
 
         <!-- tabla para listar proveedor -->
     </header>
     <div class="tabla" id="tablaProveedor">
         <table class="table caption-top ">
-            <caption>Lista de proveedores</caption>
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -107,8 +37,7 @@
                     <th scope="col">Teléfono</th>
                     <th scope="col">Dirección</th>
                     <th scope="col">Contacto</th>
-                    <th scope="col">Inhabilitar</th>
-                    <th scope="col">Editar</th>
+                    <th scope="col">Estado</th>
                 </tr>
             </thead>
         </table>
@@ -117,61 +46,6 @@
      <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
     
      </div>
-
-
-    <!-- modal de editar proveedor -->
-    <div class="modal" id="modalEditar">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header modal-head-editar">
-                    <h5 class="modal-title">Editar datos del proveedor</h5>
-                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- formulario para editar los datos de la tabla clientes -->
-                    <form action="" id="formularioEditarProveedor">
-                        <div class="mb-3" name="divNombre">
-                            <label for="nombreEditar" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombreEditar" name="nombreEditar"
-                                placeholder="Ingresar nombre">
-                        </div>
-                        <div class="mb-3" name="divTelefono">
-                            <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="text" class="form-control" id="telefonoEditar" name="telefonoEditar"
-                                placeholder="Ingresar teléfono">
-                        </div>
-                        <div class="mb-3" name="divDireccion">
-                            <label for="direccionEditar" class="col-form-label">Dirección:</label>
-                            <input type="text" class="form-control" id="direccionEditar" name="direccionEditar"
-                                placeholder="Ingresar dirección">
-                        </div>
-
-                        <div class="mb-3" name="divContacto">
-                            <label for="contactoEditar" class="col-form-label">Contacto:</label>
-                            <input type="text" class="form-control" id="productoEditar" name="productoEditar"
-                                placeholder="Ingresar contacto">
-                        </div>
-
-                        <!-- <label for="exampleDataList" class="form-label">Seleccionar estado:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="1">Habilitar</option>
-                            <option value="2">Inhabilitar</option>
-                        </select> -->
-
-                        <div class="modal-footer">
-                            <button type="button" id="editarCancelado" class="btn btn-danger"
-                                data-bs-dismiss="modal">Cancelar</button>
-                            <input type="submit" class="btn btn-success" value="Guardar">
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    </div>
 
      <!--/ scripts agregados  -->
      <script type="module" src="../../js/class_and_functions_global/UIProveedor.js"></script>
