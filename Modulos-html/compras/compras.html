@@ -17,134 +17,16 @@
 
     <link rel="stylesheet" href="/css/inicio/inicio_style.css" />
     <link rel="stylesheet" href="/css/cssgeneral.css">
+    <link rel="stylesheet" href="../../css/tailwind.min.css">
+
 </head>
 
 <body class="fondo">
     
     <header class="contenedor">
         <h1 class="titulo">Compras</h1>
-        <!-- SidebarSearch Form -->
-
-        <!-- botón agregar -->
-        <div class="container-fluid seccion2">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
-                Agregar compra
-            </button>
-            <!-- modal de agregar cliente -->
-
-            <div class="modal" id="myModal">
-                <div class="modal-dialog modal-dialog-centered" style= "width: 800px ; margin-left: 100px;">
-                    <div class="modal-content" style= "width: 800px ;" >
-                        <div class="modal-header modal-head-agregar" style="width: 800px">
-                            <h5 class="modal-title" id="exampleModalLabel">
-                                Agregar compra
-                            </h5>
-                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="formulario">
-                            
-                            <div class="modal-body">
-
-                                <!--* formulario para agregar una compra -->
-                                <form action="" id="formularioagregarCompra">
-                                    <div class="mb-3">
-                                        <label for="nombreGuardar" class="col-form-label">
-                                            Nombre del Proveedor:
-                                        </label>
-                                        <input type="text"   class="form-control" id="nombreGuardar" name="nombreGuardar" placeholder="Ingresar nombre"  />
-                                    </div>
-                                    <!-- <div class="mb-3">
-                                        <label for="cantidadGuardar" class="col-form-label">
-                                            Numero de factura:
-                                        </label>
-                                        <input type="text" class="form-control" id="cantidadGuardar" placeholder="Ingresar cantidad" />
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="ivaCompraGuardar" class="col-form-label">
-                                            Iva:
-                                        </label>
-                                        <input type="text" class="form-control" id="ivaCompraGuardar" placeholder="Ingresar porcentaje iva"  />
-                                    </div> -->
-                                    <div class="mb-3">
-                                        <label for="fechaGuardar" class="col-form-label">
-                                            Fecha:
-                                        </label>
-                                        <input type="date" class="form-control" id="fechaGuardar"  />
-                                    </div>
-                            
-                            
-                            
-                                    <!-- <label for="exampleDataList" class="form-label">
-                                        Seleccionar estado:
-                                    </label>
-                                     <select class="form-select" aria-label="Default select example">
-                                        <option value="1">Habilitado</option>
-                                        <option value="2">Inhabilitado</option>
-                                    </select>  -->
-                            
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="guardarCancelado" >
-                                            Cancelar
-                                        </button>
-                                        <input type="submit"  id="compraG" class="btn btn-success" value="Guardar" />
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-body ">
-                                <form action="" id="formularioagregarCompra">
-                                    <div class="form-label" style="text-align: center;">
-                                        <p class="detalleCompra">Agregar datos de los productos de la compra</p>
-                                    </div>
-                                    <div class="subFormulario">
-                            
-                                        <div class="mb-3">
-                                            <label for="nombreCompraAgregar" class="col-form-label">Nombre:</label>
-                                            <input type="text" class="form-control" id="nombreCompraAgregar" name="nombreCompraAgregar" placeholder="Ingresar nombre">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="cantidadCompraAgregar" class="col-form-label">Cantidad:</label>
-                                            <input type="text" class="form-control" id="cantidaCompraAgregar" name="cantidaCompraAgregar" placeholder="Ingresar cantidad">
-                                        </div>
-                                    </div>
-                                    <div class="subFormulario">
-                                        <div class="mb-3">
-                                            <label for="precioCompraAgregar" class="col-form-label">Precio:</label>
-                                            <input type="text" class="form-control" id="precioCompraAgregar" name="precioCompraAgregar"
-                                                placeholder="Ingresar precio unitario del producto">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="totalCompraAgregar" class="col-form-label">Precio total:</label>
-                                            <input type="text" class="form-control" id="totalCompraAgregar" placeholder="" value="100.000"
-                                                readonly>
-                                        </div>
-                                    </div>
-                                    <div class="bottonAgregarProducto">
-                                        <div> <input type="button" id="AgregarProductoS" class="btn btn-info" value="Agregar producto"> </div>
-                                    </div>
-                                    
-
-
-                                </form>
-                            </div>
-                        </div>
-                       </div>
-                    </div>
-                </div>
-            <!-- </div> -->
-
-
-            <!--! botón de buscar -->
-
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-
-        </div>
-
-        <!--! tabla para listar compras -->
     </header>
-    <div class="tabla">
+    <div class="tabla" id="tablaClientes">
         <table class="table caption-top ">
             <caption>Lista de compras</caption>
             <thead>
@@ -158,181 +40,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">01</th>
-                    <td>Daniel</td>
-                    <td>400.000</td>
-                    <td>10/10/2024</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-
-                    
-                </tr>
-                <tr>
-                    <th scope="row">02</th>
-                    <td>Daniel</td>
-                    <td>1.400.000</td>
-                    <td>10/10/2024</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-                    
-                </tr>
-                <tr>
-                    <th scope="row">03</th>
-                    <td>Juan</td>
-                    <td>700.000</td>
-                    <td>10/10/2024</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-                   
-                </tr>
-                <tr>
-                    <th scope="row">04</th>
-                    <td>Felipe</td>
-                    <td>100.000</td>
-                    <td>10/10/2024</td>
-                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#DetalleCompra"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button></td>
-                    <td><img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" /></td>
-
-                </tr>
             </tbody>
         </table>
     </div>
 
 
-    <!-- modal de editar cliente -->
-    <!-- <div class="modal" id="modalEditar">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header modal-head-editar">
-                    <h5 class="modal-title">Editar datos de la compra</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    formulario para editar los datos de la tabla clientes
-                    <form action="">
-                        <div class="mb-3">
-                            <label for="nombreEditar" class="col-form-label">Nombre del proveedor:</label>
-                            <input type="text" class="form-control" id="nombreEditar"
-                                placeholder="Ingresar nombre del proveedor">
-                        </div>
-                        <div class="mb-3">
-                            <label for="facturaEditar" class="col-form-label">Número de factura:</label>
-                            <input type="text" class="form-control" id="facturaEditar"
-                                placeholder="Ingresar el número de la factura">
-                        </div> -->
-                        <!-- <div class="mb-3">
-                            <label for="cantidadEditar" class="col-form-label">Cantidad:</label>
-                            <input type="text" class="form-control" id="cantidadEditar" placeholder="Ingresar cantidad">
-                        </div>
-                        <div class="mb-3">
-                            <label for="totalEditar" class="col-form-label">Total compra:</label>
-                            <input type="text" class="form-control" id="totalEditar" placeholder="Ingresar total">
-                        </div> -->
-                        <!-- <div class="mb-3">
-                            <label for="ivaCompraEditar" class="col-form-label">Iva:</label>
-                            <input type="text" class="form-control" id="ivaCompraEditar"
-                                placeholder="Ingresar Porcentaje del iva" >
-                        </div>
-                        <div class="mb-3">
-                            <label for="fechaEditar" class="col-form-label">Fecha:</label>
-                            <input type="date" class="form-control" id="fechaEditar" placeholder="Ingresar producto">
-                        </div>
-
-                        <label for="exampleDataList" class="form-label">Seleccionar Estado:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="1">Habilitar</option>
-                            <option value="2">Inhabilitar</option>
-                        </select>
-                        <hr>
-                        <div class="form-label" style="text-align: center;">
-                            <p class="detalleCompra">Ingresar datos de los productos de la compra</p>
-                        </div>
-                        <div class="subFormulario">
-
-                            <div class="mb-3">
-                                <label for="nombreProductoEditar" class="col-form-label">Nombre:</label>
-                                <input type="text" class="form-control" id="nombreProductoEditar"
-                                    placeholder="Ingresar nombre">
-                            </div>
-                            <div class="mb-3">
-                                <label for="cantidaProductodEditar" class="col-form-label">Cantidad:</label>
-                                <input type="text" class="form-control" id="cantidadProductoEditar"
-                                    placeholder="Ingresar cantidad">
-                            </div>
-                        </div>
-                        <div class="subFormulario">
-                            <div class="mb-3">
-                                <label for="precioProductoEditar" class="col-form-label">Precio:</label>
-                                <input type="text" class="form-control" id="precioProductoEditar"
-                                    placeholder="Ingresar precio unitario del producto">
-                            </div>
-                            <div class="mb-3">
-                                <label for="totalEditar" class="col-form-label">Precio total:</label>
-                                <input type="text" class="form-control" id="totalEditar" placeholder=""
-                                    value="100.000" readonly>
-                            </div>
-                        </div>
-                        <div class="bottonAgregarProducto">
-                            <div> <button type="button" class="btn btn-info">Agregar producto</button> </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                            <input type="submit" class="btn btn-success" value="Guardar">
-                        </div>
-                    </form>
-                </div>
-
+            <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
+                
             </div>
-        </div>
-    </div> -->
-
-
-    <div class="modal" id="DetalleCompra">
-        <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
-            <div class="modal-content" style= "width: 800px ;" >
-                <div class="modal-header modal-head" style="width: 800px; background-color:black; color:white">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        Detalle de compra
-                    </h5>
-                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="formulario">
-                    <div class="modal-body" >
-                        <form action="" id="Detalle">
-                         <div class="mb-3">
-                            <center>
-                                <label for="nombreGuardar" style="text-align: center;"> Producto #1</label>
-                                <br>
-                                <label for="nombreGuardar" for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;"> 001 camisa</label>
-                            </center>
-                         </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar" class="col-form-label"> Cantidad:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">2</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar"> Precio:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">35.000</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar"> Subtotal:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">70.000</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar"  style="margin-left: 60%; position: absolute;top: 155px; left: 40px;" > Fecha de compra:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; margin-left: 60%; position: absolute;top: 183px; left: 40px;">20/05/2023</label>
-                                
-                            </div>
-                                    
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="cancelar"> Regresar </button>
-                            </div>
+   
+          
 </body>
-<script src="/js/funcionaidadesCompras/validarCompra.js"></script>
+<script type="module" src="/js/class_and_functions_global/UlCompra.js"></script>
+<script src="/js/funcionaidadesCompras/listarCompras.js" type="module"></script>
+<script src="/js/funcionaidadesCompras/validarCompra.js" type="module"></script>
+<script src="/js/funcionalidadesUsuarios/cambiarEstado.js"type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/js/funcionalidadesUsuarios/cambiarEstado.js"></script>
+
 
 
 </html>
