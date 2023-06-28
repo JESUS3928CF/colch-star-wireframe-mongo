@@ -118,11 +118,10 @@ export function buscarRegistros(paginaActual) {
      // Añadir los encabezados de las columnas
     const encabezadosColumnas = [
         'ID',
-        'cliente',
+        'ID Cliente',
         'Fecha',
-        "Precio total",
-        'Ver detalle',
-        'Estado de venta',
+        "Precio Total",
+        'Estado de Venta',
     ];
      encabezadosColumnas.forEach((encabezadoColumna) => {
          const th = document.createElement('th');
@@ -146,7 +145,6 @@ export function buscarRegistros(paginaActual) {
              registro.fk_cliente,
              registro.fecha,
              registro.precio_total,
-             '<button type="button" data-bs-toggle="modal" data-bs-target="#Detalle"><img class="centrarIcono" src="/imagenes/iconos/bill.svg" alt=""></button>',
              registro.estado_de_venta
          ];
 

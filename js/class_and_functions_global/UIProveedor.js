@@ -116,8 +116,7 @@ export function buscarRegistros(paginaActual) {
          'Teléfono',
          'Dirección',
          'Contacto', 
-         'Inhabilitar',
-         'Editar',
+         'Estado',
      ];
      encabezadosColumnas.forEach((encabezadoColumna) => {
          const th = document.createElement('th');
@@ -145,7 +144,6 @@ export function buscarRegistros(paginaActual) {
              registro.estado
                  ? '<img class="centrarIcono estado" src="/imagenes/iconos/light_switch on.svg" />'
                  : '<img class="centrarIcono estado" src="/imagenes/iconos/light_switch off.svg" />',
-             '<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>',
          ];
 
          datosRegistro.forEach((dato) => {

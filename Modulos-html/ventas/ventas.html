@@ -24,235 +24,31 @@
 <body class="fondo">
     <header class="contenedor">
         <h1 class="titulo">Ventas</h1>
-        <!-- SidebarSearch Form -->
-
-        <!-- botón agregar -->
-        <div class="container-fluid seccion2">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
-                Agregar venta
-            </button>
-
-            <!-- modal de agregar Venta -->
-
-            <div class="modal" id="myModal">
-                <div class="modal-dialog modal-dialog-centered" style= "width: 800px ; margin-left: 100px;">
-                    <div class="modal-content" style= "width: 800px ;" >
-                        <div class="modal-header modal-head-agregar" style="width: 800px ">
-                            <h5 class="modal-title" id="exampleModalLabel">
-                                Agregar venta
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" name="xAgregar" aria-label="Close"></button>
-                        </div>
-                        <div class="formulario">
-                            
-                            <div class="modal-body" >
-                                <!-- formulario para agregar una Venta -->
-                                <form action="" id="formularioParaAgregarVenta">
-                                    <div class="mb-3" name="nombre">
-                                        <label for="nombreGuardar" class="col-form-label">
-                                            Nombre del cliente:
-                                        </label>
-                                        <input type="text" class="form-control" name="nombreGuardar" id="nombreGuardar" placeholder="Ingresar nombre" >
-                                    </div>
-                                    <div class="mb-3" name="telefono">
-                                        <label for="telefonoGuardar" class="col-form-label">
-                                            Teléfono:
-                                        </label>
-                                        <input type="text" class="form-control" name="telefonoGuardar" id="telefonoGuardar" placeholder="Ingresar teléfono" >
-                                    </div>
-                                    <div class="mb-3" name="direccion">
-                                        <label for="" class="col-form-label">
-                                            Dirección:
-                                        </label>
-                                        <input type="text" class="form-control" name="direccionGuardar" id="direccionGuardar" placeholder="Ingresar dirección"  />
-                                    </div>
-                                    <div class="mb-3" name="fecha">
-                                        <label for="telefonoGuardar" class="col-form-label">
-                                            Fecha:
-                                        </label>
-                                        <input type="date" class="form-control" name="FechaGuardar" id="FechaGuardar"  />
-                                    </div>
-                          
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" name="cancelar" id="cancelar"> Cancelar
-                                        </button>
-                                        <input type="submit" class="btn btn-success" value="Guardar" id="Guardar" >
-                                    </div>
-                                </form>
-                            </div>
-                                      <!-- formulario para agregar un producto -->
-
-                            <div class="modal-body ">
-                                    <div class="form-label" style="text-align: center;">
-                                        <p class="detalleCompra">Agregar datos de los productos de la venta</p>
-                                    </div>
-                                    <div class="bottonAgregarProducto">
-                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" name="xAgregar" data-bs-target="#Producto">
-                                            Agregar producto
-                                        </button>
-
-                                        <div class="modal" id="Producto">
-                                            <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
-                                                <div class="modal-content" style= "width: 800px ;" >
-                                                    <div class="modal-header modal-head-editar" style="width: 800px ">
-                                                        <h5 class="modal-title" id="exampleModalLabel">
-                                                            Agregar producto
-                                                        </h5>
-                                                        <button type="button" id="xEditar" class="btn-close" name="xAgregar" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="formulario">
-                                                        <div class="modal-body" >
-                                                            <form action="" id="formularioParaAgregarProducto">
-                                                                <div class="mb-3">
-                                                                    <label for="nombreGuardar" class="col-form-label"> Producto:</label>
-                                                                    <select name="producto"  class="form-control" title="Seleccionar" >
-                                                                        <option value="Seleccionar" placeholder="Seleccionar">Seleccionar</option>
-                                                                        <option value="">001 camisa</option>
-                                                                        <option value="">002 busos</option>
-                                                                        <option value="">003 sudadera</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="nombreGuardar" class="col-form-label"> Cantidad:</label>
-                                                                    <input type="text" class="form-control" name="cantidad" placeholder="ingrese la cantidad del producto" >
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="nombreGuardar" class="col-form-label"> Precio:</label>
-                                                                    <input type="text" class="form-control" name="precio" placeholder="ingrese el precio de la venta" >
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="nombreGuardar" class="col-form-label"> Cliente:</label>
-                                                                    <select class="form-control" name="cliente">
-                                                                        <option value="Seleccionar" placeholder="Seleccionar">Seleccionar Cliente</option>
-                                                                        <option value="">001 Mark</option>
-                                                                        <option value="">002 Jacob</option>
-                                                                        <option value="">003 Larry </option>
-                                                                        <option value="">004 Andres</option>
-                                                                    </select>
-                                                                   
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="nombreGuardar" class="col-form-label"> Fecha de entrega:</label>
-                                                                    <input type="date" class="form-control" name="Fecha" >
-                                                                </div>
-
-                                                                <div class="mb-3">
-                                                                    <label for="nombreGuardar" class="col-form-label"> Descripcion del producto:</label>
-                                                                    <textarea class="form-control" name="descripcion"></textarea>
-                                                                </div>
-
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="cancelar"> Cancelar
-
-                                                                    </button>
-                                                                    <input type="submit" class="btn btn-success" value="Agregar Producto" name="GuardarProducto">
-                                                                </div>
-                                                        </div>
 
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                         </div>           
-                                    </div>
-
-                                       
-                                </form>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- botón de buscar -->
-
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">
-                    Buscar
-                </button>
-            </form>
-        </div>
 
         <!--! tabla para listar las ventas -->
     </header>
     
-
-
-
-        <!--/ Los registros se generan por JS  -->
-        <div class="tabla" id="tablaClientes">
-            <table class="table caption-top ">
-                
-                
-        
-            </table>
-        </div>
+    <!--/ Los registros se generan por JS  -->
+    <div class="tabla" id="tablaClientes">
+        <table class="table caption-top ">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">ID Cliente</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Precio Total</th>
+                    <th scope="col">Estado de Venta</th>    
+                </tr>
+            </thead>
+            
+        </table>
+    </div>
         <!-- Paginador de mis registros  -->
         <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
         
         </div>
-    <div class="modal" id="Detalle">
-        <div class="modal-dialog modal-dialog-centered" style= "width: 5000px ; margin-left: 100px;">
-            <div class="modal-content" style= "width: 800px ;" >
-                <div class="modal-header modal-head" style="width: 800px; background-color:black; color:white">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        Detalle de venta
-                    </h5>
-                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="formulario">
-                    <div class="modal-body" >
-                        <form action="" id="Detalle">
-                         <div class="mb-3">
-                            <center>
-                                <label for="nombreGuardar" style="text-align: center;"> Producto #1</label>
-                                <br>
-                                <label for="nombreGuardar" for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;"> 001 camisa</label>
-                            </center>
-                         </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar" class="col-form-label"> Cantidad:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">2</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar"> Precio:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">35.000</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar"> Subtotal:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; text-align:center;">70.000</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="nombreGuardar"  style="margin-left: 60%; position: absolute;top: 105px; left: 40px;" > Fecha de produccion:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; margin-left: 60%; position: absolute;top: 133px; left: 40px;">20/05/2023</label>
-                                
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="nombreGuardar" class="col-form-label" style="margin-left: 60%; position: absolute;top: 185px; left: 40px;"> Fecha de entrega:</label>
-                                <label for="nombreGuardar" class="input-group-text" style= "width: 200px; margin-left: 60%; position: absolute;top: 220px; left: 40px;">29/05/2023</label>
-
-                                
-                            </div>
-
-                            <div class="mb-3">
-                            <center>
-                                <label for="nombreGuardar" class="col-form-label"> Descripcion del producto:</label>
-                                <p for="nombreGuardar" class="input-group-text" style= "width: 500px;">El bluson debe de tenr un diseño de rosa en el centro de la <br> parte frontal de la prenda y en la parte de atras</p>
-                            </center>
-
-                        
-
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="cancelar"> Regresar </button>
-                            </div>
 
 
     <script type="module" src="../../js/class_and_functions_global/UIVentas.js"></script>

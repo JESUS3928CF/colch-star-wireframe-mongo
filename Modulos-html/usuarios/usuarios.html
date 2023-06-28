@@ -28,94 +28,11 @@
         <h1 class="titulo">Usuarios</h1>
         <!-- SidebarSearch Form -->
 
-        <!-- botón agregar -->
-        <div class="container-fluid seccion2">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Agregar
-                usuario</button>
-
-            <!--! modal de agregar usuario -->
-
-            <div class="modal" id="myModal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header modal-head-agregar">
-                            <h5 class="modal-title" id="exampleModalLabel">Agregar usuario</h5>
-                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                            <!-- formulario para agregar un usuario -->
-                            <form action="" id="formularioagregarusuario">
-                                <div class="mb-3" name="divNombre">
-                                    <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreGuardarr" name="nombreGuardar"
-                                        placeholder="Ingresar nombre">
-                                </div>
-                                <div class="mb-3" name="divApellido">
-                                    <label for="apellidoGuardar" class="col-form-label">Apellido:</label>
-                                    <input type="text" class="form-control" id="apellidoGuardar" name="apellidoGuardar"
-                                        placeholder="Ingresar apellido">
-                                </div>
-                                <div class="mb-3" name="divTelefono">
-                                    <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
-                                    <input type="text" class="form-control" id="telefonoGuardar" name="telefonoGuardar" placeholder="Ingresar teléfono" >
-                                </div>
-                                <div class="mb-3" name="divEmail">
-                                    <label for="emailGuardar" class="col-form-label">Email:</label>
-                                    <input type="email" class="form-control" id="emailGuardar" name="emailGuardar"
-                                        placeholder="Ingresar email">
-                                </div>
-                                
-                                
-                                <div class="mb-3" name="divContraseña">
-                                    <label for="contraseñaGuardar" class="col-form-label" >Contraseña:</label>
-                                    <input type="password" class="form-control" id="contraseñaGuardar" name="contraseñaGuardar"
-                                        placeholder="Ingresar contraseña">
-                                </div>
-                                <div class="mb-3" name="divConfirmarContraseña">
-                                    <label for="contraseñaconfirmarGuardar" class="col-form-label">Confirmar contraseña:</label>
-                                    <input type="password" class="form-control" id="contraseñaconfirmarGuardar" name="contraseñaconfirmarGuardar"
-                                        placeholder="Confirmar contraseña:">
-                                </div>
-                                <div class="mb-3" name="divselectRol">
-                                    <label for="rolGuardar" class="col-form-label">Rol:</label>
-                                    <select class="form-control" name="selectRol">
-                                        <option value="">Seleccionar rol</option>
-                                        <option value="Empleado">Empleado</option>
-                                        <option value="Vendedor">Vendedor</option>
-                                        <option value="Comprador">Comprador</option>
-                                      </select>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" id="guardarCancelado" class="btn btn-danger"
-                                        data-bs-dismiss="modal">Cancelar</button>
-                                    <input type="submit" class="btn btn-success" value="Guardar">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--/ Mensaje de agregar usuario correctamente   -->
-            
-
-            <!--! botón de buscar -->
-
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-
-        </div>
-
         <!--! tabla para listar clientes -->
     </header>
 
     <div class="tabla" id="tablaClientes">
         <table class="table caption-top ">
-            <caption>Lista de usuarios</caption>
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -125,7 +42,6 @@
                     <th scope="col">Email</th>
                     <th scope="col">Rol</th>
                     <th scope="col">Estado</th>
-                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -137,75 +53,6 @@
     <div id="paginacion" class="container mx-auto mb-10 text-center flex flex-wrap justify-center">
 
     </div>
-
-    <!-- modal de editar cliente -->
-    <div class="modal" id="modalEditar">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header modal-head-editar">
-                    <h5 class="modal-title">Editar datos del usuario</h5>
-                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- formulario para editar los datos de la tabla clientes -->
-                    <form action="" id="formularioEditarUsuario">
-                        <div class="mb-3" name="divNombre">
-                            <label for="nombreEditar" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombreEditar" name="nombreEditar" placeholder="Ingresar nombre">
-                        </div>
-                        <div class="mb-3" name="divApellido">
-                            <label for="apellidoEditar" class="col-form-label">Apellido:</label>
-                            <input type="text" class="form-control" id="apellidoEditar" name="apellidoEditar" placeholder="Ingresar apellido">
-                        </div>
-                        <div class="mb-3" name="divTelefono">
-                            <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="text" class="form-control" id="telefonoEditar" name="telefonoEditar"
-                                placeholder="Ingresar teléfono">
-                        </div>
-                        <div class="mb-3" name="divEmail">
-                            <label for="emailEditar" class="col-form-label">Email:</label>
-                            <input type="email" class="form-control" id="emailEditar" name="emailEditar" placeholder="Ingresar email">
-                        </div>
-                        
-                        
-                        <div class="mb-3" name="divContraseña">
-                            <label for="contraseñaEditar" class="col-form-label">Contraseña:</label>
-                            <input type="password" class="form-control" id="contraseñaEditar" name="contraseñaEditar"
-                                placeholder="Ingresar contraseña">
-                        </div>
-                        <div class="mb-3" name="divConfirmarContraseña">
-                            <label for="contraseñaconfirmarEditar" class="col-form-label">Confirmar contraseña:</label>
-                            <input type="password" class="form-control" id="contraseñaconfirmarEditar" name="contraseñaconfirmarEditar"
-                                placeholder="Confirmar contraseña:">
-                        </div>
-                        <!-- <label for="exampleDataList" class="form-label">Estado:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option value="1">Habilitar</option>
-                            <option value="2">Inhabilitar</option>
-                        </select> -->
-                        <div class="mb-3" name="divselectRol">
-                            <label for="rolEditar" class="col-form-label">Rol:</label>
-                            <select class="form-control" name="selectRolEditar">
-                                <option value="">Seleccionar rol</option>
-                                <option value="Empleado">Empleado</option>
-                                <option value="Vendedor">Vendedor</option>
-                                <option value="Comprador">Comprador</option>
-                              </select>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" id="editarCancelado" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                            <input type="submit" class="btn btn-success" value="Guardar">
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
 
     <script type="module" src="../../js/class_and_functions_global/UI.js"></script>
     <script src="../../js/funcionalidadesUsuarios/listarUsuario.js" type="module"></script>

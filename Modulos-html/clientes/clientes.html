@@ -24,76 +24,11 @@
 <body class="fondo">
     <header class="contenedor">
         <h1 class="titulo">Clientes</h1>
-        <!-- SidebarSearch Form -->
-
-        <!-- botón agregar -->
-        <div class="container-fluid seccion2">
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Agregar cliente</button>
-
-            <!-- modal de agregar cliente -->
-
-            <div class="modal" id="myModal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header modal-head-agregar">
-                            <h5 class="modal-title" id="exampleModalLabel">Agregar cliente</h5>
-                            <button type="button" id="xAgregar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            
-                            <!-- formulario para agregar un cliente -->
-                            <form action="" id="formularioAgregarCliente">
-                                <div class="mb-3" name="divNombre">
-                                    <label for="nombreGuardar" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreGuardarr" name="nombreGuardar" placeholder="Ingresar nombre">
-                                </div>
-                                <div class="mb-3" name="divApellido">
-                                    <label for="apellidoGuardar" class="col-form-label">Apellido:</label>
-                                    <input type="text" class="form-control" id="apellidoGuardar" name="apellidoGuardar" placeholder="Ingresar apellido">
-                                </div>
-                                <div class="mb-3" name="divTelefono">
-                                    <label for="telefonoGuardar" class="col-form-label">Teléfono:</label>
-                                    <input type="text" class="form-control" id="telefonoGuardar" name="telefonoGuardar" placeholder="Ingresar teléfono" >
-                                </div>
-                                <div class="mb-3" name="divEmail">
-                                    <label for="emailGuardar" class="col-form-label">Email:</label>
-                                    <input type="email" class="form-control" id="emailGuardar" name="emailGuardar" placeholder="Ingresar email">
-                                </div>
-                                <div class="mb-3" name="divDireccion">
-                                    <label for="direccionGuardar" class="col-form-label">Dirección:</label>
-                                    <input type="text" class="form-control" id="direccionGuardar" name="direccionGuardar" placeholder="Ingresar Dirección">
-                                </div>
-                            
-                                <div class="modal-footer">
-                                    <button type="button" id="guardarCancelado" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                    <input type="submit" class="btn btn-success"  value="Guardar">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-         
-            
-            
-
-            <!-- botón de buscar -->
-
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-
-        </div>
-
-        <!-- tabla para listar clientes -->
     </header>
 
     <!--/ Los registros se generan por JS  -->
     <div class="tabla" id="tablaClientes">
         <table class="table caption-top ">
-            <caption>Lista de clientes</caption>
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -102,9 +37,7 @@
                     <th scope="col">Teléfono</th>
                     <th scope="col">Email</th>
                     <th scope="col">Dirección</th>
-                    <th scope="col">Inhabilitar</th>
-                    <th scope="col">Editar</th>
-    
+                    <th scope="col">Estado</th>    
                 </tr>
             </thead>
             
@@ -115,51 +48,6 @@
     
     </div>
 
-
-    <!-- modal de editar cliente -->
-    <div class="modal" id="modalEditar">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header modal-head-editar">
-                    <h5 class="modal-title">Editar datos del cliente</h5>
-                    <button type="button" id="xEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- formulario para editar los datos de la tabla clientes -->
-                    <form action="" id="formularioEditarCliente">
-                        <div class="mb-3" name="divNombre">
-                            <label for="nombreEditar" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" name="nombreEditar" placeholder="Ingresar nombre">
-                        </div>
-                        <div class="mb-3"  name="divApellido">
-                            <label for="apellidoEditar" class="col-form-label">Apellido:</label>
-                            <input type="text" class="form-control" name="apellidoEditar" placeholder="Ingresar apellido">
-                        </div>
-                        <div class="mb-3"  name="divTelefono">
-                            <label for="telefonoEditar" class="col-form-label">Teléfono:</label>
-                            <input type="text" class="form-control" name="telefonoEditar" placeholder="Ingresar teléfono">
-                        </div>
-                        <div class="mb-3"  name="divEmail">
-                            <label for="emailEditar" class="col-form-label">Email:</label>
-                            <input type="text" class="form-control" name="emailEditar" placeholder="Ingresar email">
-                        </div>
-                        <div class="mb-3"  name="divDireccion">
-                            <label for="direccionEditar" class="col-form-label">Dirección:</label>
-                            <input type="text" class="form-control" name="direccionEditar" placeholder="Ingresar email">
-                        </div>
-
-
-                        <div class="modal-footer">
-                            <button type="button" id="editarCancelado"  class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                            <input type="submit" id="GuardarEditarCliente" class="btn btn-success"  value="Guardar">
-                        </div>
-                    </form>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    
     <!--/ scripts agregados  -->
     <script type="module" src="../../js/class_and_functions_global/UIClientes.js"></script>
     <script type="module" src="../../js/funcionalidadesCliente/listarClientes.js"></script>
